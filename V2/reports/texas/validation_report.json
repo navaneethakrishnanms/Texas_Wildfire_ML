@@ -1,0 +1,100 @@
+{
+  "state_code": "TX",
+  "total_rows": 51033,
+  "is_clean": false,
+  "violations": {
+    "LATITUDE": {
+      "description": "Must be numeric in [-90.0, 90.0]",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "LONGITUDE": {
+      "description": "Must be numeric in [-180.0, 180.0]",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "DISCOVERY_DATE": {
+      "description": "Must be a parseable, non-null date",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "FIRE_SIZE": {
+      "description": "Must be numeric in [0.0, 1,000,000.0] acres",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "STATE_MISMATCH": {
+      "description": "STATE must equal 'TX'",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "COUNTY_NULL": {
+      "description": "COUNTY should be non-null (warning only)",
+      "invalid_count": 261,
+      "invalid_pct": 0.5114,
+      "sample_indices": [
+        50,
+        218,
+        347,
+        637,
+        954,
+        1455,
+        1692,
+        1854,
+        2081,
+        2082,
+        2323,
+        3020,
+        3058,
+        3060,
+        3273,
+        3570,
+        3571,
+        3818,
+        3821,
+        3847,
+        4097,
+        4153,
+        4187,
+        4188,
+        4217,
+        4387,
+        4394,
+        4522,
+        4535,
+        4536,
+        4742,
+        4775,
+        5422,
+        5462,
+        8326,
+        8742,
+        10245,
+        10247,
+        10663,
+        10670,
+        10715,
+        10757,
+        10873,
+        11099,
+        11339,
+        11390,
+        11559,
+        11641,
+        11672,
+        11921
+      ]
+    },
+    "FIRE_YEAR_OOB": {
+      "description": "FIRE_YEAR must be in [2014, 2015, 2016, 2017, 2018, 2019, 2020]",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    }
+  }
+}

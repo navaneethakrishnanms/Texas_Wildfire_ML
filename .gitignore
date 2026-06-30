@@ -1,0 +1,53 @@
+# ============================================================
+#  Wildfire Ignition Prediction System — .gitignore
+# ============================================================
+
+# ── RAW YEARLY DATA FILES (160-188 MB each — never push) ────
+*.xlsx
+*.xls
+**/*_FPA_FOD_cons.csv
+
+# ── ALL CSV FILES INSIDE data/ (raw + processed, 111-160 MB) ─
+V2/data/**/*.csv
+V2/data/*.csv
+
+# ── PROCESSED PARQUET FILES (~22 MB each) ────────────────────
+V2/data/processed/**/*.parquet
+**/*.parquet
+
+# ── LARGE EDA OUTPUT FILES (re-creatable by running run_all_eda.py) ──
+# Exclude ALL generated outputs — run maps/run_all_eda.py to regenerate
+V2/maps/**/eda_outputs/*
+!V2/maps/**/eda_outputs/.gitkeep
+
+# ── LOGS ─────────────────────────────────────────────────────
+V2/logs/
+logs/
+*.log
+
+# ── PYTHON CACHE ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# ── JUPYTER ──────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── ENVIRONMENT / IDE ────────────────────────────────────────
+.env
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.idea/
+.vscode/
+*.code-workspace
+
+# ── OS FILES ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

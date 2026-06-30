@@ -1,0 +1,100 @@
+{
+  "state_code": "CA",
+  "total_rows": 50881,
+  "is_clean": false,
+  "violations": {
+    "LATITUDE": {
+      "description": "Must be numeric in [-90.0, 90.0]",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "LONGITUDE": {
+      "description": "Must be numeric in [-180.0, 180.0]",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "DISCOVERY_DATE": {
+      "description": "Must be a parseable, non-null date",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "FIRE_SIZE": {
+      "description": "Must be numeric in [0.0, 1,000,000.0] acres",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "STATE_MISMATCH": {
+      "description": "STATE must equal 'CA'",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    },
+    "COUNTY_NULL": {
+      "description": "COUNTY should be non-null (warning only)",
+      "invalid_count": 4599,
+      "invalid_pct": 9.0387,
+      "sample_indices": [
+        0,
+        6,
+        14,
+        16,
+        30,
+        34,
+        37,
+        38,
+        81,
+        88,
+        95,
+        107,
+        116,
+        122,
+        142,
+        143,
+        160,
+        173,
+        174,
+        191,
+        193,
+        197,
+        212,
+        214,
+        231,
+        236,
+        243,
+        247,
+        259,
+        260,
+        261,
+        264,
+        300,
+        301,
+        307,
+        332,
+        336,
+        347,
+        351,
+        355,
+        377,
+        418,
+        424,
+        425,
+        452,
+        453,
+        462,
+        464,
+        472,
+        474
+      ]
+    },
+    "FIRE_YEAR_OOB": {
+      "description": "FIRE_YEAR must be in [2014, 2015, 2016, 2017, 2018, 2019, 2020]",
+      "invalid_count": 0,
+      "invalid_pct": 0.0,
+      "sample_indices": []
+    }
+  }
+}

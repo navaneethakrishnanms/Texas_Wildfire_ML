@@ -1,0 +1,104 @@
+========================================================================
+  California Wildfire Dataset -- EDA Summary Report
+========================================================================
+
+--- 1. DATASET OVERVIEW ---
+  State           : California (CA)
+  Total records   : 50,881
+  Columns         : 313
+  Years covered   : [2014, 2015, 2016, 2017, 2018, 2019, 2020]
+  Numeric cols    : 258
+  Categorical cols: 54
+  Memory usage    : 281.7 MB
+
+--- 2. DATA QUALITY ---
+  Exact duplicates     : 0
+  Columns with nulls   : 195 / 313
+  Overall missing rate : 7.9%
+  Top 10 most missing columns:
+    geometry                                  100.0% missing
+    GACC_Fire Use Teams                       100.0% missing
+    IAPLHS_88                                 100.0% missing
+    IAULHS_89                                 100.0% missing
+    IAHSEF                                    100.0% missing
+    IALMIL_87                                 100.0% missing
+    road_interstate_dis                        99.9% missing
+    road_US_dis                                99.8% missing
+    ICS_209_PLUS_COMPLEX_JOIN_ID               99.6% missing
+    COMPLEX_NAME                               99.6% missing
+
+--- 3. FIRE SIZE SUMMARY ---
+  Count    : 50,881
+  Mean     : 102.82 acres
+  Median   : 0.10 acres
+  Std Dev  : 3181.44 acres
+  Max      : 410203.00 acres
+  Small (<100ac) : 49,916  (98.1%)
+  Large (>=100ac): 965  (1.9%)
+
+--- 4. KEY FINDINGS ---
+  Top discriminating features (Cohen's d, Large vs Small fire):
+    fm100                           d = 0.467
+    TRI                             d = 0.454
+    Slope                           d = 0.446
+    erc                             d = 0.430
+    rmin                            d = 0.426
+    vpd                             d = 0.422
+    tmmx                            d = 0.355
+    Elevation                       d = 0.297
+
+--- 5. TEMPORAL PATTERNS ---
+  Peak year  : 2017  (9,537 fires)
+  Peak month : Jul  (9,745 fires)
+  Fires per year:
+    2014  :   6,493 fires
+    2015  :   7,354 fires
+    2016  :   7,882 fires
+    2017  :   9,537 fires
+    2018  :   9,488 fires
+    2019  :   6,454 fires
+    2020  :   3,673 fires
+
+--- 6. GEOGRAPHIC PATTERNS ---
+  Records with lat/lon : 50,881
+  Latitude  range : 32.553  to  42.417
+  Longitude range : -124.399  to  -114.138
+
+--- 7. CAUSE BREAKDOWN ---
+  Missing data/not specified/undetermined  25,786  (50.7%)
+  Debris and open burning               5,233  (10.3%)
+  Equipment and vehicle use             4,948  (9.7%)
+  Natural                               4,909  (9.6%)
+  Arson/incendiarism                    4,234  (8.3%)
+  Recreation and ceremony               1,909  (3.8%)
+  Misuse of fire by a minor             1,173  (2.3%)
+  Smoking                               1,149  (2.3%)
+  Power generation/transmission/distribution   1,044  (2.1%)
+  Other causes                            222  (0.4%)
+
+--- 8. MODELLING RECOMMENDATIONS ---
+  [Class Imbalance]
+    Large vs Small ratio: 1 : 51
+    Use SMOTE, class_weight='balanced', or threshold tuning.
+
+  [Multicollinearity]
+    ERC, BI, VPD, TMMX are highly correlated.
+    Consider PCA or dropping correlated pairs before tree-based models.
+
+  [Leakage Columns]
+    CONT_DATE, CONT_DOY, CONT_TIME, MTBS_ID describe post-fire outcomes.
+    Exclude from all predictive models.
+
+  [Feature Engineering Ideas]
+    - Interaction: erc * vs (fire weather index proxy)
+    - Rolling means: 7-day / 30-day weather windows
+    - NDVI anomaly relative to seasonal normal
+    - County-level historical fire frequency
+
+  [Train/Test Split]
+    Use temporal split: train on 2014-2018, validate on 2019, test on 2020.
+    Avoid random split -- spatial autocorrelation causes leakage.
+
+========================================================================
+  END OF REPORT
+========================================================================

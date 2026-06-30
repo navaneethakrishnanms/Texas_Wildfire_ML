@@ -1,0 +1,17 @@
+{
+  "model": "D: LightGBM",
+  "threshold": 0.45999999999999963,
+  "metrics": {
+    "auc_roc": 0.8994,
+    "auc_pr": 0.6905,
+    "f1": 0.6915,
+    "precision": 0.5821,
+    "recall": 0.8516,
+    "accuracy": 0.8187,
+    "threshold": 0.46,
+    "tp": 241,
+    "fp": 173,
+    "tn": 730,
+    "fn": 42
+  }
+}

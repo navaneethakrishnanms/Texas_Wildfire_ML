@@ -1,28 +1,27 @@
 # ============================================================
 #  Wildfire Ignition Prediction System — .gitignore
+#  RULE: Only exclude large raw/processed DATA files.
+#  Everything else (code, outputs, images, maps) IS tracked.
 # ============================================================
 
-# ── RAW YEARLY DATA FILES (160-188 MB each — never push) ────
-*.xlsx
-*.xls
-**/*_FPA_FOD_cons.csv
+# ── RAW FPA-FOD YEARLY CSVs (79-180 MB each) ─────────────────
+V2/data/*_FPA_FOD_cons.csv
+V2/data/*.xlsx
+V2/data/*.xls
 
-# ── ALL CSV FILES INSIDE data/ (raw + processed, 111-160 MB) ─
-V2/data/**/*.csv
-V2/data/*.csv
-
-# ── PROCESSED PARQUET FILES (~22 MB each) ────────────────────
+# ── PROCESSED DATA FILES (111-114 MB CSVs, 22 MB parquets) ──
+V2/data/processed/**/*.csv
 V2/data/processed/**/*.parquet
-**/*.parquet
 
-# ── LARGE EDA OUTPUT FILES (re-creatable by running run_all_eda.py) ──
-# Exclude ALL generated outputs — run maps/run_all_eda.py to regenerate
-V2/maps/**/eda_outputs/*
-!V2/maps/**/eda_outputs/.gitkeep
+# ── V1 LARGE RASTER/GIS FILES (.tif, .tiff) ──────────────────
+**/*.tif
+**/*.tiff
+**/*.geotiff
 
 # ── LOGS ─────────────────────────────────────────────────────
-V2/logs/
-logs/
+V2/logs/*.log
+V1/logs/*.log
+logs/*.log
 *.log
 
 # ── PYTHON CACHE ─────────────────────────────────────────────
@@ -33,7 +32,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
-# ── JUPYTER ──────────────────────────────────────────────────
+# ── JUPYTER CHECKPOINTS ──────────────────────────────────────
 .ipynb_checkpoints/
 
 # ── ENVIRONMENT / IDE ────────────────────────────────────────
@@ -47,7 +46,7 @@ build/
 .vscode/
 *.code-workspace
 
-# ── OS FILES ─────────────────────────────────────────────────
+# ── OS ───────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 desktop.ini

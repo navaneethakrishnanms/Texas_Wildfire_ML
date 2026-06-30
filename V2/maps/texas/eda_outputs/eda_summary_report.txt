@@ -1,0 +1,104 @@
+========================================================================
+  Texas Wildfire Dataset -- EDA Summary Report
+========================================================================
+
+--- 1. DATASET OVERVIEW ---
+  State           : Texas (TX)
+  Total records   : 51,033
+  Columns         : 313
+  Years covered   : [2014, 2015, 2016, 2017, 2018, 2019, 2020]
+  Numeric cols    : 258
+  Categorical cols: 54
+  Memory usage    : 279.7 MB
+
+--- 2. DATA QUALITY ---
+  Exact duplicates     : 0
+  Columns with nulls   : 195 / 313
+  Overall missing rate : 8.6%
+  Top 10 most missing columns:
+    geometry                                  100.0% missing
+    GACC_Fire Use Teams                       100.0% missing
+    IAHSEF                                    100.0% missing
+    IAULHS_89                                 100.0% missing
+    IAPLHS_88                                 100.0% missing
+    IALMIL_87                                 100.0% missing
+    ICS_209_PLUS_COMPLEX_JOIN_ID              100.0% missing
+    COMPLEX_NAME                               99.9% missing
+    road_interstate_dis                        99.9% missing
+    road_US_dis                                99.8% missing
+
+--- 3. FIRE SIZE SUMMARY ---
+  Count    : 51,033
+  Mean     : 43.03 acres
+  Median   : 1.00 acres
+  Std Dev  : 1645.50 acres
+  Max      : 318156.00 acres
+  Small (<100ac) : 49,333  (96.7%)
+  Large (>=100ac): 1,700  (3.3%)
+
+--- 4. KEY FINDINGS ---
+  Top discriminating features (Cohen's d, Large vs Small fire):
+    Elevation                       d = 0.907
+    erc                             d = 0.603
+    rmin                            d = 0.574
+    fm100                           d = 0.502
+    vpd                             d = 0.441
+    bi                              d = 0.343
+    vs                              d = 0.295
+    tmmx                            d = 0.198
+
+--- 5. TEMPORAL PATTERNS ---
+  Peak year  : 2017  (8,922 fires)
+  Peak month : Jul  (6,526 fires)
+  Fires per year:
+    2014  :   8,538 fires
+    2015  :   8,304 fires
+    2016  :   8,586 fires
+    2017  :   8,922 fires
+    2018  :   7,533 fires
+    2019  :   6,455 fires
+    2020  :   2,695 fires
+
+--- 6. GEOGRAPHIC PATTERNS ---
+  Records with lat/lon : 51,033
+  Latitude  range : 25.866  to  36.731
+  Longitude range : -106.638  to  -93.558
+
+--- 7. CAUSE BREAKDOWN ---
+  Debris and open burning              20,481  (40.1%)
+  Missing data/not specified/undetermined  16,615  (32.6%)
+  Equipment and vehicle use             5,968  (11.7%)
+  Power generation/transmission/distribution   3,367  (6.6%)
+  Natural                               1,892  (3.7%)
+  Smoking                                 836  (1.6%)
+  Arson/incendiarism                      742  (1.5%)
+  Recreation and ceremony                 501  (1.0%)
+  Misuse of fire by a minor               300  (0.6%)
+  Railroad operations and maintenance     239  (0.5%)
+
+--- 8. MODELLING RECOMMENDATIONS ---
+  [Class Imbalance]
+    Large vs Small ratio: 1 : 29
+    Use SMOTE, class_weight='balanced', or threshold tuning.
+
+  [Multicollinearity]
+    ERC, BI, VPD, TMMX are highly correlated.
+    Consider PCA or dropping correlated pairs before tree-based models.
+
+  [Leakage Columns]
+    CONT_DATE, CONT_DOY, CONT_TIME, MTBS_ID describe post-fire outcomes.
+    Exclude from all predictive models.
+
+  [Feature Engineering Ideas]
+    - Interaction: erc * vs (fire weather index proxy)
+    - Rolling means: 7-day / 30-day weather windows
+    - NDVI anomaly relative to seasonal normal
+    - County-level historical fire frequency
+
+  [Train/Test Split]
+    Use temporal split: train on 2014-2018, validate on 2019, test on 2020.
+    Avoid random split -- spatial autocorrelation causes leakage.
+
+========================================================================
+  END OF REPORT
+========================================================================

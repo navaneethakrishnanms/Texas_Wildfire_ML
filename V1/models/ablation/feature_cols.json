@@ -1,0 +1,19 @@
+[
+  "NDVI",
+  "EVI",
+  "LST",
+  "Temperature",
+  "Wind",
+  "Rainfall",
+  "DEM",
+  "Slope",
+  "Aspect",
+  "LandCover",
+  "month",
+  "day_of_year",
+  "season_code",
+  "sin_month",
+  "cos_month",
+  "sin_doy",
+  "cos_doy"
+]

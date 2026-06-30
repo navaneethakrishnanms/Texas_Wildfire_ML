@@ -1,0 +1,114 @@
+# Configuration for Texas Wildfire Ignition Risk Prediction
+# V1 Pipeline — Annual GEE composites + FIRMS 2024 fire detections
+
+project_name: "texas-wildfire-risk-v1"
+
+# Data folder structure
+paths:
+  raw_dir:       "data/raw"
+  processed_dir: "data/processed"
+  ablation_dir:  "data/processed_ablation"
+  external_dir:  "data/external"
+  models_dir:    "models"
+  outputs_dir:   "outputs"
+  logs_dir:      "logs"
+
+# ── Feature schema ────────────────────────────────────────────────────────────
+# These match the columns produced by build_dataset.py exactly.
+# Drop columns: latitude, longitude, acq_date (spatial IDs / raw date string)
+# Target column: Fire (0=no fire, 1=confirmed FIRMS fire ignition)
+features:
+  raster:
+    - NDVI           # Normalized Difference Vegetation Index (annual MODIS composite)
+    - EVI            # Enhanced Vegetation Index
+    - LST            # Land Surface Temperature (°C, annual mean)
+    - Temperature    # Air temperature (°C)
+    - Wind           # Wind speed (m/s)
+    - Rainfall       # Annual rainfall (mm)
+    - DEM            # Digital Elevation Model (m)
+    - Slope          # Terrain slope (degrees)
+    - Aspect         # Terrain aspect (degrees, 0–360)
+    - LandCover      # MODIS land cover class (integer 0–17, tree models handle natively)
+  temporal:
+    - month          # Calendar month (1–12)
+    - day_of_year    # Day of year (1–366)
+    - season_code    # Season (0=Winter, 1=Spring, 2=Summer, 3=Fall)
+    - sin_month      # Cyclical month encoding (sin)
+    - cos_month      # Cyclical month encoding (cos)
+    - sin_doy        # Cyclical day-of-year encoding (sin)
+    - cos_doy        # Cyclical day-of-year encoding (cos)
+  domain:
+    - is_peak_fire_season  # 1 for Feb/Mar/Apr/Oct/Nov (Model A only; omit for ablation)
+
+target: "Fire"
+
+drop_columns:
+  - latitude        # spatial ID — not a generalizable predictor
+  - longitude       # spatial ID — not a generalizable predictor
+  - acq_date        # raw date string — replaced by temporal feature encodings
+
+# ── Model hyperparameters ─────────────────────────────────────────────────────
+model:
+  # Class imbalance: calculated from train set (n_neg / n_pos ≈ 3.0)
+  scale_pos_weight: 3.0
+
+  xgboost:
+    n_estimators:         600
+    max_depth:            6
+    learning_rate:        0.05
+    subsample:            0.8
+    colsample_bytree:     0.8
+    min_child_weight:     5
+    gamma:                0.1
+    reg_alpha:            0.1
+    reg_lambda:           1.0
+    random_state:         42
+    eval_metric:          "aucpr"   # Area under PR curve (better than AUC for imbalanced)
+    early_stopping_rounds: 50
+    tree_method:          "hist"    # Fast histogram-based training (GPU-compatible)
+    device:               "cuda"    # Use GPU if available, else falls back to cpu
+
+  random_forest:
+    n_estimators:    500
+    max_depth:       20
+    min_samples_leaf: 5
+    max_features:    "sqrt"
+    class_weight:    "balanced"
+    random_state:    42
+    n_jobs:          -1
+
+  lightgbm:
+    n_estimators:         600
+    max_depth:            6
+    learning_rate:        0.05
+    subsample:            0.8
+    colsample_bytree:     0.8
+    min_child_samples:    20
+    reg_alpha:            0.1
+    reg_lambda:           1.0
+    random_state:         42
+    is_unbalance:         true
+    early_stopping_rounds: 50
+    verbose:              -1
+
+# ── Evaluation settings ───────────────────────────────────────────────────────
+evaluation:
+  # Threshold tuning: find threshold where recall >= target on val set
+  target_recall:           0.85
+  threshold_sweep_step:    0.01
+  default_threshold:       0.50
+
+  # SHAP: run on best model using first N training samples (speed)
+  shap_background_samples: 500
+  shap_val_samples:        500
+
+  # Expected top features after SHAP (for validation)
+  expected_top_features:
+    - NDVI
+    - EVI
+    - LST
+    - Temperature
+    - Wind
+    - sin_month
+    - cos_month
+    - Rainfall

@@ -1,0 +1,96 @@
+# ============================================================
+#  Texas Wildfire ML — .gitignore
+# ============================================================
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+.installed.cfg
+*.spec
+
+# ── Virtual environments ─────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ── Jupyter ──────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Large raster / GeoTIFF files (too big for GitHub) ────────
+*.tif
+*.tiff
+*.geotiff
+*.img
+*.nc
+*.hdf5
+*.h5
+
+# ── Raw data ─────────────────────────────────────────────────
+data/raw/**
+!data/raw/.gitkeep
+
+data/interim/**
+!data/interim/.gitkeep
+
+data/external/**
+!data/external/.gitkeep
+
+# ── Processed CSV data (can be large) ────────────────────────
+data/processed/**
+!data/processed/.gitkeep
+
+data/processed_ablation/**
+!data/processed_ablation/.gitkeep
+
+# ── Trained model files (.pkl / .json) ───────────────────────
+# NOTE: model configs (feature_cols.json, optimal_threshold.json) ARE kept
+models/*.pkl
+models/ablation/*.pkl
+models/*.json
+!models/feature_cols.json
+!models/optimal_threshold.json
+!models/.gitkeep
+
+# ── Raw FIRMS fire archive (2.9 MB CSV — borderline, exclude) ─
+fire_archive_M-C61_760762.csv
+
+# ── Logs ─────────────────────────────────────────────────────
+logs/**
+!logs/.gitkeep
+*.log
+
+# ── Outputs — keep plots, exclude heavy files ─────────────────
+outputs/**
+!outputs/.gitkeep
+!outputs/plots/
+!outputs/plots/*.png
+!outputs/val_metrics.json
+!outputs/test_metrics.json
+
+# ── IDE / OS ──────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Environment files with secrets ────────────────────────────
+.env
+*.pem
+*.key
+secrets.yaml
+secrets.json

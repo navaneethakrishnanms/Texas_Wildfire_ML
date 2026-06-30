@@ -1,0 +1,54 @@
+{
+  "A: XGBoost (full)": {
+    "auc_roc": 0.8868,
+    "auc_pr": 0.6691,
+    "f1": 0.6494,
+    "precision": 0.571,
+    "recall": 0.7527,
+    "accuracy": 0.8061,
+    "threshold": 0.5,
+    "tp": 213,
+    "fp": 160,
+    "tn": 743,
+    "fn": 70
+  },
+  "B: XGBoost (ablation)": {
+    "auc_roc": 0.8871,
+    "auc_pr": 0.6761,
+    "f1": 0.5749,
+    "precision": 0.5604,
+    "recall": 0.5901,
+    "accuracy": 0.7917,
+    "threshold": 0.5,
+    "tp": 167,
+    "fp": 131,
+    "tn": 772,
+    "fn": 116
+  },
+  "C: Random Forest": {
+    "auc_roc": 0.8831,
+    "auc_pr": 0.6611,
+    "f1": 0.5164,
+    "precision": 0.5678,
+    "recall": 0.4735,
+    "accuracy": 0.7884,
+    "threshold": 0.5,
+    "tp": 134,
+    "fp": 102,
+    "tn": 801,
+    "fn": 149
+  },
+  "D: LightGBM": {
+    "auc_roc": 0.8994,
+    "auc_pr": 0.6905,
+    "f1": 0.6923,
+    "precision": 0.5954,
+    "recall": 0.8269,
+    "accuracy": 0.8246,
+    "threshold": 0.5,
+    "tp": 234,
+    "fp": 159,
+    "tn": 744,
+    "fn": 49
+  }
+}

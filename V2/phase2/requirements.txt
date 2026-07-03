@@ -1,2 +1,7 @@
+# Phase 2 — Feature Finalization + H3 Grid Construction
 pandas>=1.5.0
-pathlib2>=2.3.7
+numpy>=1.23.0
+scipy>=1.9.0
+shapely>=2.0.0
+h3>=3.7.0
+pyarrow>=10.0.0

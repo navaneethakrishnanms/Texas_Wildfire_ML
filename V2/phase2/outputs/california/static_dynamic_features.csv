@@ -1,0 +1,310 @@
+Column,Update_Category,Category_Desc,Source_Update_Freq,Classification_Basis
+FOD_ID,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+FPA_ID,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+SOURCE_SYSTEM_TYPE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+SOURCE_SYSTEM,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+NWCG_REPORTING_AGENCY,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+NWCG_REPORTING_UNIT_ID,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+NWCG_REPORTING_UNIT_NAME,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+SOURCE_REPORTING_UNIT,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production
+SOURCE_REPORTING_UNIT_NAME,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production
+LOCAL_FIRE_REPORT_ID,EVENT_BASED,Only exists after a fire event — not for production,Monthly,Not applicable — feature excluded from production
+LOCAL_INCIDENT_ID,EVENT_BASED,Only exists after a fire event — not for production,Monthly,Not applicable — feature excluded from production
+FIRE_CODE,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production
+FIRE_NAME,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production
+ICS_209_PLUS_INCIDENT_JOIN_ID,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+ICS_209_PLUS_COMPLEX_JOIN_ID,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+MTBS_ID,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+MTBS_FIRE_NAME,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+COMPLEX_NAME,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+FIRE_YEAR,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+DISCOVERY_DATE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+DISCOVERY_DOY,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+DISCOVERY_TIME,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+NWCG_CAUSE_CLASSIFICATION,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+NWCG_GENERAL_CAUSE,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+NWCG_CAUSE_AGE_CATEGORY,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+CONT_DATE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+CONT_DOY,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+CONT_TIME,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+FIRE_SIZE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+FIRE_SIZE_CLASS,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+LATITUDE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+LONGITUDE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+OWNER_DESCR,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+STATE,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+COUNTY,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+FIPS_CODE,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+FIPS_NAME,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Not applicable — feature excluded from production
+LatLong_State,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+LatLong_County,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Event-based — not for production prediction
+NPL,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+Mang_Type,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+Mang_Name,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+Des_Tp,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+GAP_Sts,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+GAP_Prity,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EVH,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+EVT,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+EVH_1km,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+EVT_1km,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+EVC,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+EVC_1km,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+NAME,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+MOD_NDVI_12m,DAILY,Download every day for operational prediction,16-day,Keyword match — Download every day for operational prediction
+MOD_EVI_12m,DAILY,Download every day for operational prediction,16-day,Keyword match — Download every day for operational prediction
+Land_Cover,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+Land_Cover_1km,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+rpms,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+rpms_1km,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+Population,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+Popo_1km,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+GACCAbbrev,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_PL,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_New fire,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_New LF,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_Uncont LF,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_Type 1 IMTs,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_Type 2 IMTs,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_NIMO Teams,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_Area Command Teams,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GACC_Fire Use Teams,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GDP,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+pr_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmn_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmx_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmin_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmax_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+sph_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+srad_Normal,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+fm100_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+fm1000_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+bi_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vpd_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+erc_Normal,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+DF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+AF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+HDF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+DSF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+EBF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+EALR_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EBLR_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EPLR_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+HBF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+LLEF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+LIF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+LMI_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+MHVF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+PM25F_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+HSEF,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+P100_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+P200_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LPF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+NPL_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+RMP_PFS,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+TSDF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+TPF,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+TF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+UF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+WF_PFS,ANNUAL,Update once per year,5 years,Source update frequency: 5 years
+M_WTR,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+M_WKFC,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+M_CLT,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_ENY,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_TRN,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_HSG,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_PLN,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_HLTH,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+SM_C,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+SM_PFS,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+EPLRLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EALRLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EBLRLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+PM25LI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EBLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+DPMLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+TPLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LPMHVLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+HBLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+RMPLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+SFLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+HWLI,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+WDLI,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+DLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+ALI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+HDLI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LLELI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LILHSE,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+PLHSE,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LMILHSE,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+ULHSE,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EPL_ET,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EAL_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EBL_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+EB_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+PM25_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+DS_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+TP_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LPP_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+HB_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+RMP_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+NPL_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+TSDF_ET,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+WD_ET,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+DB_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+A_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+HD_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LLE_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+UN_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LISO_ET,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+POV_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+LMI_ET,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+IA_LMI_ET,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IA_UN_ET,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IA_POV_ET,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+TC,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+CC,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+IAULHSE,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IAPLHSE,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IALMILHSE,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IALMIL_87,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IAPLHS_88,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IAULHS_89,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+LHE,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+IALHE,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+IAHSEF,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+CA,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+NCA,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+CA_LT20,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+M_CLT_EOMI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_ENY_EOMI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_TRN_EOMI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_HSG_EOMI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_PLN_EOMI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_WTR_EOMI,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+M_HLTH_102,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_WKFC_103,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+FPL200S,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+M_WKFC_105,MONTHLY,Update monthly,Monthly,Source update frequency: Monthly
+M_EBSI,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+UI_EXP,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+THRHLD,ANNUAL,Update once per year,Annual,Source update frequency: Annual
+No_FireStation_1.0km,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+No_FireStation_5.0km,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+No_FireStation_10.0km,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+No_FireStation_20.0km,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+FRG_1km,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+FRG,STATIC,Download once; refresh every 2–5 years,~2 years,Keyword match — Download once; refresh every 2–5 years
+TRI_1km,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+TRI,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Aspect_1km,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Elevation_1km,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Elevation,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Slope_1km,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Aspect,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Slope,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+GHM,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+TPI,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+TPI_1km,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+TRACT,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+RPL_THEMES,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+RPL_THEME1,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_POV,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_UNEMP,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_PCI,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_NOHSDP,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+RPL_THEME2,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_AGE65,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_AGE17,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_DISABL,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_SNGPNT,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+RPL_THEME3,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_MINRTY,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_LIMENG,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+RPL_THEME4,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_MUNIT,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_MOBILE,DAILY,Download every day for operational prediction,5 years,Keyword match — Download every day for operational prediction
+EPL_CROWD,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_NOVEH,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+EPL_GROUPQ,STATIC,Download once; refresh every 2–5 years,5 years,Keyword match — Download once; refresh every 2–5 years
+road_county_dis,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+road_interstate_dis,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+road_common_name_dis,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+road_other_dis,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+road_state_dis,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+road_US_dis,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+Ecoregion_US_L4CODE,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Ecoregion_US_L3CODE,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Ecoregion_NA_L3CODE,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Ecoregion_NA_L2CODE,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+Ecoregion_NA_L1CODE,STATIC,Download once; refresh every 2–5 years,Static,Keyword match — Download once; refresh every 2–5 years
+SDI,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production
+Annual_etr,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+Annual_precipitation,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+Annual_tempreture,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+Aridity_index,MONTHLY,Update monthly,Monthly,Keyword match — Update monthly
+Evacuation,EVENT_BASED,Only exists after a fire event — not for production,Event-based,Keyword match — Only exists after a fire event — not for production
+pr,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+tmmn,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmx,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmin,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmax,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+sph,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vs,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+th,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+srad,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+etr,DAILY,Download every day for operational prediction,UNKNOWN,Default — conservative daily assumption (verify)
+fm100,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+fm1000,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+bi,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vpd,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+erc,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+pr_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmn_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmx_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmin_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmax_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+sph_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vs_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+th_5D_mean,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+srad_5D_mean,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+etr_5D_mean,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+fm100_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+fm1000_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+bi_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vpd_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+erc_5D_mean,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+pr_5D_min,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+pr_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmn_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmx_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmin_5D_min,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+rmax_5D_min,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+sph_5D_min,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vs_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+th_5D_max,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+srad_5D_max,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+etr_5D_max,DAILY,Download every day for operational prediction,UNKNOWN,Keyword match — Download every day for operational prediction
+fm100_5D_min,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+fm1000_5D_min,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+bi_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vpd_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+erc_5D_max,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmn_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+tmmx_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+sph_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vs_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+fm100_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+bi_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+vpd_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+erc_Percentile,DAILY,Download every day for operational prediction,Daily,Keyword match — Download every day for operational prediction
+NDVI-1day,DAILY,Download every day for operational prediction,16-day,Keyword match — Download every day for operational prediction
+NDVI_min,DAILY,Download every day for operational prediction,16-day,Keyword match — Download every day for operational prediction
+NDVI_max,DAILY,Download every day for operational prediction,16-day,Keyword match — Download every day for operational prediction
+NDVI_mean,DAILY,Download every day for operational prediction,16-day,Keyword match — Download every day for operational prediction
+CheatGrass,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+ExoticAnnualGrass,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+Medusahead,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+PoaSecunda,STATIC,Download once; refresh every 2–5 years,Annual,Keyword match — Download once; refresh every 2–5 years
+geometry,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production
+source_year,EVENT_BASED,Only exists after a fire event — not for production,UNKNOWN,Not applicable — feature excluded from production

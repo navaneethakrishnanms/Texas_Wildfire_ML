@@ -1,0 +1,252 @@
+Column,Source_System,API_URL,Spatial_Res,Temporal_Res,Update_Frequency,Update_Category,Availability_Label,Missing_%,Missing_Root_Cause,Missing_Treatment,Gate1_Status,Gate2_Status
+AF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0764,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+ALI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+A_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Annual_etr,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+Annual_precipitation,NOAA CPC / TerraClimate,https://www.climatologylab.org/terraclimate.html,0.5° / 4 km,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+Annual_tempreture,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+Aridity_index,NOAA CPC / TerraClimate,https://www.climatologylab.org/terraclimate.html,0.5° / 4 km,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+Aspect,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+Aspect_1km,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+CA,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.049,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+CA_LT20,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+CC,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+COUNTY,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.5114,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+DB_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+DF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0764,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+DLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+DPMLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+DSF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0333,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+DS_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Des_Tp,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EALRLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EALR_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EAL_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EBF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.096,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EBLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EBLRLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EBLR_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0059,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EBL_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EB_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EPLRLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EPLR_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0333,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EPL_ET,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,STATIC,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+EVC_1km,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+EVH,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+EVH_1km,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+EVT,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+EVT_1km,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+Ecoregion_NA_L2CODE,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.0196,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Ecoregion_NA_L3CODE,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.0196,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Ecoregion_US_L3CODE,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.0196,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Ecoregion_US_L4CODE,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.0196,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Elevation,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+Evacuation,FPA-FOD v6 (Post-fire outcome — LEAKAGE),N/A — post-fire only,,Post-fire,Event-based,EVENT_BASED,POST_FIRE,98.4971,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+ExoticAnnualGrass,Rangeland Analysis Platform (RAP),https://rangelands.app/products/,30 m,Annual,Annual,STATIC,PRE_FIRE_STATIC,33.0022,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+FIPS_CODE,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.5114,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+FIRE_YEAR,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+FPL200S,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+FRG,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+FRG_1km,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+GACCAbbrev,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_Area Command Teams,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_Fire Use Teams,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,POST_FIRE,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+GACC_NIMO Teams,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_New LF,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_New fire,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_PL,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_Type 1 IMTs,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_Type 2 IMTs,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GACC_Uncont LF,EPA Level-3 Ecoregions / NIFC GACC,https://www.epa.gov/eco-research/ecoregions,Vector polygon,Static,Static,STATIC,PRE_FIRE_STATIC,0.3625,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GAP_Prity,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GAP_Sts,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GDP,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0216,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+GHM,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+HBF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.1274,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HBLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HB_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HDF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0764,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HDLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HD_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HSEF,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0705,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+HWLI,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IAHSEF,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+IALHE,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IALMILHSE,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IALMIL_87,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+IAPLHSE,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IAPLHS_88,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+IAULHSE,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IAULHS_89,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+IA_LMI_ET,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IA_POV_ET,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+IA_UN_ET,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LATITUDE,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+LIF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.098,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LILHSE,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LLEF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,4.9752,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LLELI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LLE_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LMILHSE,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LMI_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LMI_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.194,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LONGITUDE,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+LPF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LPMHVLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LPP_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Land_Cover,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+Land_Cover_1km,LANDFIRE,https://www.landfire.gov/viewer/,30 m → 1 km aggregate in FPA-FOD,~2-year release cycle,~2 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+LatLong_County,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0294,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+LatLong_State,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0294,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+MHVF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.5408,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+MOD_EVI_12m,MODIS MOD13A1 (Terra),https://appeears.earthdatacloud.nasa.gov/,500 m,16-day composite,16-day,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+MOD_NDVI_12m,MODIS MOD13A1 (Terra),https://appeears.earthdatacloud.nasa.gov/,500 m,16-day composite,16-day,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+M_CLT,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_CLT_EOMI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_EBSI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_ENY,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_ENY_EOMI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_HLTH,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_HLTH_102,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_HSG,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_HSG_EOMI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_PLN,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_PLN_EOMI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_TRN,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_TRN_EOMI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_WKFC,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_WKFC_103,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+M_WKFC_105,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Mang_Name,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Mang_Type,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+NAME,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0196,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+NDVI-1day,MODIS MOD13A1 (Terra),https://appeears.earthdatacloud.nasa.gov/,500 m,16-day composite,16-day,DAILY,PRE_FIRE_DYNAMIC,1.8557,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+NDVI_max,MODIS MOD13A1 (Terra),https://appeears.earthdatacloud.nasa.gov/,500 m,16-day composite,16-day,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+NDVI_mean,MODIS MOD13A1 (Terra),https://appeears.earthdatacloud.nasa.gov/,500 m,16-day composite,16-day,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+NDVI_min,MODIS MOD13A1 (Terra),https://appeears.earthdatacloud.nasa.gov/,500 m,16-day composite,16-day,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+NPL,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+NPL_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+NPL_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+NWCG_CAUSE_AGE_CATEGORY,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,99.4121,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",RETAINED,RETAINED
+NWCG_CAUSE_CLASSIFICATION,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+NWCG_GENERAL_CAUSE,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+NWCG_REPORTING_AGENCY,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+No_FireStation_1.0km,HSIP / TIGER Fire Stations,https://geoplatform.gov/metadata/,Point (count within radius),Static,Annual,STATIC,PRE_FIRE_STATIC,90.5316,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',RETAINED,RETAINED
+No_FireStation_10.0km,HSIP / TIGER Fire Stations,https://geoplatform.gov/metadata/,Point (count within radius),Static,Annual,STATIC,PRE_FIRE_STATIC,4.1934,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+No_FireStation_20.0km,HSIP / TIGER Fire Stations,https://geoplatform.gov/metadata/,Point (count within radius),Static,Annual,STATIC,PRE_FIRE_STATIC,0.192,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+No_FireStation_5.0km,HSIP / TIGER Fire Stations,https://geoplatform.gov/metadata/,Point (count within radius),Static,Annual,STATIC,PRE_FIRE_STATIC,37.2935,sensor_gap,INTERPOLATE or GRIDMET_FALLBACK,RETAINED,RETAINED
+OWNER_DESCR,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+P100_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.098,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+P200_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.098,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+PLHSE,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+PM25F_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+PM25LI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+PM25_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+POV_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Popo_1km,US Census ACS / LandScan,https://www.census.gov/data/developers/data-sets/acs-5year.html,Census tract / 1 km grid,Static (ACS 5-year),5 years,STATIC,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+Population,US Census ACS / LandScan,https://www.census.gov/data/developers/data-sets/acs-5year.html,Census tract / 1 km grid,Static (ACS 5-year),5 years,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+RMPLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+RMP_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+RMP_PFS,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+RPL_THEME2,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,STATIC,PRE_FIRE_STATIC,0.0294,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+RPL_THEME3,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,STATIC,PRE_FIRE_STATIC,0.0294,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+RPL_THEMES,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,STATIC,PRE_FIRE_STATIC,0.0294,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+SFLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+SM_C,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+SOURCE_SYSTEM,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+SOURCE_SYSTEM_TYPE,FPA-FOD v6 (Administrative/Temporal),https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009,Point record,Event-based,Event-based,EVENT_BASED,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+STATE,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+Slope,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+Slope_1km,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+TC,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,8.4161,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+THRHLD,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TPF,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TPI,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+TPI_1km,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+TPLI,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TP_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TRACT,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0294,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TRI,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+TRI_1km,USGS 3DEP / SRTM,https://elevation.nationalmap.gov/arcgis/rest/services/,30 m → 1 km aggregate,Static,Static,STATIC,PRE_FIRE_STATIC,0.0,none,none,RETAINED,RETAINED
+TSDF_ET,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+TSDF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+UF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,0.049,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+UI_EXP,EPA EJScreen,https://www.epa.gov/ejscreen/download-ejscreen-data,Census block group,Static,Annual,ANNUAL,PRE_FIRE_STATIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+ULHSE,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+UN_ET,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+WDLI,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+WD_ET,NLDAS / TerraClimate (Water Budget),https://ldas.gsfc.nasa.gov/nldas/,4 km / 0.125°,Monthly,Monthly,MONTHLY,PRE_FIRE_DYNAMIC,0.0039,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+WF_PFS,CDC Social Vulnerability Index (SVI),https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html,Census tract,Static (ACS 5-year),5 years,ANNUAL,PRE_FIRE_STATIC,10.1718,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+bi,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+bi_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+bi_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+bi_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+bi_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0725,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+erc,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+erc_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+erc_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+erc_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+erc_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0529,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+etr,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+etr_5D_max,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+etr_5D_mean,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+fm100,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+fm1000,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+fm1000_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,5.0458,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+fm100_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+fm100_5D_min,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+fm100_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+fm100_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0098,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+pr,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+pr_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+pr_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+pr_5D_min,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+pr_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmax,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmax_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmax_5D_min,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmax_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,5.0458,sensor_gap,INTERPOLATE or GRIDMET_FALLBACK,RETAINED,RETAINED
+rmin,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmin_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmin_5D_min,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rmin_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,5.0458,sensor_gap,INTERPOLATE or GRIDMET_FALLBACK,RETAINED,RETAINED
+road_US_dis,US Census TIGER Road Network,https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html,Vector (computed distance),Static,Annual,STATIC,PRE_FIRE_STATIC,99.7825,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',RETAINED,RETAINED
+road_common_name_dis,US Census TIGER Road Network,https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html,Vector (computed distance),Static,Annual,STATIC,PRE_FIRE_STATIC,33.7037,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+road_county_dis,US Census TIGER Road Network,https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html,Vector (computed distance),Static,Annual,STATIC,PRE_FIRE_STATIC,98.1208,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',RETAINED,RETAINED
+road_interstate_dis,US Census TIGER Road Network,https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html,Vector (computed distance),Static,Annual,STATIC,PRE_FIRE_STATIC,99.9236,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',RETAINED,RETAINED
+road_other_dis,US Census TIGER Road Network,https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html,Vector (computed distance),Static,Annual,STATIC,PRE_FIRE_STATIC,99.4886,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',RETAINED,RETAINED
+road_state_dis,US Census TIGER Road Network,https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html,Vector (computed distance),Static,Annual,STATIC,PRE_FIRE_STATIC,98.5049,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',RETAINED,RETAINED
+rpms,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+rpms_1km,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+sph,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+sph_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+sph_5D_min,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+sph_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+sph_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+srad,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+srad_5D_max,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+srad_5D_mean,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+srad_Normal,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+th,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+th_5D_max,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+th_5D_mean,UNKNOWN,UNKNOWN — requires manual investigation,UNKNOWN,UNKNOWN,UNKNOWN,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmn,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmn_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmn_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmn_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmn_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmx,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmx_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmx_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmx_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+tmmx_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vpd,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vpd_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vpd_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vpd_Normal,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vpd_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0607,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED
+vs,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vs_5D_max,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vs_5D_mean,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.0,none,none,RETAINED,RETAINED
+vs_Percentile,GridMET,https://www.climatologylab.org/wget-gridmet.html,4 km,Daily,Daily,DAILY,PRE_FIRE_DYNAMIC,0.1117,unknown,REVIEW — investigate before deciding,RETAINED,RETAINED

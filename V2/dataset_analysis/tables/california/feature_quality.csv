@@ -1,0 +1,310 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+FOD_ID,int64,50881,0.0,False,False,300317795,0.0,False,False,False,False,0,0,PASS,PASS
+FPA_ID,object,50881,0.0,False,False,2014CAIRS24109077,0.0,False,False,False,True,0,0,HIGH_CARD(50881),REVIEW
+SOURCE_SYSTEM_TYPE,object,3,0.0,False,False,NONFED,0.7629,False,False,False,False,0,0,PASS,PASS
+SOURCE_SYSTEM,object,7,0.0,False,False,ST-NASF,0.7315,False,False,False,False,0,0,PASS,PASS
+NWCG_REPORTING_AGENCY,object,8,0.0,False,False,ST/C&L,0.7657,False,False,False,False,0,0,PASS,PASS
+NWCG_REPORTING_UNIT_ID,object,122,0.0,False,False,USCACDF,0.4244,False,False,False,True,0,0,HIGH_CARD(122),REVIEW
+NWCG_REPORTING_UNIT_NAME,object,122,0.0,False,False,California Department of Forestry & Fire Protection,0.4244,False,False,False,True,0,0,HIGH_CARD(122),REVIEW
+SOURCE_REPORTING_UNIT,object,142,0.0,False,False,CACDF,0.5804,False,False,False,True,0,0,HIGH_CARD(142),REVIEW
+SOURCE_REPORTING_UNIT_NAME,object,160,0.0,False,False,"Headquarters, California Department of Forestry & Fire Protection",0.5804,False,False,False,True,0,0,HIGH_CARD(160),REVIEW
+LOCAL_FIRE_REPORT_ID,float64,3417,75.6176,False,False,1.0,0.0102,False,False,False,False,0,0,PASS,PASS
+LOCAL_INCIDENT_ID,object,40010,8.9542,False,False,11,0.0023,False,False,False,True,0,0,HIGH_CARD(40010),REVIEW
+FIRE_CODE,object,7703,76.6966,False,False,EK1W,0.0364,False,False,False,True,0,0,HIGH_CARD(7703),REVIEW
+FIRE_NAME,object,17712,30.3532,False,False,CREEK,0.0042,False,False,False,True,0,0,HIGH_CARD(17712),REVIEW
+ICS_209_PLUS_INCIDENT_JOIN_ID,object,602,98.5279,False,False,2017_7238965_MODOC JULY COMPLEX,0.0708,False,False,False,True,0,0,HIGH_CARD(602),REVIEW
+ICS_209_PLUS_COMPLEX_JOIN_ID,object,32,99.5696,False,False,2017_7238965_MODOC JULY COMPLEX,0.2511,False,False,False,False,0,0,PASS,PASS
+MTBS_ID,object,289,99.4045,False,False,CA4064212358620150731,0.0132,False,False,False,True,0,0,HIGH_CARD(289),REVIEW
+MTBS_FIRE_NAME,object,266,99.4045,False,False,ROUTE COMPLEX,0.0132,False,False,False,True,0,0,HIGH_CARD(266),REVIEW
+COMPLEX_NAME,object,34,99.5598,False,False,MODOC JULY COMPLEX,0.2634,False,False,False,False,0,0,PASS,PASS
+FIRE_YEAR,int64,7,0.0,False,False,2017,0.1874,True,False,False,False,0,0,DUPLICATE,REVIEW
+DISCOVERY_DATE,object,2320,0.0,False,False,2015-07-30,0.0031,False,False,False,True,0,0,HIGH_CARD(2320),REVIEW
+DISCOVERY_DOY,int64,366,0.0,False,False,185,0.0132,False,False,False,False,0,0,PASS,PASS
+DISCOVERY_TIME,float64,1440,1.1281,False,False,1600.0,0.0055,False,False,False,False,0,0,PASS,PASS
+NWCG_CAUSE_CLASSIFICATION,object,3,0.0,False,False,Human,0.5791,False,False,False,False,0,0,PASS,PASS
+NWCG_GENERAL_CAUSE,object,13,0.0,False,False,Missing data/not specified/undetermined,0.5068,False,False,False,False,0,0,PASS,PASS
+NWCG_CAUSE_AGE_CATEGORY,object,1,97.6848,True,False,,0.0,False,False,False,False,0,0,CONSTANT,REVIEW
+CONT_DATE,object,2142,40.2351,False,False,7/4/2015 0:00:00,0.0031,False,False,False,True,0,0,HIGH_CARD(2142),REVIEW
+CONT_DOY,float64,366,40.2351,False,False,185.0,0.0119,False,False,False,False,0,0,PASS,PASS
+CONT_TIME,float64,1437,40.862,False,False,1800.0,0.0206,False,False,False,False,0,0,PASS,PASS
+FIRE_SIZE,float64,1571,0.0,False,False,0.1,0.2833,False,False,False,False,0,0,PASS,PASS
+FIRE_SIZE_CLASS,object,7,0.0,False,False,A,0.646,False,False,False,False,0,0,PASS,PASS
+LATITUDE,float64,42005,0.0,False,False,38.416666,0.0011,False,False,False,False,0,0,PASS,PASS
+LONGITUDE,float64,41988,0.0,False,False,-120.333333,0.0012,False,False,False,False,0,0,PASS,PASS
+OWNER_DESCR,object,16,0.0,False,False,MISSING/NOT SPECIFIED,0.7053,False,False,False,False,0,0,PASS,PASS
+STATE,object,1,0.0,True,False,,0.0,False,False,False,False,0,0,CONSTANT,REVIEW
+COUNTY,object,177,9.0387,False,False,RIVERSIDE,0.1032,False,False,False,True,0,0,HIGH_CARD(177),REVIEW
+FIPS_CODE,float64,58,9.0387,False,False,6065.0,0.1175,False,False,False,False,0,0,PASS,PASS
+FIPS_NAME,object,58,9.0387,False,False,Riverside County,0.1175,False,False,False,False,0,0,PASS,PASS
+LatLong_State,object,4,0.0865,False,True,California,0.9997,False,False,False,False,0,0,NEAR_CONSTANT(100.0%),REVIEW
+LatLong_County,object,66,0.0865,False,False,Riverside,0.1093,False,False,False,False,0,0,PASS,PASS
+NPL,float64,5,0.0,False,False,1.0,0.3468,False,False,False,False,0,0,PASS,PASS
+Mang_Type,object,9,0.002,False,False,UNK,0.7655,False,False,False,False,0,0,PASS,PASS
+Mang_Name,object,25,0.002,False,False,UNK,0.7655,False,False,False,False,0,0,PASS,PASS
+Des_Tp,object,48,0.002,False,False,UNK,0.7656,False,False,False,False,0,0,PASS,PASS
+GAP_Sts,float64,4,0.002,False,False,4.0,0.8182,False,False,False,False,0,0,PASS,PASS
+GAP_Prity,float64,5,0.002,False,False,0.0,0.7655,False,False,False,False,0,0,PASS,PASS
+EVH,float64,96,0.0,False,False,25.0,0.6295,False,False,False,False,0,0,PASS,PASS
+EVT,float64,157,0.0,False,False,7299.0,0.6295,False,False,False,False,0,0,PASS,PASS
+EVH_1km,object,40186,0.0,False,False,303(56%) / 118(20%) / 308(8%),0.0006,False,False,False,True,0,0,HIGH_CARD(40186),REVIEW
+EVT_1km,object,41996,0.0,False,False,7299(29%) / 7914(23%) / 7297(22%),0.0006,False,False,False,True,0,0,HIGH_CARD(41996),REVIEW
+EVC,float64,214,0.0,False,False,25.0,0.6295,False,False,False,False,0,0,PASS,PASS
+EVC_1km,object,39786,0.0,False,False,355(51%) / 135(8%) / 325(8%),0.0006,False,False,False,True,0,0,HIGH_CARD(39786),REVIEW
+NAME,object,18,0.1336,False,False,Central California Valley,0.2179,False,False,False,False,0,0,PASS,PASS
+MOD_NDVI_12m,object,38769,0.0,False,False,'0.77' '0.76' '0.73' '0.73' '0.73' '0.62' '0.71' '0.7' '0.74' '0.74' '0.73' '0.74',0.0005,False,False,False,True,0,0,HIGH_CARD(38769),REVIEW
+MOD_EVI_12m,object,38758,0.0,False,False,'0.49' '0.41' '0.39' '0.3' '0.3' '0.28' '0.29' '0.37' '0.39' '0.44' '0.45' '0.44',0.0005,False,False,False,True,0,0,HIGH_CARD(38758),REVIEW
+Land_Cover,float64,16,0.0,False,False,23.0,0.2118,False,False,False,False,0,0,PASS,PASS
+Land_Cover_1km,object,39929,0.0,False,False,52(100%),0.0011,False,False,False,True,0,0,HIGH_CARD(39929),REVIEW
+rpms,float64,3734,0.0,False,False,0.0,0.7339,False,False,False,False,0,0,PASS,PASS
+rpms_1km,float64,46607,0.0,False,False,0.0,0.0227,False,False,False,False,0,0,PASS,PASS
+Population,float64,20394,0.0,False,False,0.0,0.2982,False,False,False,False,0,151,NEG(151),REVIEW
+Popo_1km,float64,24450,0.0255,False,False,0.0,0.104,False,False,False,False,0,0,PASS,PASS
+GACCAbbrev,object,10,0.1965,False,False,OSCC,0.3215,False,False,False,False,0,0,PASS,PASS
+GACC_PL,float64,5,0.1965,False,False,2.0,0.3482,False,False,False,False,0,0,PASS,PASS
+GACC_New fire,float64,235,0.1965,False,False,16.0,0.0385,False,False,False,False,0,0,PASS,PASS
+GACC_New LF,float64,40,0.1965,False,False,0.0,0.5265,False,False,False,False,0,0,PASS,PASS
+GACC_Uncont LF,float64,36,0.1965,False,False,1.0,0.3117,False,False,False,False,0,0,PASS,PASS
+GACC_Type 1 IMTs,float64,8,0.1965,False,False,0.0,0.664,False,False,False,False,0,0,PASS,PASS
+GACC_Type 2 IMTs,float64,13,0.1965,False,False,0.0,0.6823,False,False,False,False,0,0,PASS,PASS
+GACC_NIMO Teams,float64,4,0.1965,False,False,0.0,0.9655,False,False,False,False,0,0,PASS,PASS
+GACC_Area Command Teams,float64,3,0.1965,False,True,0.0,0.9916,False,False,False,False,0,0,NEAR_CONSTANT(99.2%),REVIEW
+GACC_Fire Use Teams,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+GDP,float64,9,0.0059,False,False,55768.438,0.8705,False,False,False,False,0,0,PASS,PASS
+pr_Normal,float64,958,0.0,False,False,0.01,0.0605,False,False,False,False,0,0,PASS,PASS
+tmmn_Normal,float64,359,0.0,False,False,285.1000061035156,0.0104,False,False,False,False,0,0,PASS,PASS
+tmmx_Normal,float64,399,0.0,False,False,300.8999938964844,0.0068,False,False,False,False,0,0,PASS,PASS
+rmin_Normal,float64,603,1.5841,False,False,22.3,0.0072,False,False,False,False,0,0,PASS,PASS
+rmax_Normal,float64,676,1.5841,False,False,79.9,0.0036,False,False,False,False,0,0,PASS,PASS
+sph_Normal,float64,107,0.0,False,False,0.0075,0.0265,False,False,False,False,0,0,PASS,PASS
+srad_Normal,float64,297,0.0,False,False,345.0,0.0161,False,False,False,False,0,0,PASS,PASS
+fm100_Normal,float64,203,0.0,False,False,8.8,0.0147,False,False,False,False,0,0,PASS,PASS
+fm1000_Normal,float64,255,1.5841,False,False,10.0,0.0143,False,False,False,False,0,0,PASS,PASS
+bi_Normal,float64,823,0.0,False,False,45.20000076293945,0.0042,False,False,False,False,0,0,PASS,PASS
+vpd_Normal,float64,461,0.0,False,False,1.4,0.0057,False,False,False,False,0,0,PASS,PASS
+erc_Normal,float64,965,0.0,False,False,63.70000076293945,0.0032,False,False,False,False,0,0,PASS,PASS
+DF_PFS,float64,90,0.0668,False,False,0.69,0.0371,False,False,False,False,0,0,PASS,PASS
+AF_PFS,float64,55,0.0668,False,False,0.46,0.0584,False,False,False,False,0,0,PASS,PASS
+HDF_PFS,float64,70,0.0668,False,False,0.55,0.0355,False,False,False,False,0,0,PASS,PASS
+DSF_PFS,float64,100,0.0275,False,False,0.0,0.1436,False,False,False,False,0,0,PASS,PASS
+EBF_PFS,float64,55,0.0884,False,False,0.52,0.0378,False,False,False,False,0,0,PASS,PASS
+EALR_PFS,float64,100,0.0177,False,False,0.99,0.1882,False,False,False,False,0,0,PASS,PASS
+EBLR_PFS,float64,100,0.0177,False,False,0.96,0.0788,False,False,False,False,0,0,PASS,PASS
+EPLR_PFS,float64,99,0.0216,False,False,0.1,0.0493,False,False,False,False,0,0,PASS,PASS
+HBF_PFS,float64,100,0.114,False,False,0.7,0.0258,False,False,False,False,0,0,PASS,PASS
+LLEF_PFS,float64,100,5.9079,False,False,0.56,0.0328,False,False,False,False,0,0,PASS,PASS
+LIF_PFS,float64,76,0.0884,False,False,0.12,0.1603,False,False,False,False,0,0,PASS,PASS
+LMI_PFS,float64,100,5.8254,False,False,0.92,0.0354,False,False,False,False,0,0,PASS,PASS
+MHVF_PFS,float64,99,0.568,False,False,0.56,0.0334,False,False,False,False,0,0,PASS,PASS
+PM25F_PFS,float64,99,0.0118,False,False,0.99,0.0662,False,False,False,False,0,0,PASS,PASS
+HSEF,float64,71,0.0491,False,False,0.06,0.0681,False,False,False,False,0,0,PASS,PASS
+P100_PFS,float64,100,0.0786,False,False,0.53,0.0275,False,False,False,False,0,0,PASS,PASS
+P200_PFS,float64,100,0.0786,False,False,0.93,0.03,False,False,False,False,0,0,PASS,PASS
+LPF_PFS,float64,98,0.0039,False,False,0.34,0.028,False,False,False,False,0,0,PASS,PASS
+NPL_PFS,float64,100,0.0039,False,False,0.31,0.0302,False,False,False,False,0,0,PASS,PASS
+RMP_PFS,float64,100,0.0039,False,False,0.02,0.0605,False,False,False,False,0,0,PASS,PASS
+TSDF_PFS,float64,98,0.0039,False,False,0.02,0.0625,False,False,False,False,0,0,PASS,PASS
+TPF,float64,3007,0.0039,False,False,3573.0,0.0172,False,False,False,False,0,0,PASS,PASS
+TF_PFS,float64,100,8.6673,False,False,0.0,0.0403,False,False,False,False,0,0,PASS,PASS
+UF_PFS,float64,100,0.0766,False,False,0.94,0.0322,False,False,False,False,0,0,PASS,PASS
+WF_PFS,float64,100,46.3002,False,False,0.01,0.0307,False,False,False,False,0,0,PASS,PASS
+M_WTR,float64,2,0.0039,False,True,0.0,0.9849,True,False,False,False,0,0,NEAR_CONSTANT(98.5%); DUPLICATE,REVIEW
+M_WKFC,float64,2,0.0039,False,False,0.0,0.7499,False,False,False,False,0,0,PASS,PASS
+M_CLT,float64,2,0.0039,False,False,0.0,0.8237,False,False,False,False,0,0,PASS,PASS
+M_ENY,float64,2,0.0039,False,False,0.0,0.7963,False,False,False,False,0,0,PASS,PASS
+M_TRN,float64,2,0.0039,False,False,0.0,0.9738,False,False,False,False,0,0,PASS,PASS
+M_HSG,float64,2,0.0039,False,False,0.0,0.9404,False,False,False,False,0,0,PASS,PASS
+M_PLN,float64,2,0.0039,False,False,0.0,0.9357,False,False,False,False,0,0,PASS,PASS
+M_HLTH,float64,2,0.0039,False,False,0.0,0.8777,False,False,False,False,0,0,PASS,PASS
+SM_C,float64,2,0.0039,False,False,0.0,0.6006,True,False,False,False,0,0,DUPLICATE,REVIEW
+SM_PFS,float64,2,0.0039,False,False,0.0,0.6006,True,False,False,False,0,0,DUPLICATE,REVIEW
+EPLRLI,float64,2,0.0039,False,True,0.0,0.9848,False,False,False,False,0,0,NEAR_CONSTANT(98.5%),REVIEW
+EALRLI,float64,2,0.0039,False,False,0.0,0.908,False,False,False,False,0,0,PASS,PASS
+EBLRLI,float64,2,0.0039,False,False,0.0,0.8766,False,False,False,False,0,0,PASS,PASS
+PM25LI,float64,2,0.0039,False,False,0.0,0.8594,False,False,False,False,0,0,PASS,PASS
+EBLI,float64,2,0.0039,False,False,0.0,0.926,False,False,False,False,0,0,PASS,PASS
+DPMLI,float64,2,0.0039,False,True,0.0,0.9943,False,False,False,False,0,0,NEAR_CONSTANT(99.4%),REVIEW
+TPLI,float64,2,0.0039,False,False,0.0,0.9758,False,False,False,False,0,0,PASS,PASS
+LPMHVLI,float64,2,0.0039,False,True,0.0,0.9967,False,False,False,False,0,0,NEAR_CONSTANT(99.7%),REVIEW
+HBLI,float64,2,0.0039,False,False,0.0,0.9415,False,False,False,False,0,0,PASS,PASS
+RMPLI,float64,2,0.0039,False,False,0.0,0.9551,False,False,False,False,0,0,PASS,PASS
+SFLI,float64,2,0.0039,False,False,0.0,0.9709,False,False,False,False,0,0,PASS,PASS
+HWLI,float64,2,0.0039,False,True,0.0,0.9897,False,False,False,False,0,0,NEAR_CONSTANT(99.0%),REVIEW
+WDLI,float64,2,0.0039,False,True,0.0,0.9849,True,False,False,False,0,0,NEAR_CONSTANT(98.5%); DUPLICATE,REVIEW
+DLI,float64,2,0.0039,False,False,0.0,0.9681,False,False,False,False,0,0,PASS,PASS
+ALI,float64,2,0.0039,False,False,0.0,0.9674,False,False,False,False,0,0,PASS,PASS
+HDLI,float64,2,0.0039,False,False,0.0,0.9343,False,False,False,False,0,0,PASS,PASS
+LLELI,float64,2,0.0039,False,False,0.0,0.9722,False,False,False,False,0,0,PASS,PASS
+LILHSE,float64,2,0.0039,False,False,0.0,0.8793,False,False,False,False,0,0,PASS,PASS
+PLHSE,float64,2,0.0039,False,False,0.0,0.9177,False,False,False,False,0,0,PASS,PASS
+LMILHSE,float64,2,0.0039,False,False,0.0,0.915,False,False,False,False,0,0,PASS,PASS
+ULHSE,float64,2,0.0039,False,False,0.0,0.8513,False,False,False,False,0,0,PASS,PASS
+EPL_ET,float64,2,0.0039,False,False,0.0,0.9184,False,False,False,False,0,0,PASS,PASS
+EAL_ET,float64,2,0.0039,False,False,0.0,0.6586,False,False,False,False,0,0,PASS,PASS
+EBL_ET,float64,2,0.0039,False,False,0.0,0.583,False,False,False,False,0,0,PASS,PASS
+EB_ET,float64,2,0.0039,False,False,0.0,0.8934,False,False,False,False,0,0,PASS,PASS
+PM25_ET,float64,2,0.0039,False,False,0.0,0.7087,False,False,False,False,0,0,PASS,PASS
+DS_ET,float64,2,0.0039,False,True,0.0,0.9891,False,False,False,False,0,0,NEAR_CONSTANT(98.9%),REVIEW
+TP_ET,float64,2,0.0039,False,False,0.0,0.9515,False,False,False,False,0,0,PASS,PASS
+LPP_ET,float64,2,0.0039,False,True,0.0,0.9954,False,False,False,False,0,0,NEAR_CONSTANT(99.5%),REVIEW
+HB_ET,float64,2,0.0039,False,False,0.0,0.9373,False,False,False,False,0,0,PASS,PASS
+RMP_ET,float64,2,0.0039,False,False,0.0,0.9346,False,False,False,False,0,0,PASS,PASS
+NPL_ET,float64,2,0.0039,False,False,0.0,0.9468,False,False,False,False,0,0,PASS,PASS
+TSDF_ET,float64,2,0.0039,False,False,0.0,0.9719,False,False,False,False,0,0,PASS,PASS
+WD_ET,float64,2,0.0039,False,False,0.0,0.9482,True,False,False,False,0,0,DUPLICATE,REVIEW
+DB_ET,float64,2,0.0039,False,False,0.0,0.9663,False,False,False,False,0,0,PASS,PASS
+A_ET,float64,2,0.0039,False,False,0.0,0.9668,False,False,False,False,0,0,PASS,PASS
+HD_ET,float64,2,0.0039,False,False,0.0,0.9169,False,False,False,False,0,0,PASS,PASS
+LLE_ET,float64,2,0.0039,False,False,0.0,0.9677,False,False,False,False,0,0,PASS,PASS
+UN_ET,float64,2,0.0039,False,False,0.0,0.8012,False,False,False,False,0,0,PASS,PASS
+LISO_ET,float64,2,0.0039,False,False,0.0,0.8773,False,False,False,False,0,0,PASS,PASS
+POV_ET,float64,2,0.0039,False,False,0.0,0.9152,False,False,False,False,0,0,PASS,PASS
+LMI_ET,float64,2,0.0039,False,False,0.0,0.8974,False,False,False,False,0,0,PASS,PASS
+IA_LMI_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IA_UN_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IA_POV_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+TC,float64,14,0.0039,False,False,0.0,0.6006,False,False,False,False,0,0,PASS,PASS
+CC,float64,9,0.0039,False,False,0.0,0.6006,False,False,False,False,0,0,PASS,PASS
+IAULHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAPLHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IALMILHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IALMIL_87,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IAPLHS_88,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IAULHS_89,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+LHE,float64,2,0.0039,False,False,1.0,0.5665,True,False,False,False,0,0,DUPLICATE,REVIEW
+IALHE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAHSEF,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+CA,float64,65,0.0491,False,False,0.06,0.1547,False,False,False,False,0,0,PASS,PASS
+NCA,float64,65,0.0491,False,False,0.93,0.1546,False,False,False,False,0,0,PASS,PASS
+CA_LT20,float64,2,0.0039,False,True,1.0,0.992,False,False,False,False,0,0,NEAR_CONSTANT(99.2%),REVIEW
+M_CLT_EOMI,float64,2,0.0039,False,False,1.0,0.5937,False,False,False,False,0,0,PASS,PASS
+M_ENY_EOMI,float64,2,0.0039,False,False,0.0,0.613,False,False,False,False,0,0,PASS,PASS
+M_TRN_EOMI,float64,2,0.0039,False,False,0.0,0.9462,False,False,False,False,0,0,PASS,PASS
+M_HSG_EOMI,float64,2,0.0039,False,False,0.0,0.935,False,False,False,False,0,0,PASS,PASS
+M_PLN_EOMI,float64,2,0.0039,False,False,0.0,0.8844,False,False,False,False,0,0,PASS,PASS
+M_WTR_EOMI,float64,2,0.0039,False,False,0.0,0.9482,True,False,False,False,0,0,DUPLICATE,REVIEW
+M_HLTH_102,float64,2,0.0039,False,False,0.0,0.8553,False,False,False,False,0,0,PASS,PASS
+M_WKFC_103,float64,2,0.0039,False,False,0.0,0.6891,False,False,False,False,0,0,PASS,PASS
+FPL200S,float64,2,0.0039,False,False,0.0,0.6146,False,False,False,False,0,0,PASS,PASS
+M_WKFC_105,float64,2,0.0039,False,False,1.0,0.5665,True,False,False,False,0,0,DUPLICATE,REVIEW
+M_EBSI,float64,2,0.0039,False,False,0.0,0.6186,False,False,False,False,0,0,PASS,PASS
+UI_EXP,object,1,0.0039,True,False,,0.0,False,False,False,False,0,0,CONSTANT,REVIEW
+THRHLD,float64,1,0.0039,True,False,,0.0,False,True,False,False,0,0,CONSTANT; ZERO_VARIANCE,REVIEW
+No_FireStation_1.0km,float64,4,84.0392,False,False,1.0,0.9392,False,False,False,False,0,0,PASS,PASS
+No_FireStation_5.0km,float64,40,23.7338,False,False,1.0,0.2549,False,False,False,False,0,0,PASS,PASS
+No_FireStation_10.0km,float64,120,4.7837,False,False,3.0,0.0654,False,False,False,False,0,0,PASS,PASS
+No_FireStation_20.0km,float64,389,0.3498,False,False,10.0,0.0233,False,False,False,False,0,0,PASS,PASS
+FRG_1km,object,24591,0.0,False,False,4(100%) / 3(0%),0.006,False,False,False,True,0,0,HIGH_CARD(24591),REVIEW
+FRG,float64,10,0.0,False,False,1.0,0.4188,False,False,False,False,0,0,PASS,PASS
+TRI_1km,float64,21986,0.0,False,False,0.0,0.0007,False,False,False,False,0,0,PASS,PASS
+TRI,float64,2394,0.0,False,False,0.0,0.1428,False,False,False,False,0,0,PASS,PASS
+Aspect_1km,float64,40270,0.0,False,False,-0.79178145087236,0.01,False,False,False,False,0,0,PASS,PASS
+Elevation_1km,float64,45301,0.0,False,False,297.5027548209366,0.0006,False,False,False,False,0,685,NEG(685),REVIEW
+Elevation,float64,2878,0.0,False,False,50.0,0.0049,False,False,False,False,0,635,NEG(635),REVIEW
+Slope_1km,float64,37993,0.0,False,False,-0.7915518824609734,0.0011,False,False,False,False,0,9958,NEG(9958),REVIEW
+Aspect,float64,361,0.0,False,False,-1.0,0.4942,False,False,False,False,0,0,PASS,PASS
+Slope,float64,56,0.0,False,False,0.0,0.2134,False,False,False,False,0,0,PASS,PASS
+GHM,float64,101,0.0,False,False,0.0,0.0204,False,False,False,False,0,0,PASS,PASS
+TPI,float64,185,0.0,False,False,0.0,0.1937,False,False,False,False,0,0,PASS,PASS
+TPI_1km,float64,70,0.0,False,False,-0.0,0.4003,False,False,False,False,0,0,PASS,PASS
+TRACT,float64,3347,0.0865,False,False,300.0,0.0243,False,False,False,False,0,0,PASS,PASS
+RPL_THEMES,float64,5597,0.0865,False,False,0.9595,0.0071,False,False,False,False,0,0,PASS,PASS
+RPL_THEME1,float64,5673,0.0865,False,False,0.9063,0.0071,False,False,False,False,0,0,PASS,PASS
+EPL_POV,float64,1674,0.0865,False,False,0.9167,0.0069,False,False,False,False,0,0,PASS,PASS
+EPL_UNEMP,float64,867,0.0865,False,False,0.9697,0.0087,False,False,False,False,0,0,PASS,PASS
+EPL_PCI,float64,4956,7.3033,False,False,0.8601,0.0078,False,False,False,False,0,0,PASS,PASS
+EPL_NOHSDP,float64,1604,0.0865,False,False,0.6968,0.0069,False,False,False,False,0,0,PASS,PASS
+RPL_THEME2,float64,5654,0.0865,False,False,0.9068,0.0069,False,False,False,False,0,0,PASS,PASS
+EPL_AGE65,float64,1273,0.0865,False,False,0.194,0.0093,False,False,False,False,0,0,PASS,PASS
+EPL_AGE17,float64,3770,0.0865,False,False,0.8706,0.0069,False,False,False,False,0,0,PASS,PASS
+EPL_DISABL,float64,993,0.0865,False,False,0.8523,0.013,False,False,False,False,0,0,PASS,PASS
+EPL_SNGPNT,float64,3609,0.0865,False,False,0.0,0.0224,False,False,False,False,0,0,PASS,PASS
+RPL_THEME3,float64,4730,0.0865,False,False,0.6821,0.007,False,False,False,False,0,0,PASS,PASS
+EPL_MINRTY,float64,4053,0.0865,False,False,0.9104,0.007,False,False,False,False,0,0,PASS,PASS
+EPL_LIMENG,float64,3269,0.0865,False,False,0.0,0.0651,False,False,False,False,0,0,PASS,PASS
+RPL_THEME4,float64,5631,0.0865,False,False,0.9511,0.0069,False,False,False,False,0,0,PASS,PASS
+EPL_MUNIT,float64,3049,0.0865,False,False,0.0,0.3233,False,False,False,False,0,0,PASS,PASS
+EPL_MOBILE,float64,1183,0.0865,False,False,0.0,0.1332,False,False,False,False,0,0,PASS,PASS
+EPL_CROWD,float64,3066,0.0865,False,False,0.0,0.0663,False,False,False,False,0,0,PASS,PASS
+EPL_NOVEH,float64,884,0.0865,False,False,0.0,0.0429,False,False,False,False,0,0,PASS,PASS
+EPL_GROUPQ,float64,2710,0.0865,False,False,0.0,0.1954,False,False,False,False,0,0,PASS,PASS
+road_county_dis,float64,281,98.3511,False,False,33.9,0.0119,False,False,False,False,0,0,PASS,PASS
+road_interstate_dis,float64,37,99.9194,False,False,41.5,0.0488,False,False,False,False,0,0,PASS,PASS
+road_common_name_dis,float64,625,35.0229,False,False,38.2,0.0071,False,False,False,False,0,0,PASS,PASS
+road_other_dis,float64,215,99.3219,False,False,10.6,0.0203,False,False,False,False,0,0,PASS,PASS
+road_state_dis,float64,239,98.638,False,False,37.9,0.0216,False,False,False,False,0,0,PASS,PASS
+road_US_dis,float64,101,99.7583,False,False,40.2,0.0407,False,False,False,False,0,0,PASS,PASS
+Ecoregion_US_L4CODE,object,173,0.1336,False,False,85k,0.0705,False,False,False,True,0,0,HIGH_CARD(173),REVIEW
+Ecoregion_US_L3CODE,float64,13,0.1336,False,False,6.0,0.2509,False,False,False,False,0,0,PASS,PASS
+Ecoregion_NA_L3CODE,object,12,0.1336,False,False,11.1.1,0.4063,False,False,False,False,0,0,PASS,PASS
+Ecoregion_NA_L2CODE,float64,5,0.1336,False,False,11.1,0.6661,False,False,False,False,0,0,PASS,PASS
+Ecoregion_NA_L1CODE,float64,4,0.1336,False,False,11.0,0.6661,False,False,False,False,0,0,PASS,PASS
+SDI,float64,224,0.0,False,False,0.0,0.5095,False,False,False,False,0,0,PASS,PASS
+Annual_etr,float64,2203,0.0,False,False,2263.0,0.0031,False,False,False,False,0,0,PASS,PASS
+Annual_precipitation,float64,2469,0.0,False,False,345.0,0.0038,False,False,False,False,0,0,PASS,PASS
+Annual_tempreture,float64,26,0.0,False,False,291.0,0.1953,False,False,False,False,0,0,PASS,PASS
+Aridity_index,float64,227,0.0,False,False,0.1,0.0409,False,False,False,False,0,0,PASS,PASS
+Evacuation,float64,4,89.1335,False,False,2.0,0.6743,False,False,False,False,0,0,PASS,PASS
+pr,float64,355,0.0,False,False,0.0,0.9054,False,False,False,False,0,0,PASS,PASS
+tmmn,float64,421,0.0,False,False,285.3999938964844,0.0088,False,False,False,False,0,0,PASS,PASS
+tmmx,float64,458,0.0,False,False,303.6000061035156,0.0055,False,False,False,False,0,0,PASS,PASS
+rmin,float64,841,0.0,False,False,1.0,0.007,False,False,False,False,0,0,PASS,PASS
+rmax,float64,871,0.0,False,False,100.0,0.0721,False,False,False,False,0,0,PASS,PASS
+sph,float64,1417,0.0,False,False,0.0070799998939037,0.0024,False,False,False,False,0,0,PASS,PASS
+vs,float64,135,0.0,False,False,2.6,0.0406,False,False,False,False,0,0,PASS,PASS
+th,float64,361,0.0,False,False,315.0,0.0092,False,False,False,False,0,0,PASS,PASS
+srad,float64,3284,0.0,False,False,358.6000061035156,0.0015,False,False,False,False,0,0,PASS,PASS
+etr,float64,214,0.0,False,False,7.6,0.0143,False,False,False,False,0,0,PASS,PASS
+fm100,float64,253,0.0,False,False,6.9,0.0133,False,False,False,False,0,0,PASS,PASS
+fm1000,float64,284,0.0,False,False,8.5,0.0125,False,False,False,False,0,0,PASS,PASS
+bi,float64,127,0.0,False,False,0.0,0.0819,False,False,False,False,0,0,PASS,PASS
+vpd,float64,579,0.0,False,False,1.3,0.005,False,False,False,False,0,0,PASS,PASS
+erc,float64,114,0.0,False,False,61.0,0.0193,False,False,False,False,0,0,PASS,PASS
+pr_5D_mean,float64,758,0.0,False,False,0.0,0.7699,False,False,False,False,0,0,PASS,PASS
+tmmn_5D_mean,float64,3339,0.0,False,False,285.06,0.002,False,False,False,False,0,0,PASS,PASS
+tmmx_5D_mean,float64,3832,0.0,False,False,303.06,0.0014,False,False,False,False,0,0,PASS,PASS
+rmin_5D_mean,float64,763,0.0,False,False,18.5,0.0045,False,False,False,False,0,0,PASS,PASS
+rmax_5D_mean,float64,832,0.0,False,False,100.0,0.0113,False,False,False,False,0,0,PASS,PASS
+sph_5D_mean,float64,9894,0.0,False,False,0.007158,0.0007,False,False,False,False,0,0,PASS,PASS
+vs_5D_mean,float64,455,0.0,False,False,2.88,0.0105,False,False,False,False,0,0,PASS,PASS
+th_5D_mean,float64,1627,0.0,False,False,306.6,0.0019,False,False,False,False,0,0,PASS,PASS
+srad_5D_mean,float64,18684,0.0,False,False,353.56,0.0004,False,False,False,False,0,0,PASS,PASS
+etr_5D_mean,float64,830,0.0,False,False,7.94,0.0036,False,False,False,False,0,0,PASS,PASS
+fm100_5D_mean,float64,243,0.0,False,False,7.1,0.0134,False,False,False,False,0,0,PASS,PASS
+fm1000_5D_mean,float64,282,0.0,False,False,9.1,0.013,False,False,False,False,0,0,PASS,PASS
+bi_5D_mean,float64,524,0.0,False,False,49.2,0.0056,False,False,False,False,0,0,PASS,PASS
+vpd_5D_mean,float64,552,0.0,False,False,1.2,0.0051,False,False,False,False,0,0,PASS,PASS
+erc_5D_mean,float64,546,0.0,False,False,59.8,0.0044,False,False,False,False,0,0,PASS,PASS
+pr_5D_min,float64,41,0.0,False,True,0.0,0.9968,False,False,False,False,0,0,NEAR_CONSTANT(99.7%),REVIEW
+pr_5D_max,float64,579,0.0,False,False,0.0,0.7699,False,False,False,False,0,0,PASS,PASS
+tmmn_5D_max,float64,397,0.0,False,False,287.0,0.0089,False,False,False,False,0,0,PASS,PASS
+tmmx_5D_max,float64,438,0.0,False,False,309.1,0.0064,False,False,False,False,0,0,PASS,PASS
+rmin_5D_min,float64,676,0.0,False,False,1.0,0.0177,False,False,False,False,0,0,PASS,PASS
+rmax_5D_min,float64,892,0.0,False,False,100.0,0.0109,False,False,False,False,0,0,PASS,PASS
+sph_5D_min,float64,1276,0.0,False,False,0.00568,0.0024,False,False,False,False,0,0,PASS,PASS
+vs_5D_max,float64,141,0.0,False,False,3.4,0.0321,False,False,False,False,0,0,PASS,PASS
+th_5D_max,float64,348,0.0,False,False,319.0,0.0144,False,False,False,False,0,0,PASS,PASS
+srad_5D_max,float64,2903,0.0,False,False,354.1,0.002,False,False,False,False,0,0,PASS,PASS
+etr_5D_max,float64,221,0.0,False,False,9.6,0.0149,False,False,False,False,0,0,PASS,PASS
+fm100_5D_min,float64,227,0.0,False,False,6.6,0.0174,False,False,False,False,0,0,PASS,PASS
+fm1000_5D_min,float64,273,0.0,False,False,7.7,0.0131,False,False,False,False,0,0,PASS,PASS
+bi_5D_max,float64,136,0.0,False,False,52.0,0.0254,False,False,False,False,0,0,PASS,PASS
+vpd_5D_max,float64,624,0.0,False,False,1.89,0.0043,False,False,False,False,0,0,PASS,PASS
+erc_5D_max,float64,115,0.0,False,False,75.0,0.0215,False,False,False,False,0,0,PASS,PASS
+tmmn_Percentile,object,1,0.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+tmmx_Percentile,object,1,0.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+sph_Percentile,object,6,0.0,False,False,10-30%,0.2044,False,False,False,False,0,0,PASS,PASS
+vs_Percentile,object,6,0.2201,False,False,10-30%,0.21,False,False,False,False,0,0,PASS,PASS
+fm100_Percentile,object,6,0.0138,False,False,10-30%,0.2528,False,False,False,False,0,0,PASS,PASS
+bi_Percentile,object,6,0.0865,False,False,70-90%,0.2437,False,False,False,False,0,0,PASS,PASS
+vpd_Percentile,object,12,0.1238,False,False,50-70%,0.1884,False,False,False,False,0,0,PASS,PASS
+erc_Percentile,object,6,0.0884,False,False,>90%,0.2713,False,False,False,False,0,0,PASS,PASS
+NDVI-1day,float64,113,2.3309,False,False,0.33,0.0225,False,False,False,False,0,179,NEG(179),REVIEW
+NDVI_min,object,38690,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0019,False,False,False,True,0,0,HIGH_CARD(38690),REVIEW
+NDVI_max,object,38691,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0019,False,False,False,True,0,0,HIGH_CARD(38691),REVIEW
+NDVI_mean,object,38691,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0019,False,False,False,True,0,0,HIGH_CARD(38691),REVIEW
+CheatGrass,float64,43,27.2145,False,False,255.0,0.8503,False,False,False,False,0,0,PASS,PASS
+ExoticAnnualGrass,float64,51,27.2145,False,False,255.0,0.8503,False,False,False,False,0,0,PASS,PASS
+Medusahead,float64,27,27.2145,False,False,255.0,0.8503,False,False,False,False,0,0,PASS,PASS
+PoaSecunda,float64,20,27.2145,False,False,255.0,0.8503,False,False,False,False,0,0,PASS,PASS
+geometry,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+source_year,int64,7,0.0,False,False,2017,0.1874,True,False,False,False,0,0,DUPLICATE,REVIEW

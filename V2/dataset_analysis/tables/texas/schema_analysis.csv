@@ -1,0 +1,310 @@
+Column Name,Data Type,Semantic Type,Example Value,Unique Values,Missing Count,Missing %,Description
+FOD_ID,int64,Numeric,300088688,51033,0,0.0,Fire occurrence database unique identifier
+FPA_ID,object,Text,SFO-2014TXTXS1873,51033,0,0.0,No description available
+SOURCE_SYSTEM_TYPE,object,Categorical,NONFED,3,0,0.0,No description available
+SOURCE_SYSTEM,object,Categorical,ST-NASF,6,0,0.0,No description available
+NWCG_REPORTING_AGENCY,object,Categorical,ST/C&L,6,0,0.0,Agency that reported the fire
+NWCG_REPORTING_UNIT_ID,object,Categorical,USTXTXS,33,0,0.0,No description available
+NWCG_REPORTING_UNIT_NAME,object,Categorical,Texas A & M Forest Service,33,0,0.0,No description available
+SOURCE_REPORTING_UNIT,object,Categorical,TXTXS,39,0,0.0,No description available
+SOURCE_REPORTING_UNIT_NAME,object,Categorical,Texas Forest Service,46,0,0.0,No description available
+LOCAL_FIRE_REPORT_ID,float64,Numeric,1401.0,284,50584,99.1202,No description available
+LOCAL_INCIDENT_ID,object,Text,1873,50072,665,1.3031,No description available
+FIRE_CODE,object,Text,H08C,614,50263,98.4912,No description available
+FIRE_NAME,object,Text,#7000 ANDERSON COUNTY,37488,73,0.143,Name assigned to the fire
+ICS_209_PLUS_INCIDENT_JOIN_ID,object,Text,2014_283614_MOODY,442,50586,99.1241,Join key to ICS-209+ incident database
+ICS_209_PLUS_COMPLEX_JOIN_ID,object,Text,2015_2777872_FORT MCKAVETT COMPLEX,10,51016,99.9667,Join key to ICS-209+ complex database
+MTBS_ID,object,Text,TX3231010029020140306,159,50871,99.6826,Monitoring Trends in Burn Severity fire ID
+MTBS_FIRE_NAME,object,Text,173,157,50871,99.6826,Fire name in MTBS dataset
+COMPLEX_NAME,object,Text,WHITE ROSE COMPLEX,18,51007,99.9491,Name of fire complex (if part of multi-fire event)
+FIRE_YEAR,int64,Numeric,2014,7,0,0.0,Calendar year the fire was discovered
+DISCOVERY_DATE,object,Text,2014-01-01,2345,0,0.0,Date fire was first reported
+DISCOVERY_DOY,int64,Numeric,1,366,0,0.0,Discovery day-of-year (1–366)
+DISCOVERY_TIME,float64,Numeric,1517.0,898,45962,90.0633,Time fire was first reported (HHMM)
+NWCG_CAUSE_CLASSIFICATION,object,Categorical,Human,3,0,0.0,No description available
+NWCG_GENERAL_CAUSE,object,Categorical,Debris and open burning,13,0,0.0,General cause category per NWCG standard
+NWCG_CAUSE_AGE_CATEGORY,object,Categorical,Minor,1,50733,99.4121,Age category of responsible person (if human cause)
+CONT_DATE,object,Text,1/1/2014 0:00:00,1430,45884,89.9105,Date fire was declared contained
+CONT_DOY,float64,Numeric,1.0,365,45884,89.9105,Containment day-of-year
+CONT_TIME,float64,Numeric,1557.0,973,46069,90.273,Time fire was contained (HHMM)
+FIRE_SIZE,float64,Numeric,20.0,1162,0,0.0,Final fire size in acres
+FIRE_SIZE_CLASS,object,Categorical,C,7,0,0.0,Categorical fire size class (A–G)
+LATITUDE,float64,Numeric,31.89488333,46440,0,0.0,Geographic latitude of fire origin (WGS84)
+LONGITUDE,float64,Numeric,-95.48596667,46972,0,0.0,Geographic longitude of fire origin (WGS84)
+OWNER_DESCR,object,Categorical,MISSING/NOT SPECIFIED,13,0,0.0,Land ownership description
+STATE,object,Categorical,TX,1,0,0.0,Two-letter US state abbreviation
+COUNTY,object,Text,Anderson,288,261,0.5114,County name where fire occurred
+FIPS_CODE,float64,Numeric,48001.0,251,261,0.5114,Administrative geographic code
+FIPS_NAME,object,Text,Anderson County,251,261,0.5114,Administrative geographic code
+LatLong_State,object,Categorical,Texas,5,15,0.0294,Latitude coordinate
+LatLong_County,object,Text,Anderson,261,15,0.0294,Latitude coordinate
+NPL,float64,Numeric,1.0,5,0,0.0,No description available
+Mang_Type,object,Categorical,UNK,8,2,0.0039,No description available
+Mang_Name,object,Categorical,UNK,20,2,0.0039,No description available
+Des_Tp,object,Categorical,UNK,30,2,0.0039,No description available
+GAP_Sts,float64,Numeric,4.0,4,2,0.0039,No description available
+GAP_Prity,float64,Numeric,0.0,5,2,0.0039,No description available
+EVH,float64,Numeric,305.0,80,0,0.0,No description available
+EVT,float64,Numeric,7997.0,198,0,0.0,No description available
+EVH_1km,object,Text,118(12%) / 304(10%) / 119(9%),44470,0,0.0,No description available
+EVT_1km,object,Text,7371(19%) / 9322(14%) / 9284(12%),47130,0,0.0,No description available
+EVC,float64,Numeric,362.0,212,0,0.0,No description available
+EVC_1km,object,Text,165(5%) / 166(5%) / 167(5%),41117,0,0.0,No description available
+NAME,object,Categorical,North Texas Tertiary Uplands,21,10,0.0196,No description available
+MOD_NDVI_12m,object,Text,'0.57' '0.68' '0.73' '0.67' '0.71' '0.73' '0.76' '0.73' '0.65' '0.54' '0.53' ...,41236,0,0.0,Vegetation index
+MOD_EVI_12m,object,Text,'0.29' '0.33' '0.41' '0.38' '0.46' '0.45' '0.5' '0.49' '0.39' '0.29' '0.25' '...,41236,0,0.0,Vegetation index
+Land_Cover,float64,Numeric,81.0,16,0,0.0,No description available
+Land_Cover_1km,object,Text,90(30%) / 43(25%) / 42(20%),46587,0,0.0,No description available
+rpms,float64,Numeric,0.0,3690,0,0.0,No description available
+rpms_1km,float64,Numeric,156.69444444444446,48311,0,0.0,No description available
+Population,float64,Numeric,0.0961,15418,0,0.0,Latitude coordinate
+Popo_1km,float64,Numeric,0.0592,16916,2,0.0039,Population metric
+GACCAbbrev,object,Categorical,ONCC,10,185,0.3625,No description available
+GACC_PL,float64,Numeric,1.0,5,185,0.3625,No description available
+GACC_New fire,float64,Numeric,80.0,227,185,0.3625,No description available
+GACC_New LF,float64,Numeric,2.0,39,185,0.3625,No description available
+GACC_Uncont LF,float64,Numeric,1.0,33,185,0.3625,No description available
+GACC_Type 1 IMTs,float64,Numeric,0.0,9,185,0.3625,No description available
+GACC_Type 2 IMTs,float64,Numeric,0.0,14,185,0.3625,No description available
+GACC_NIMO Teams,float64,Numeric,0.0,3,185,0.3625,No description available
+GACC_Area Command Teams,float64,Numeric,0.0,2,185,0.3625,No description available
+GACC_Fire Use Teams,float64,Numeric,N/A,0,51033,100.0,No description available
+GDP,float64,Numeric,48723.184,16,11,0.0216,No description available
+pr_Normal,float64,Numeric,3.32,624,0,0.0,No description available
+tmmn_Normal,float64,Numeric,276.20001220703125,328,0,0.0,No description available
+tmmx_Normal,float64,Numeric,287.6000061035156,307,0,0.0,No description available
+rmin_Normal,float64,Numeric,43.0,510,2575,5.0458,No description available
+rmax_Normal,float64,Numeric,84.8,442,2575,5.0458,No description available
+sph_Normal,float64,Numeric,0.005,186,0,0.0,No description available
+srad_Normal,float64,Numeric,103.0,236,0,0.0,No description available
+fm100_Normal,float64,Numeric,16.7,146,0,0.0,No description available
+fm1000_Normal,float64,Numeric,18.9,157,2575,5.0458,No description available
+bi_Normal,float64,Numeric,20.200000762939453,538,0,0.0,No description available
+vpd_Normal,float64,Numeric,0.49,263,0,0.0,No description available
+erc_Normal,float64,Numeric,23.799999237060547,584,0,0.0,No description available
+DF_PFS,float64,Numeric,0.73,90,39,0.0764,No description available
+AF_PFS,float64,Numeric,0.29,55,39,0.0764,No description available
+HDF_PFS,float64,Numeric,0.76,70,39,0.0764,No description available
+DSF_PFS,float64,Numeric,0.1,97,17,0.0333,No description available
+EBF_PFS,float64,Numeric,0.8,55,49,0.096,No description available
+EALR_PFS,float64,Numeric,0.44,100,2,0.0039,No description available
+EBLR_PFS,float64,Numeric,0.7,73,3,0.0059,No description available
+EPLR_PFS,float64,Numeric,0.94,93,17,0.0333,No description available
+HBF_PFS,float64,Numeric,0.16,100,65,0.1274,No description available
+LLEF_PFS,float64,Numeric,0.13,100,2539,4.9752,No description available
+LIF_PFS,float64,Numeric,0.26,76,50,0.098,No description available
+LMI_PFS,float64,Numeric,0.48,100,99,0.194,No description available
+MHVF_PFS,float64,Numeric,0.24,100,276,0.5408,No description available
+PM25F_PFS,float64,Numeric,0.65,89,2,0.0039,No description available
+HSEF,float64,Numeric,0.09,71,36,0.0705,No description available
+P100_PFS,float64,Numeric,0.65,100,50,0.098,No description available
+P200_PFS,float64,Numeric,0.53,100,50,0.098,No description available
+LPF_PFS,float64,Numeric,0.34,98,2,0.0039,No description available
+NPL_PFS,float64,Numeric,0.06,100,2,0.0039,No description available
+RMP_PFS,float64,Numeric,0.19,100,2,0.0039,No description available
+TSDF_PFS,float64,Numeric,0.06,93,2,0.0039,No description available
+TPF,float64,Numeric,5164.0,2184,2,0.0039,No description available
+TF_PFS,float64,Numeric,0.29,100,4295,8.4161,No description available
+UF_PFS,float64,Numeric,0.21,100,25,0.049,No description available
+WF_PFS,float64,Numeric,0.22,98,5191,10.1718,No description available
+M_WTR,float64,Numeric,0.0,2,2,0.0039,No description available
+M_WKFC,float64,Numeric,0.0,2,2,0.0039,No description available
+M_CLT,float64,Numeric,0.0,2,2,0.0039,No description available
+M_ENY,float64,Numeric,0.0,2,2,0.0039,No description available
+M_TRN,float64,Numeric,0.0,2,2,0.0039,No description available
+M_HSG,float64,Numeric,0.0,2,2,0.0039,No description available
+M_PLN,float64,Numeric,0.0,2,2,0.0039,No description available
+M_HLTH,float64,Numeric,0.0,2,2,0.0039,No description available
+SM_C,float64,Numeric,0.0,2,2,0.0039,No description available
+SM_PFS,float64,Numeric,0.0,2,2,0.0039,No description available
+EPLRLI,float64,Numeric,0.0,2,2,0.0039,No description available
+EALRLI,float64,Numeric,0.0,2,2,0.0039,No description available
+EBLRLI,float64,Numeric,0.0,2,2,0.0039,No description available
+PM25LI,float64,Numeric,0.0,2,2,0.0039,No description available
+EBLI,float64,Numeric,0.0,2,2,0.0039,No description available
+DPMLI,float64,Numeric,0.0,2,2,0.0039,No description available
+TPLI,float64,Numeric,0.0,2,2,0.0039,No description available
+LPMHVLI,float64,Numeric,0.0,2,2,0.0039,No description available
+HBLI,float64,Numeric,0.0,2,2,0.0039,No description available
+RMPLI,float64,Numeric,0.0,2,2,0.0039,No description available
+SFLI,float64,Numeric,0.0,2,2,0.0039,No description available
+HWLI,float64,Numeric,0.0,2,2,0.0039,No description available
+WDLI,float64,Numeric,0.0,2,2,0.0039,No description available
+DLI,float64,Numeric,0.0,2,2,0.0039,No description available
+ALI,float64,Numeric,0.0,2,2,0.0039,No description available
+HDLI,float64,Numeric,0.0,2,2,0.0039,No description available
+LLELI,float64,Numeric,0.0,2,2,0.0039,No description available
+LILHSE,float64,Numeric,0.0,2,2,0.0039,No description available
+PLHSE,float64,Numeric,0.0,2,2,0.0039,No description available
+LMILHSE,float64,Numeric,0.0,2,2,0.0039,No description available
+ULHSE,float64,Numeric,0.0,2,2,0.0039,No description available
+EPL_ET,float64,Numeric,1.0,2,2,0.0039,No description available
+EAL_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+EBL_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+EB_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+PM25_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+DS_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+TP_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+LPP_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+HB_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+RMP_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+NPL_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+TSDF_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+WD_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+DB_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+A_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+HD_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+LLE_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+UN_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+LISO_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+POV_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+LMI_ET,float64,Numeric,0.0,2,2,0.0039,No description available
+IA_LMI_ET,float64,Numeric,0.0,1,2,0.0039,No description available
+IA_UN_ET,float64,Numeric,0.0,1,2,0.0039,No description available
+IA_POV_ET,float64,Numeric,0.0,1,2,0.0039,No description available
+TC,float64,Numeric,0.0,13,2,0.0039,No description available
+CC,float64,Numeric,0.0,8,2,0.0039,No description available
+IAULHSE,float64,Numeric,0.0,1,2,0.0039,No description available
+IAPLHSE,float64,Numeric,0.0,1,2,0.0039,No description available
+IALMILHSE,float64,Numeric,0.0,1,2,0.0039,No description available
+IALMIL_87,float64,Numeric,N/A,0,51033,100.0,No description available
+IAPLHS_88,float64,Numeric,N/A,0,51033,100.0,No description available
+IAULHS_89,float64,Numeric,N/A,0,51033,100.0,No description available
+LHE,float64,Numeric,0.0,2,2,0.0039,No description available
+IALHE,float64,Numeric,0.0,1,2,0.0039,No description available
+IAHSEF,float64,Numeric,N/A,0,51033,100.0,No description available
+CA,float64,Numeric,0.02,64,25,0.049,No description available
+NCA,float64,Numeric,0.97,64,25,0.049,No description available
+CA_LT20,float64,Numeric,1.0,2,2,0.0039,No description available
+M_CLT_EOMI,float64,Numeric,1.0,2,2,0.0039,No description available
+M_ENY_EOMI,float64,Numeric,0.0,2,2,0.0039,No description available
+M_TRN_EOMI,float64,Numeric,0.0,2,2,0.0039,No description available
+M_HSG_EOMI,float64,Numeric,0.0,2,2,0.0039,No description available
+M_PLN_EOMI,float64,Numeric,0.0,2,2,0.0039,No description available
+M_WTR_EOMI,float64,Numeric,0.0,2,2,0.0039,No description available
+M_HLTH_102,float64,Numeric,0.0,2,2,0.0039,No description available
+M_WKFC_103,float64,Numeric,0.0,2,2,0.0039,No description available
+FPL200S,float64,Numeric,0.0,2,2,0.0039,No description available
+M_WKFC_105,float64,Numeric,0.0,2,2,0.0039,No description available
+M_EBSI,float64,Numeric,0.0,2,2,0.0039,No description available
+UI_EXP,object,Categorical,Nation,1,2,0.0039,No description available
+THRHLD,float64,Numeric,21.0,1,2,0.0039,No description available
+No_FireStation_1.0km,float64,Numeric,1.0,3,46201,90.5316,Number of fire stations within 1 km
+No_FireStation_5.0km,float64,Numeric,1.0,17,19032,37.2935,Number of fire stations within 5 km
+No_FireStation_10.0km,float64,Numeric,3.0,70,2140,4.1934,No description available
+No_FireStation_20.0km,float64,Numeric,37.0,251,98,0.192,No description available
+FRG_1km,object,Text,1(83%) / 3(17%) / 111(0%),11435,0,0.0,No description available
+FRG,float64,Numeric,1.0,10,0,0.0,No description available
+TRI_1km,float64,Numeric,4.944,6944,0,0.0,No description available
+TRI,float64,Numeric,2.828,356,0,0.0,No description available
+Aspect_1km,float64,Numeric,76.2362258953168,43128,0,0.0,No description available
+Elevation_1km,float64,Numeric,84.90082644628099,49042,0,0.0,Elevation (meters)
+Elevation,float64,Numeric,109.0,1452,0,0.0,Elevation (meters)
+Slope_1km,float64,Numeric,2.4839302112029387,28126,0,0.0,Terrain slope
+Aspect,float64,Numeric,-1.0,361,0,0.0,No description available
+Slope,float64,Numeric,2.0,31,0,0.0,Terrain slope
+GHM,float64,Numeric,0.34,102,0,0.0,No description available
+TPI,float64,Numeric,0.25,83,0,0.0,No description available
+TPI_1km,float64,Numeric,-0.01,26,0,0.0,No description available
+TRACT,float64,Numeric,950100.0,1755,15,0.0294,No description available
+RPL_THEMES,float64,Numeric,0.6414,4258,15,0.0294,No description available
+RPL_THEME1,float64,Numeric,0.5194,4310,15,0.0294,No description available
+EPL_POV,float64,Numeric,0.6305,1571,15,0.0294,No description available
+EPL_UNEMP,float64,Numeric,0.3209,712,15,0.0294,No description available
+EPL_PCI,float64,Numeric,0.4151,3823,2708,5.3064,No description available
+EPL_NOHSDP,float64,Numeric,0.6621,1507,15,0.0294,No description available
+RPL_THEME2,float64,Numeric,0.3947,4293,15,0.0294,No description available
+EPL_AGE65,float64,Numeric,0.771,1151,15,0.0294,No description available
+EPL_AGE17,float64,Numeric,0.3047,3241,15,0.0294,No description available
+EPL_DISABL,float64,Numeric,0.5987,949,15,0.0294,No description available
+EPL_SNGPNT,float64,Numeric,0.1983,3212,15,0.0294,No description available
+RPL_THEME3,float64,Numeric,0.5672,4041,15,0.0294,No description available
+EPL_MINRTY,float64,Numeric,0.4601,3655,15,0.0294,No description available
+EPL_LIMENG,float64,Numeric,0.6312,2903,15,0.0294,No description available
+RPL_THEME4,float64,Numeric,0.853,4378,15,0.0294,No description available
+EPL_MUNIT,float64,Numeric,0.2931,2514,15,0.0294,No description available
+EPL_MOBILE,float64,Numeric,0.9028,1299,15,0.0294,No description available
+EPL_CROWD,float64,Numeric,0.7801,2797,15,0.0294,No description available
+EPL_NOVEH,float64,Numeric,0.5706,798,15,0.0294,No description available
+EPL_GROUPQ,float64,Numeric,0.6812,1900,15,0.0294,No description available
+road_county_dis,float64,Numeric,27.0,252,50074,98.1208,Road/infrastructure distance
+road_interstate_dis,float64,Numeric,23.6,34,50994,99.9236,Road/infrastructure distance
+road_common_name_dis,float64,Numeric,16.8,506,17200,33.7037,Road/infrastructure distance
+road_other_dis,float64,Numeric,23.4,169,50772,99.4886,Road/infrastructure distance
+road_state_dis,float64,Numeric,20.1,228,50270,98.5049,Road/infrastructure distance
+road_US_dis,float64,Numeric,20.5,89,50922,99.7825,Road/infrastructure distance
+Ecoregion_US_L4CODE,object,Categorical,35a,56,10,0.0196,Ecoregion classification
+Ecoregion_US_L3CODE,float64,Numeric,35.0,12,10,0.0196,Ecoregion classification
+Ecoregion_NA_L3CODE,object,Categorical,8.3.7,12,10,0.0196,Ecoregion classification
+Ecoregion_NA_L2CODE,float64,Numeric,8.3,6,10,0.0196,Ecoregion classification
+Ecoregion_NA_L1CODE,float64,Numeric,8.0,4,10,0.0196,Ecoregion classification
+SDI,float64,Numeric,0.08,90,0,0.0,No description available
+Annual_etr,float64,Numeric,2202.0,1313,0,0.0,No description available
+Annual_precipitation,float64,Numeric,1009.0,2018,0,0.0,Precipitation variable
+Annual_tempreture,float64,Numeric,291.0,14,0,0.0,No description available
+Aridity_index,float64,Numeric,0.46,135,0,0.0,No description available
+Evacuation,float64,Numeric,2.0,4,50266,98.4971,No description available
+pr,float64,Numeric,0.0,578,0,0.0,No description available
+tmmn,float64,Numeric,271.3999938964844,436,0,0.0,No description available
+tmmx,float64,Numeric,290.8999938964844,480,0,0.0,No description available
+rmin,float64,Numeric,27.200000762939453,891,0,0.0,No description available
+rmax,float64,Numeric,100.0,750,0,0.0,No description available
+sph,float64,Numeric,0.0038399999029934,1983,0,0.0,No description available
+vs,float64,Numeric,4.4,114,0,0.0,No description available
+th,float64,Numeric,2.0,361,0,0.0,No description available
+srad,float64,Numeric,111.0999984741211,3264,0,0.0,No description available
+etr,float64,Numeric,4.2,187,0,0.0,No description available
+fm100,float64,Numeric,16.6,220,0,0.0,No description available
+fm1000,float64,Numeric,18.6,219,0,0.0,No description available
+bi,float64,Numeric,33.0,117,0,0.0,No description available
+vpd,float64,Numeric,0.67,464,0,0.0,No description available
+erc,float64,Numeric,29.0,101,0,0.0,No description available
+pr_5D_mean,float64,Numeric,0.0,1159,0,0.0,No description available
+tmmn_5D_mean,float64,Numeric,272.7,3903,0,0.0,No description available
+tmmx_5D_mean,float64,Numeric,280.6,3898,0,0.0,No description available
+rmin_5D_mean,float64,Numeric,44.8,732,0,0.0,No description available
+rmax_5D_mean,float64,Numeric,78.9,663,0,0.0,No description available
+sph_5D_mean,float64,Numeric,0.003046,14809,0,0.0,No description available
+vs_5D_mean,float64,Numeric,2.5,341,0,0.0,No description available
+th_5D_mean,float64,Numeric,189.4,1471,0,0.0,No description available
+srad_5D_mean,float64,Numeric,93.3,20006,0,0.0,No description available
+etr_5D_mean,float64,Numeric,1.78,742,0,0.0,No description available
+fm100_5D_mean,float64,Numeric,15.4,208,0,0.0,No description available
+fm1000_5D_mean,float64,Numeric,19.1,214,0,0.0,No description available
+bi_5D_mean,float64,Numeric,21.0,488,0,0.0,No description available
+vpd_5D_mean,float64,Numeric,0.32,428,0,0.0,No description available
+erc_5D_mean,float64,Numeric,25.4,457,0,0.0,No description available
+pr_5D_min,float64,Numeric,0.0,46,0,0.0,No description available
+pr_5D_max,float64,Numeric,0.0,961,0,0.0,No description available
+tmmn_5D_max,float64,Numeric,272.7,372,0,0.0,No description available
+tmmx_5D_max,float64,Numeric,280.6,393,0,0.0,No description available
+rmin_5D_min,float64,Numeric,42.2,624,0,0.0,No description available
+rmax_5D_min,float64,Numeric,75.0,783,0,0.0,No description available
+sph_5D_min,float64,Numeric,0.00289,1892,0,0.0,No description available
+vs_5D_max,float64,Numeric,4.1,117,0,0.0,No description available
+th_5D_max,float64,Numeric,343.0,356,0,0.0,No description available
+srad_5D_max,float64,Numeric,93.3,2709,0,0.0,No description available
+etr_5D_max,float64,Numeric,1.8,190,0,0.0,No description available
+fm100_5D_min,float64,Numeric,15.2,195,0,0.0,No description available
+fm1000_5D_min,float64,Numeric,19.1,213,0,0.0,No description available
+bi_5D_max,float64,Numeric,25.0,116,0,0.0,No description available
+vpd_5D_max,float64,Numeric,0.35,478,0,0.0,No description available
+erc_5D_max,float64,Numeric,26.0,100,0,0.0,No description available
+tmmn_Percentile,object,Categorical,>90%,1,0,0.0,No description available
+tmmx_Percentile,object,Categorical,>90%,1,0,0.0,No description available
+sph_Percentile,object,Categorical,30-50%,6,0,0.0,No description available
+vs_Percentile,object,Categorical,50-70%,6,57,0.1117,No description available
+fm100_Percentile,object,Categorical,50-70%,6,5,0.0098,No description available
+bi_Percentile,object,Categorical,70-90%,6,37,0.0725,No description available
+vpd_Percentile,object,Categorical,70-80%,12,31,0.0607,No description available
+erc_Percentile,object,Categorical,50-70%,6,27,0.0529,No description available
+NDVI-1day,float64,Numeric,0.43,106,947,1.8557,Vegetation index
+NDVI_min,object,Text,'-0.05' '-0.07' '-0.1' '-0.04' '0.04' '0.03' '0.02' '0.01' '-0.01' '-0.04' '-...,41160,0,0.0,Vegetation index
+NDVI_max,object,Text,'0.51' '0.7' '0.73' '0.72' '0.71' '0.69' '0.76' '0.74' '0.69' '0.78' '0.49' '...,41218,0,0.0,Vegetation index
+NDVI_mean,object,Text,'0.21' '0.26' '0.35' '0.3' '0.44' '0.37' '0.52' '0.39' '0.39' '0.31' '0.23' '...,41218,0,0.0,Vegetation index
+CheatGrass,float64,Numeric,0.0,20,16842,33.0022,No description available
+ExoticAnnualGrass,float64,Numeric,0.0,23,16842,33.0022,No description available
+Medusahead,float64,Numeric,0.0,7,16842,33.0022,No description available
+PoaSecunda,float64,Numeric,0.0,7,16842,33.0022,No description available
+geometry,float64,Numeric,N/A,0,51033,100.0,GIS geometry (WKT/WKB) — typically empty in tabular exports
+source_year,int64,Numeric,2014,7,0,0.0,No description available

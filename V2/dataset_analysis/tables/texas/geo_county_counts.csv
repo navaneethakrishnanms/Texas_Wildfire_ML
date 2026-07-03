@@ -1,0 +1,289 @@
+County,Fire Count,% of Total
+Upshur,1438,2.8178
+McLennan,1354,2.6532
+Tarrant,1353,2.6512
+Hill,1323,2.5924
+Dallas,1166,2.2848
+Rusk,1033,2.0242
+Cherokee,931,1.8243
+Taylor,814,1.595
+Navarro,740,1.45
+Erath,700,1.3717
+Victoria,697,1.3658
+Coryell,689,1.3501
+Grimes,661,1.2952
+Hunt,651,1.2756
+Starr,645,1.2639
+Smith,618,1.211
+Harrison,614,1.2031
+Van Zandt,555,1.0875
+Bell,536,1.0503
+Atascosa,535,1.0483
+Palo Pinto,532,1.0425
+Bowie,522,1.0229
+Burleson,508,0.9954
+Cass,506,0.9915
+Clay,491,0.9621
+Randall,489,0.9582
+Jasper,488,0.9562
+Harris,487,0.9543
+Gregg,487,0.9543
+Montague,482,0.9445
+Freestone,481,0.9425
+Wood,477,0.9347
+Grayson,475,0.9308
+Frio,445,0.872
+Cooke,444,0.87
+Brazos,434,0.8504
+Titus,434,0.8504
+Kaufman,433,0.8485
+Bosque,422,0.8269
+Callahan,418,0.8191
+Brown,410,0.8034
+Camp,393,0.7701
+Marion,382,0.7485
+Robertson,380,0.7446
+Panola,378,0.7407
+Potter,377,0.7387
+Archer,373,0.7309
+Anderson,371,0.727
+Wichita,370,0.725
+Wise,363,0.7113
+Howard,358,0.7015
+Williamson,355,0.6956
+Fannin,353,0.6917
+Collin,349,0.6839
+Comanche,346,0.678
+Hidalgo,346,0.678
+Houston,337,0.6604
+Montgomery,336,0.6584
+Cameron,331,0.6486
+Washington,328,0.6427
+Nacogdoches,325,0.6368
+Henderson,323,0.6329
+Young,320,0.627
+Angelina,318,0.6231
+Gillespie,315,0.6172
+Swisher,308,0.6035
+Limestone,294,0.5761
+Carson,288,0.5643
+Lee,286,0.5604
+Stephens,278,0.5447
+Burnet,277,0.5428
+Lamar,276,0.5408
+Parker,275,0.5389
+Red River,270,0.5291
+Caldwell,264,0.5173
+Hutchinson,239,0.4683
+Scurry,235,0.4605
+Bee,230,0.4507
+Blanco,221,0.4331
+Denton,217,0.4252
+Bailey,216,0.4233
+DeWitt,211,0.4135
+Newton,205,0.4017
+Jim Wells,200,0.3919
+Oldham,199,0.3899
+Tyler,199,0.3899
+Aransas,197,0.386
+Hamilton,196,0.3841
+Hood,194,0.3801
+Wheeler,193,0.3782
+Medina,189,0.3703
+Karnes,185,0.3625
+Donley,184,0.3606
+Milam,178,0.3488
+Liberty,176,0.3449
+Ellis,176,0.3449
+Live Oak,171,0.3351
+Tom Green,168,0.3292
+Lubbock,155,0.3037
+Nolan,154,0.3018
+Comal,151,0.2959
+Bastrop,139,0.2724
+Sabine,136,0.2665
+San Augustine,128,0.2508
+Waller,125,0.2449
+Travis,125,0.2449
+Webb,124,0.243
+Walker,124,0.243
+Llano,123,0.241
+Baylor,120,0.2351
+Gaines,120,0.2351
+Hartley,119,0.2332
+Fisher,118,0.2312
+Coleman,118,0.2312
+Delta,118,0.2312
+San Saba,114,0.2234
+Jones,114,0.2234
+Polk,111,0.2175
+Winkler,100,0.196
+Jeff Davis,100,0.196
+Trinity,100,0.196
+Hall,100,0.196
+Kenedy,97,0.1901
+Morris,93,0.1822
+Bexar,93,0.1822
+San Jacinto,93,0.1822
+Hardin,92,0.1803
+Guadalupe,91,0.1783
+Jack,89,0.1744
+Matagorda,88,0.1724
+Floyd,85,0.1666
+Nueces,83,0.1626
+Hays,83,0.1626
+Briscoe,83,0.1626
+Dallam,80,0.1568
+Kendall,75,0.147
+Eastland,75,0.147
+Mason,75,0.147
+Presidio,74,0.145
+Zapata,74,0.145
+Austin,74,0.145
+Armstrong,74,0.145
+Motley,74,0.145
+Gray,73,0.143
+Zavala,72,0.1411
+Schleicher,72,0.1411
+Haskell,72,0.1411
+Cottle,67,0.1313
+Crockett,67,0.1313
+Jefferson,66,0.1293
+Stonewall,64,0.1254
+Kimble,63,0.1234
+Lampasas,62,0.1215
+Dickens,62,0.1215
+Goliad,61,0.1195
+Shelby,60,0.1176
+Andrews,59,0.1156
+Kerr,58,0.1137
+La Salle,57,0.1117
+Hemphill,57,0.1117
+Lipscomb,57,0.1117
+Falls,57,0.1117
+Fayette,54,0.1058
+Fort Bend,54,0.1058
+Runnels,54,0.1058
+Moore,53,0.1039
+Hopkins,50,0.098
+Wilbarger,48,0.0941
+Deaf Smith,47,0.0921
+Shackelford,46,0.0901
+San Patricio,45,0.0882
+Lamb,42,0.0823
+Chambers,42,0.0823
+Reagan,42,0.0823
+Rockwall,42,0.0823
+Franklin,41,0.0803
+Brazoria,40,0.0784
+Leon,36,0.0705
+Kleberg,36,0.0705
+Galveston,36,0.0705
+Knox,35,0.0686
+McCulloch,34,0.0666
+Mills,33,0.0647
+Willacy,32,0.0627
+Wilson,32,0.0627
+Rains,32,0.0627
+Hansford,31,0.0607
+Brooks,30,0.0588
+Parmer,28,0.0549
+Madison,28,0.0549
+Orange,28,0.0549
+Gonzales,28,0.0549
+Edwards,26,0.0509
+Throckmorton,26,0.0509
+Hardeman,25,0.049
+Real,25,0.049
+Concho,25,0.049
+Hockley,25,0.049
+Refugio,24,0.047
+005,23,0.0451
+Mitchell,22,0.0431
+Johnson,22,0.0431
+403,22,0.0431
+Crosby,21,0.0411
+Terry,21,0.0411
+Lynn,20,0.0392
+Borden,20,0.0392
+225,20,0.0392
+Childress,20,0.0392
+339,19,0.0372
+Roberts,18,0.0353
+Hale,18,0.0353
+405,18,0.0353
+Collingsworth,18,0.0353
+455,18,0.0353
+407,17,0.0333
+Calhoun,17,0.0333
+Sutton,16,0.0314
+Sherman,16,0.0314
+419,16,0.0314
+Brewster,16,0.0314
+Culberson,16,0.0314
+Coke,15,0.0294
+497,14,0.0274
+Uvalde,14,0.0274
+Lavaca,14,0.0274
+Glasscock,13,0.0255
+Irion,13,0.0255
+Val Verde,13,0.0255
+471,12,0.0235
+El Paso,12,0.0235
+Ector,12,0.0235
+Cochran,12,0.0235
+Bandera,11,0.0216
+Castro,11,0.0216
+Pecos,11,0.0216
+Menard,11,0.0216
+Terrell,10,0.0196
+King,10,0.0196
+147,9,0.0176
+Dawson,9,0.0176
+McMullen,8,0.0157
+Jackson,7,0.0137
+Loving,7,0.0137
+Martin,7,0.0137
+Kent,7,0.0137
+Midland,6,0.0118
+Jim Hogg,6,0.0118
+Dimmit,6,0.0118
+111,5,0.0098
+Colorado,5,0.0098
+Sterling,5,0.0098
+Ward,5,0.0098
+Foard,5,0.0098
+Somervell,4,0.0078
+Garza,4,0.0078
+Kinney,3,0.0059
+Ochiltree,3,0.0059
+Reeves,3,0.0059
+Motley County,2,0.0039
+241,2,0.0039
+Jefferson County,2,0.0039
+Yoakum,2,0.0039
+179,2,0.0039
+Crosby County,1,0.002
+Shackelford County,1,0.002
+Brown County,1,0.002
+Ward County,1,0.002
+Schleicher County,1,0.002
+Armstrong County,1,0.002
+Fisher County,1,0.002
+Childress County,1,0.002
+Hays County,1,0.002
+Victoria County,1,0.002
+Crane,1,0.002
+Parker County,1,0.002
+Wichita County,1,0.002
+Ector County,1,0.002
+Erath County,1,0.002
+Potter County,1,0.002
+127,1,0.002
+Jackson County,1,0.002
+Borden County,1,0.002
+Hartley County,1,0.002
+Hudspeth,1,0.002
+245,1,0.002
+Morris County,1,0.002
+Duval,1,0.002

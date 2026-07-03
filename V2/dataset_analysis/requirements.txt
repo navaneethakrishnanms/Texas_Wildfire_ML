@@ -1,0 +1,29 @@
+# Wildfire Dataset Analysis Pipeline — Requirements
+# Install with:  pip install -r requirements.txt
+
+# Core data stack
+pandas>=1.5.0
+numpy>=1.23.0
+scipy>=1.9.0
+
+# Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+plotly>=5.10.0
+
+# Missing value visualization
+missingno>=0.5.2
+
+# Excel export
+openpyxl>=3.0.10
+
+# Parquet I/O (for caching)
+pyarrow>=10.0.0
+
+# Scikit-learn (for utilities, not training)
+scikit-learn>=1.1.0
+
+# Optional: PDF report generation
+# weasyprint>=57.0    # Requires additional OS dependencies
+# markdown>=3.4.0     # Required by weasyprint path
+# pdfkit>=1.0.0       # Alternative PDF generator (requires wkhtmltopdf)

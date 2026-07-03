@@ -1,0 +1,5 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+Population,float64,15418,0.0,False,False,0.0,0.1882,False,False,False,False,0,43,NEG(43),REVIEW
+Elevation_1km,float64,49042,0.0,False,False,141.67401285583105,0.0007,False,False,False,False,0,8,NEG(8),REVIEW
+Slope_1km,float64,28126,0.0,False,False,1.9010560146923785,0.0007,False,False,False,False,0,7051,NEG(7051),REVIEW
+NDVI-1day,float64,106,1.8557,False,False,0.02,0.0211,False,False,False,False,0,151,NEG(151),REVIEW

@@ -1,0 +1,13 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+LatLong_State,object,4,0.0865,False,True,California,0.9997,False,False,False,False,0,0,NEAR_CONSTANT(100.0%),REVIEW
+GACC_Area Command Teams,float64,3,0.1965,False,True,0.0,0.9916,False,False,False,False,0,0,NEAR_CONSTANT(99.2%),REVIEW
+M_WTR,float64,2,0.0039,False,True,0.0,0.9849,True,False,False,False,0,0,NEAR_CONSTANT(98.5%); DUPLICATE,REVIEW
+EPLRLI,float64,2,0.0039,False,True,0.0,0.9848,False,False,False,False,0,0,NEAR_CONSTANT(98.5%),REVIEW
+DPMLI,float64,2,0.0039,False,True,0.0,0.9943,False,False,False,False,0,0,NEAR_CONSTANT(99.4%),REVIEW
+LPMHVLI,float64,2,0.0039,False,True,0.0,0.9967,False,False,False,False,0,0,NEAR_CONSTANT(99.7%),REVIEW
+HWLI,float64,2,0.0039,False,True,0.0,0.9897,False,False,False,False,0,0,NEAR_CONSTANT(99.0%),REVIEW
+WDLI,float64,2,0.0039,False,True,0.0,0.9849,True,False,False,False,0,0,NEAR_CONSTANT(98.5%); DUPLICATE,REVIEW
+DS_ET,float64,2,0.0039,False,True,0.0,0.9891,False,False,False,False,0,0,NEAR_CONSTANT(98.9%),REVIEW
+LPP_ET,float64,2,0.0039,False,True,0.0,0.9954,False,False,False,False,0,0,NEAR_CONSTANT(99.5%),REVIEW
+CA_LT20,float64,2,0.0039,False,True,1.0,0.992,False,False,False,False,0,0,NEAR_CONSTANT(99.2%),REVIEW
+pr_5D_min,float64,41,0.0,False,True,0.0,0.9968,False,False,False,False,0,0,NEAR_CONSTANT(99.7%),REVIEW

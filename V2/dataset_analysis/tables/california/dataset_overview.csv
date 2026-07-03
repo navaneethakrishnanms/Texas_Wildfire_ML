@@ -1,0 +1,16 @@
+Property,Value
+State,California
+Total Rows,"50,881"
+Total Columns,309
+Memory Usage (MB),280.76 MB
+Dtype Breakdown,float64: 251; object: 54; int64: 4
+Numeric Columns,255
+Categorical Columns,35
+Datetime Columns,0
+Boolean Columns,0
+Object Columns (raw),54
+Text Columns,19
+Float64 Columns,251
+Int64 Columns,4
+Year Range,2014 – 2020
+Data Source,FPA-FOD Pre-processed (Phase-1 Pipeline)

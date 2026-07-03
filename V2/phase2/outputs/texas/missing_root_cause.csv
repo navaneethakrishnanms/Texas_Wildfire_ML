@@ -1,0 +1,196 @@
+Column,Missing_%,Root_Cause,Treatment,Action
+GACC_Fire Use Teams,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+IAULHS_89,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+IAHSEF,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+IALMIL_87,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+IAPLHS_88,100.0,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+geometry,100.0,structural,"EXCLUDE — format artifact, never a real feature",EXCLUDE
+ICS_209_PLUS_COMPLEX_JOIN_ID,99.9667,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+COMPLEX_NAME,99.9491,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+road_interstate_dis,99.9236,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',SENTINEL_999
+road_US_dis,99.7825,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',SENTINEL_999
+MTBS_ID,99.6826,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",EXCLUDE
+MTBS_FIRE_NAME,99.6826,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",EXCLUDE
+road_other_dis,99.4886,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',SENTINEL_999
+NWCG_CAUSE_AGE_CATEGORY,99.4121,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+ICS_209_PLUS_INCIDENT_JOIN_ID,99.1241,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+LOCAL_FIRE_REPORT_ID,99.1202,administrative,"EXCLUDE — administrative ID, not a predictive feature",EXCLUDE
+road_state_dis,98.5049,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',SENTINEL_999
+Evacuation,98.4971,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+FIRE_CODE,98.4912,administrative,"EXCLUDE — administrative ID, not a predictive feature",EXCLUDE
+road_county_dis,98.1208,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',SENTINEL_999
+No_FireStation_1.0km,90.5316,geographic_coverage,SENTINEL_FILL — 999 means 'no such infrastructure nearby',SENTINEL_999
+CONT_TIME,90.273,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+DISCOVERY_TIME,90.0633,unknown,REVIEW — investigate before deciding,REVIEW
+CONT_DOY,89.9105,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+CONT_DATE,89.9105,event_conditional,"BINARY_FLAG or EXCLUDE — missing means 'small fire', informative",BINARY_FLAG
+No_FireStation_5.0km,37.2935,sensor_gap,INTERPOLATE or GRIDMET_FALLBACK,GRIDMET_FALLBACK
+road_common_name_dis,33.7037,unknown,REVIEW — investigate before deciding,REVIEW
+ExoticAnnualGrass,33.0022,unknown,REVIEW — investigate before deciding,REVIEW
+PoaSecunda,33.0022,unknown,REVIEW — investigate before deciding,REVIEW
+Medusahead,33.0022,unknown,REVIEW — investigate before deciding,REVIEW
+CheatGrass,33.0022,unknown,REVIEW — investigate before deciding,REVIEW
+WF_PFS,10.1718,unknown,REVIEW — investigate before deciding,REVIEW
+TF_PFS,8.4161,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_PCI,5.3064,unknown,REVIEW — investigate before deciding,REVIEW
+rmin_Normal,5.0458,sensor_gap,INTERPOLATE or GRIDMET_FALLBACK,GRIDMET_FALLBACK
+rmax_Normal,5.0458,sensor_gap,INTERPOLATE or GRIDMET_FALLBACK,GRIDMET_FALLBACK
+fm1000_Normal,5.0458,unknown,REVIEW — investigate before deciding,REVIEW
+LLEF_PFS,4.9752,unknown,REVIEW — investigate before deciding,REVIEW
+No_FireStation_10.0km,4.1934,unknown,REVIEW — investigate before deciding,REVIEW
+NDVI-1day,1.8557,unknown,REVIEW — investigate before deciding,REVIEW
+LOCAL_INCIDENT_ID,1.3031,administrative,"EXCLUDE — administrative ID, not a predictive feature",EXCLUDE
+MHVF_PFS,0.5408,unknown,REVIEW — investigate before deciding,REVIEW
+FIPS_CODE,0.5114,unknown,REVIEW — investigate before deciding,REVIEW
+FIPS_NAME,0.5114,unknown,REVIEW — investigate before deciding,REVIEW
+COUNTY,0.5114,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_New fire,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACCAbbrev,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_PL,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_New LF,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_Type 1 IMTs,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_Uncont LF,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_Area Command Teams,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_Type 2 IMTs,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+GACC_NIMO Teams,0.3625,unknown,REVIEW — investigate before deciding,REVIEW
+LMI_PFS,0.194,unknown,REVIEW — investigate before deciding,REVIEW
+No_FireStation_20.0km,0.192,unknown,REVIEW — investigate before deciding,REVIEW
+FIRE_NAME,0.143,unknown,REVIEW — investigate before deciding,REVIEW
+HBF_PFS,0.1274,unknown,REVIEW — investigate before deciding,REVIEW
+vs_Percentile,0.1117,unknown,REVIEW — investigate before deciding,REVIEW
+LIF_PFS,0.098,unknown,REVIEW — investigate before deciding,REVIEW
+P100_PFS,0.098,unknown,REVIEW — investigate before deciding,REVIEW
+P200_PFS,0.098,unknown,REVIEW — investigate before deciding,REVIEW
+EBF_PFS,0.096,unknown,REVIEW — investigate before deciding,REVIEW
+AF_PFS,0.0764,unknown,REVIEW — investigate before deciding,REVIEW
+DF_PFS,0.0764,unknown,REVIEW — investigate before deciding,REVIEW
+HDF_PFS,0.0764,unknown,REVIEW — investigate before deciding,REVIEW
+bi_Percentile,0.0725,unknown,REVIEW — investigate before deciding,REVIEW
+HSEF,0.0705,unknown,REVIEW — investigate before deciding,REVIEW
+vpd_Percentile,0.0607,unknown,REVIEW — investigate before deciding,REVIEW
+erc_Percentile,0.0529,unknown,REVIEW — investigate before deciding,REVIEW
+UF_PFS,0.049,unknown,REVIEW — investigate before deciding,REVIEW
+NCA,0.049,unknown,REVIEW — investigate before deciding,REVIEW
+CA,0.049,unknown,REVIEW — investigate before deciding,REVIEW
+EPLR_PFS,0.0333,unknown,REVIEW — investigate before deciding,REVIEW
+DSF_PFS,0.0333,unknown,REVIEW — investigate before deciding,REVIEW
+RPL_THEMES,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+TRACT,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_AGE65,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_AGE17,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_DISABL,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_SNGPNT,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_NOHSDP,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_MUNIT,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_MINRTY,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_LIMENG,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+RPL_THEME4,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_MOBILE,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_CROWD,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_NOVEH,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_POV,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_GROUPQ,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+LatLong_County,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+LatLong_State,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+RPL_THEME3,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+RPL_THEME1,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_UNEMP,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+RPL_THEME2,0.0294,unknown,REVIEW — investigate before deciding,REVIEW
+GDP,0.0216,unknown,REVIEW — investigate before deciding,REVIEW
+Ecoregion_NA_L2CODE,0.0196,unknown,REVIEW — investigate before deciding,REVIEW
+Ecoregion_NA_L1CODE,0.0196,unknown,REVIEW — investigate before deciding,REVIEW
+NAME,0.0196,unknown,REVIEW — investigate before deciding,REVIEW
+Ecoregion_NA_L3CODE,0.0196,unknown,REVIEW — investigate before deciding,REVIEW
+Ecoregion_US_L3CODE,0.0196,unknown,REVIEW — investigate before deciding,REVIEW
+Ecoregion_US_L4CODE,0.0196,unknown,REVIEW — investigate before deciding,REVIEW
+fm100_Percentile,0.0098,unknown,REVIEW — investigate before deciding,REVIEW
+EBLR_PFS,0.0059,unknown,REVIEW — investigate before deciding,REVIEW
+Mang_Name,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EALR_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+PM25_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+Mang_Type,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+GAP_Prity,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+Des_Tp,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+GAP_Sts,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LPF_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+Popo_1km,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+PM25F_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+TPF,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+NPL_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+RMP_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+TSDF_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_CLT,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_WTR,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_WKFC,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_ENY,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_TRN,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_HSG,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EPLRLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EPL_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EBLRLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+DLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EBLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+TPLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LPMHVLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+HBLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+RMPLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+SFLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+HWLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+WDLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+HDLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+ALI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LMILHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LLELI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LILHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+PLHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EB_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+PM25LI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EBL_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EAL_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_HLTH,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_PLN,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+DS_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+SM_C,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+SM_PFS,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IAULHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+HB_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IAPLHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+RMP_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+NPL_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+WD_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+DB_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+A_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LLE_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+UN_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LISO_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+POV_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+TSDF_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IA_LMI_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IA_UN_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IA_POV_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LMI_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+CC,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+TC,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+HD_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IALMILHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_HLTH_102,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_HSG_EOMI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+EALRLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+DPMLI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LPP_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+IALHE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+CA_LT20,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_CLT_EOMI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_ENY_EOMI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_TRN_EOMI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_PLN_EOMI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+TP_ET,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+LHE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_WTR_EOMI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_WKFC_103,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+FPL200S,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_WKFC_105,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+M_EBSI,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+UI_EXP,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+THRHLD,0.0039,unknown,REVIEW — investigate before deciding,REVIEW
+ULHSE,0.0039,unknown,REVIEW — investigate before deciding,REVIEW

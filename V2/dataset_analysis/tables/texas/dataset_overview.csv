@@ -1,0 +1,16 @@
+Property,Value
+State,Texas
+Total Rows,"51,033"
+Total Columns,309
+Memory Usage (MB),278.77 MB
+Dtype Breakdown,float64: 251; object: 54; int64: 4
+Numeric Columns,255
+Categorical Columns,30
+Datetime Columns,0
+Boolean Columns,0
+Object Columns (raw),54
+Text Columns,24
+Float64 Columns,251
+Int64 Columns,4
+Year Range,2014 – 2020
+Data Source,FPA-FOD Pre-processed (Phase-1 Pipeline)

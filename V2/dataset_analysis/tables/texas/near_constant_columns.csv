@@ -1,0 +1,38 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+SOURCE_SYSTEM_TYPE,object,3,0.0,False,True,NONFED,0.9813,False,False,False,False,0,0,NEAR_CONSTANT(98.1%),REVIEW
+SOURCE_SYSTEM,object,6,0.0,False,True,ST-NASF,0.9813,False,False,False,False,0,0,NEAR_CONSTANT(98.1%),REVIEW
+NWCG_REPORTING_AGENCY,object,6,0.0,False,True,ST/C&L,0.9847,False,False,False,False,0,0,NEAR_CONSTANT(98.5%),REVIEW
+NWCG_REPORTING_UNIT_ID,object,33,0.0,False,True,USTXTXS,0.9846,False,False,False,False,0,0,NEAR_CONSTANT(98.5%),REVIEW
+NWCG_REPORTING_UNIT_NAME,object,33,0.0,False,True,Texas A & M Forest Service,0.9846,False,False,False,False,0,0,NEAR_CONSTANT(98.5%),REVIEW
+LatLong_State,object,5,0.0294,False,True,Texas,0.9997,False,False,False,False,0,0,NEAR_CONSTANT(100.0%),REVIEW
+Mang_Type,object,8,0.0039,False,True,UNK,0.9802,False,False,False,False,0,0,NEAR_CONSTANT(98.0%),REVIEW
+Mang_Name,object,20,0.0039,False,True,UNK,0.9802,False,False,False,False,0,0,NEAR_CONSTANT(98.0%),REVIEW
+Des_Tp,object,30,0.0039,False,True,UNK,0.9801,False,False,False,False,0,0,NEAR_CONSTANT(98.0%),REVIEW
+GAP_Sts,float64,4,0.0039,False,True,4.0,0.9868,False,False,False,False,0,0,NEAR_CONSTANT(98.7%),REVIEW
+GAP_Prity,float64,5,0.0039,False,True,0.0,0.9801,False,False,False,False,0,0,NEAR_CONSTANT(98.0%),REVIEW
+GACC_Area Command Teams,float64,2,0.3625,False,True,0.0,0.9988,False,False,False,False,0,0,NEAR_CONSTANT(99.9%),REVIEW
+M_WTR,float64,2,0.0039,False,True,0.0,0.9958,True,False,False,False,0,0,NEAR_CONSTANT(99.6%); DUPLICATE,REVIEW
+M_TRN,float64,2,0.0039,False,True,0.0,0.9936,False,False,False,False,0,0,NEAR_CONSTANT(99.4%),REVIEW
+M_HSG,float64,2,0.0039,False,True,0.0,0.981,False,False,False,False,0,0,NEAR_CONSTANT(98.1%),REVIEW
+PM25LI,float64,2,0.0039,False,True,0.0,0.9938,False,False,False,False,0,0,NEAR_CONSTANT(99.4%),REVIEW
+DPMLI,float64,2,0.0039,False,True,0.0,0.9985,False,False,False,False,0,0,NEAR_CONSTANT(99.8%),REVIEW
+TPLI,float64,2,0.0039,False,True,0.0,0.9946,False,False,False,False,0,0,NEAR_CONSTANT(99.5%),REVIEW
+LPMHVLI,float64,2,0.0039,False,True,0.0,0.9957,False,False,False,False,0,0,NEAR_CONSTANT(99.6%),REVIEW
+HBLI,float64,2,0.0039,False,True,0.0,0.9848,False,False,False,False,0,0,NEAR_CONSTANT(98.5%),REVIEW
+SFLI,float64,2,0.0039,False,True,0.0,0.9923,False,False,False,False,0,0,NEAR_CONSTANT(99.2%),REVIEW
+HWLI,float64,2,0.0039,False,True,0.0,1.0,False,False,False,False,0,0,NEAR_CONSTANT(100.0%),REVIEW
+WDLI,float64,2,0.0039,False,True,0.0,0.9958,True,False,False,False,0,0,NEAR_CONSTANT(99.6%); DUPLICATE,REVIEW
+ALI,float64,2,0.0039,False,True,0.0,0.9932,False,False,False,False,0,0,NEAR_CONSTANT(99.3%),REVIEW
+PM25_ET,float64,2,0.0039,False,True,0.0,0.9924,False,False,False,False,0,0,NEAR_CONSTANT(99.2%),REVIEW
+DS_ET,float64,2,0.0039,False,True,0.0,0.9966,False,False,False,False,0,0,NEAR_CONSTANT(99.7%),REVIEW
+TP_ET,float64,2,0.0039,False,True,0.0,0.9908,False,False,False,False,0,0,NEAR_CONSTANT(99.1%),REVIEW
+LPP_ET,float64,2,0.0039,False,True,0.0,0.9945,False,False,False,False,0,0,NEAR_CONSTANT(99.4%),REVIEW
+HB_ET,float64,2,0.0039,False,True,0.0,0.9818,False,False,False,False,0,0,NEAR_CONSTANT(98.2%),REVIEW
+NPL_ET,float64,2,0.0039,False,True,0.0,0.9861,False,False,False,False,0,0,NEAR_CONSTANT(98.6%),REVIEW
+TSDF_ET,float64,2,0.0039,False,True,0.0,0.9998,False,False,False,False,0,0,NEAR_CONSTANT(100.0%),REVIEW
+WD_ET,float64,2,0.0039,False,True,0.0,0.9892,True,False,False,False,0,0,NEAR_CONSTANT(98.9%); DUPLICATE,REVIEW
+A_ET,float64,2,0.0039,False,True,0.0,0.9927,False,False,False,False,0,0,NEAR_CONSTANT(99.3%),REVIEW
+CA_LT20,float64,2,0.0039,False,True,1.0,0.9896,False,False,False,False,0,0,NEAR_CONSTANT(99.0%),REVIEW
+M_TRN_EOMI,float64,2,0.0039,False,True,0.0,0.9888,False,False,False,False,0,0,NEAR_CONSTANT(98.9%),REVIEW
+M_WTR_EOMI,float64,2,0.0039,False,True,0.0,0.9892,True,False,False,False,0,0,NEAR_CONSTANT(98.9%); DUPLICATE,REVIEW
+pr_5D_min,float64,46,0.0,False,True,0.0,0.995,False,False,False,False,0,0,NEAR_CONSTANT(99.5%),REVIEW

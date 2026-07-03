@@ -1,28 +1,65 @@
 # ============================================================
 #  Wildfire Ignition Prediction System — .gitignore
-#  RULE: Only exclude large raw/processed DATA files.
-#  Everything else (code, outputs, images, maps) IS tracked.
+#  Push:    Code, analysis outputs (CSV/MD), plots, maps
+#  Ignore:  Raw datasets, processed parquets, large binaries
 # ============================================================
 
-# ── RAW FPA-FOD YEARLY CSVs (79-180 MB each) ─────────────────
+# ── RAW FPA-FOD SOURCE DATA (150–190 MB each) ────────────────
 V2/data/*_FPA_FOD_cons.csv
 V2/data/*.xlsx
 V2/data/*.xls
 
-# ── PROCESSED DATA FILES (111-114 MB CSVs, 22 MB parquets) ──
-V2/data/processed/**/*.csv
+# ── PROCESSED PARQUET / CSV DATASETS ─────────────────────────
+# (large ML-ready datasets — too big for git)
 V2/data/processed/**/*.parquet
+V2/data/processed/**/*.csv
+V2/data/raw/**/*.parquet
+V2/data/raw/**/*.csv
 
-# ── V1 LARGE RASTER/GIS FILES (.tif, .tiff) ──────────────────
+# ── PHASE 2 DOWNLOADED DATA (GridMET, MODIS, LANDFIRE etc.) ──
+# Raw downloaded rasters and NetCDF files
+V2/phase2/data/
+**/*.nc
+**/*.nc4
+**/*.hdf
+**/*.hdf5
+**/*.h5
+
+# ── PHASE 2 LARGE INTERMEDIATE DATA ──────────────────────────
+# Parquet training datasets (built by pipeline, not code)
+V2/phase2/outputs/**/*.parquet
+V2/phase2/outputs/**/*.feather
+# But KEEP the analysis CSVs and reports
+!V2/phase2/outputs/**/*.csv
+!V2/phase2/outputs/**/*.md
+
+# ── RASTER / GIS FILES ───────────────────────────────────────
 **/*.tif
 **/*.tiff
 **/*.geotiff
+**/*.img
+**/*.vrt
+**/*.shp
+**/*.dbf
+**/*.shx
+**/*.prj
+**/*.cpg
+**/*.sbn
+**/*.sbx
+
+# ── MODEL WEIGHTS (large binary files) ───────────────────────
+**/*.pkl
+**/*.pickle
+**/*.joblib
+**/*.model
+**/*.bin
+**/*.cbm
 
 # ── LOGS ─────────────────────────────────────────────────────
-V2/logs/*.log
-V1/logs/*.log
-logs/*.log
-*.log
+**/*.log
+V2/logs/
+V2/phase2/logs/
+V1/logs/
 
 # ── PYTHON CACHE ─────────────────────────────────────────────
 __pycache__/
@@ -31,22 +68,49 @@ __pycache__/
 *.pyo
 .pytest_cache/
 .mypy_cache/
+*.pyc
 
-# ── JUPYTER CHECKPOINTS ──────────────────────────────────────
+# ── JUPYTER ──────────────────────────────────────────────────
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
-# ── ENVIRONMENT / IDE ────────────────────────────────────────
+# ── VIRTUAL ENVIRONMENTS ──────────────────────────────────────
 .env
 .venv/
 venv/
+env/
+conda-env/
 *.egg-info/
 dist/
 build/
+
+# ── IDE / EDITOR ─────────────────────────────────────────────
 .idea/
 .vscode/
 *.code-workspace
+*.swp
+*.swo
 
-# ── OS ───────────────────────────────────────────────────────
+# ── OS ARTIFACTS ─────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 desktop.ini
+ehthumbs.db
+
+# ── TEMP / SCRATCH ────────────────────────────────────────────
+tmp/
+temp/
+scratch/
+*.tmp
+*.bak
+
+# ============================================================
+#  WHAT IS TRACKED (pushed to GitHub):
+#  ✅ All Python source code (.py)
+#  ✅ All config files (.py, .yaml, .json, .toml)
+#  ✅ All analysis outputs (phase2/outputs/**/*.csv)
+#  ✅ All Markdown reports (.md)
+#  ✅ All plots and images (.png, .jpg, .svg)
+#  ✅ requirements.txt files
+#  ✅ README files
+# ============================================================

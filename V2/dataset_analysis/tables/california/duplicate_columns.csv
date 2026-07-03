@@ -1,0 +1,26 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+FIRE_YEAR,int64,7,0.0,False,False,2017,0.1874,True,False,False,False,0,0,DUPLICATE,REVIEW
+GACC_Fire Use Teams,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+M_WTR,float64,2,0.0039,False,True,0.0,0.9849,True,False,False,False,0,0,NEAR_CONSTANT(98.5%); DUPLICATE,REVIEW
+SM_C,float64,2,0.0039,False,False,0.0,0.6006,True,False,False,False,0,0,DUPLICATE,REVIEW
+SM_PFS,float64,2,0.0039,False,False,0.0,0.6006,True,False,False,False,0,0,DUPLICATE,REVIEW
+WDLI,float64,2,0.0039,False,True,0.0,0.9849,True,False,False,False,0,0,NEAR_CONSTANT(98.5%); DUPLICATE,REVIEW
+WD_ET,float64,2,0.0039,False,False,0.0,0.9482,True,False,False,False,0,0,DUPLICATE,REVIEW
+IA_LMI_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IA_UN_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IA_POV_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAULHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAPLHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IALMILHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IALMIL_87,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IAPLHS_88,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IAULHS_89,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+LHE,float64,2,0.0039,False,False,1.0,0.5665,True,False,False,False,0,0,DUPLICATE,REVIEW
+IALHE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAHSEF,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+M_WTR_EOMI,float64,2,0.0039,False,False,0.0,0.9482,True,False,False,False,0,0,DUPLICATE,REVIEW
+M_WKFC_105,float64,2,0.0039,False,False,1.0,0.5665,True,False,False,False,0,0,DUPLICATE,REVIEW
+tmmn_Percentile,object,1,0.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+tmmx_Percentile,object,1,0.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+geometry,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+source_year,int64,7,0.0,False,False,2017,0.1874,True,False,False,False,0,0,DUPLICATE,REVIEW

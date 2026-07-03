@@ -1,0 +1,310 @@
+Column,Feature Group
+FOD_ID,Fire Identity
+FPA_ID,Other
+SOURCE_SYSTEM_TYPE,Fire Identity
+SOURCE_SYSTEM,Fire Identity
+NWCG_REPORTING_AGENCY,Administrative
+NWCG_REPORTING_UNIT_ID,Administrative
+NWCG_REPORTING_UNIT_NAME,Administrative
+SOURCE_REPORTING_UNIT,Administrative
+SOURCE_REPORTING_UNIT_NAME,Administrative
+LOCAL_FIRE_REPORT_ID,Fire Identity
+LOCAL_INCIDENT_ID,Other
+FIRE_CODE,Fire Identity
+FIRE_NAME,Fire Identity
+ICS_209_PLUS_INCIDENT_JOIN_ID,Fire Identity
+ICS_209_PLUS_COMPLEX_JOIN_ID,Fire Identity
+MTBS_ID,Fire Identity
+MTBS_FIRE_NAME,Fire Identity
+COMPLEX_NAME,Other
+FIRE_YEAR,Fire Identity
+DISCOVERY_DATE,Discovery
+DISCOVERY_DOY,Discovery
+DISCOVERY_TIME,Discovery
+NWCG_CAUSE_CLASSIFICATION,Cause
+NWCG_GENERAL_CAUSE,Cause
+NWCG_CAUSE_AGE_CATEGORY,Cause
+CONT_DATE,Fire Outcome
+CONT_DOY,Fire Outcome
+CONT_TIME,Fire Outcome
+FIRE_SIZE,Fire Outcome
+FIRE_SIZE_CLASS,Fire Outcome
+LATITUDE,Geographic Coordinates
+LONGITUDE,Geographic Coordinates
+OWNER_DESCR,Administrative
+STATE,Administrative
+COUNTY,Administrative
+FIPS_CODE,Administrative
+FIPS_NAME,Administrative
+LatLong_State,Administrative
+LatLong_County,Administrative
+NPL,Other
+Mang_Type,Other
+Mang_Name,Other
+Des_Tp,Other
+GAP_Sts,Other
+GAP_Prity,Other
+EVH,Other
+EVT,Other
+EVH_1km,Other
+EVT_1km,Other
+EVC,Other
+EVC_1km,Other
+NAME,Other
+MOD_NDVI_12m,Vegetation Index
+MOD_EVI_12m,Vegetation Index
+Land_Cover,Land Cover
+Land_Cover_1km,Land Cover
+rpms,Other
+rpms_1km,Other
+Population,Population
+Popo_1km,Population
+GACCAbbrev,Administrative
+GACC_PL,Administrative
+GACC_New fire,Administrative
+GACC_New LF,Administrative
+GACC_Uncont LF,Administrative
+GACC_Type 1 IMTs,Administrative
+GACC_Type 2 IMTs,Administrative
+GACC_NIMO Teams,Administrative
+GACC_Area Command Teams,Administrative
+GACC_Fire Use Teams,Administrative
+GDP,Other
+pr_Normal,Other
+tmmn_Normal,Other
+tmmx_Normal,Other
+rmin_Normal,Other
+rmax_Normal,Other
+sph_Normal,Other
+srad_Normal,Other
+fm100_Normal,Fire Weather Index
+fm1000_Normal,Fire Weather Index
+bi_Normal,Fire Weather Index
+vpd_Normal,Other
+erc_Normal,Fire Weather Index
+DF_PFS,Other
+AF_PFS,Other
+HDF_PFS,Other
+DSF_PFS,Other
+EBF_PFS,Other
+EALR_PFS,Other
+EBLR_PFS,Other
+EPLR_PFS,Other
+HBF_PFS,Other
+LLEF_PFS,Other
+LIF_PFS,Other
+LMI_PFS,Other
+MHVF_PFS,Other
+PM25F_PFS,Other
+HSEF,Other
+P100_PFS,Other
+P200_PFS,Other
+LPF_PFS,Other
+NPL_PFS,Other
+RMP_PFS,Other
+TSDF_PFS,Other
+TPF,Other
+TF_PFS,Other
+UF_PFS,Other
+WF_PFS,Other
+M_WTR,Other
+M_WKFC,Other
+M_CLT,Other
+M_ENY,Other
+M_TRN,Other
+M_HSG,Other
+M_PLN,Other
+M_HLTH,Other
+SM_C,Other
+SM_PFS,Other
+EPLRLI,Other
+EALRLI,Other
+EBLRLI,Other
+PM25LI,Other
+EBLI,Other
+DPMLI,Other
+TPLI,Other
+LPMHVLI,Other
+HBLI,Other
+RMPLI,Other
+SFLI,Other
+HWLI,Other
+WDLI,Other
+DLI,Other
+ALI,Other
+HDLI,Other
+LLELI,Other
+LILHSE,Other
+PLHSE,Other
+LMILHSE,Other
+ULHSE,Other
+EPL_ET,Other
+EAL_ET,Other
+EBL_ET,Other
+EB_ET,Other
+PM25_ET,Other
+DS_ET,Other
+TP_ET,Other
+LPP_ET,Other
+HB_ET,Other
+RMP_ET,Other
+NPL_ET,Other
+TSDF_ET,Other
+WD_ET,Other
+DB_ET,Other
+A_ET,Other
+HD_ET,Other
+LLE_ET,Other
+UN_ET,Other
+LISO_ET,Other
+POV_ET,Other
+LMI_ET,Other
+IA_LMI_ET,Other
+IA_UN_ET,Other
+IA_POV_ET,Other
+TC,Other
+CC,Other
+IAULHSE,Other
+IAPLHSE,Other
+IALMILHSE,Other
+IALMIL_87,Other
+IAPLHS_88,Other
+IAULHS_89,Other
+LHE,Other
+IALHE,Other
+IAHSEF,Other
+CA,Other
+NCA,Other
+CA_LT20,Other
+M_CLT_EOMI,Other
+M_ENY_EOMI,Other
+M_TRN_EOMI,Other
+M_HSG_EOMI,Other
+M_PLN_EOMI,Other
+M_WTR_EOMI,Other
+M_HLTH_102,Other
+M_WKFC_103,Other
+FPL200S,Other
+M_WKFC_105,Other
+M_EBSI,Other
+UI_EXP,Other
+THRHLD,Fire Weather Index
+No_FireStation_1.0km,Fire Stations
+No_FireStation_5.0km,Fire Stations
+No_FireStation_10.0km,Fire Stations
+No_FireStation_20.0km,Fire Stations
+FRG_1km,Other
+FRG,Other
+TRI_1km,Terrain
+TRI,Terrain
+Aspect_1km,Terrain
+Elevation_1km,Terrain
+Elevation,Terrain
+Slope_1km,Terrain
+Aspect,Terrain
+Slope,Terrain
+GHM,Other
+TPI,Terrain
+TPI_1km,Terrain
+TRACT,Other
+RPL_THEMES,Other
+RPL_THEME1,Other
+EPL_POV,Other
+EPL_UNEMP,Other
+EPL_PCI,Other
+EPL_NOHSDP,Other
+RPL_THEME2,Other
+EPL_AGE65,Other
+EPL_AGE17,Other
+EPL_DISABL,Other
+EPL_SNGPNT,Other
+RPL_THEME3,Other
+EPL_MINRTY,Other
+EPL_LIMENG,Other
+RPL_THEME4,Other
+EPL_MUNIT,Administrative
+EPL_MOBILE,Fire Weather Index
+EPL_CROWD,Other
+EPL_NOVEH,Other
+EPL_GROUPQ,Other
+road_county_dis,Administrative
+road_interstate_dis,Administrative
+road_common_name_dis,Infrastructure
+road_other_dis,Infrastructure
+road_state_dis,Administrative
+road_US_dis,Infrastructure
+Ecoregion_US_L4CODE,Ecoregion
+Ecoregion_US_L3CODE,Ecoregion
+Ecoregion_NA_L3CODE,Ecoregion
+Ecoregion_NA_L2CODE,Ecoregion
+Ecoregion_NA_L1CODE,Ecoregion
+SDI,Other
+Annual_etr,Other
+Annual_precipitation,Other
+Annual_tempreture,Other
+Aridity_index,Climate / EJ
+Evacuation,Other
+pr,Other
+tmmn,Other
+tmmx,Other
+rmin,Other
+rmax,Other
+sph,Other
+vs,Other
+th,Other
+srad,Other
+etr,Other
+fm100,Fire Weather Index
+fm1000,Fire Weather Index
+bi,Fire Weather Index
+vpd,Other
+erc,Fire Weather Index
+pr_5D_mean,Other
+tmmn_5D_mean,Other
+tmmx_5D_mean,Other
+rmin_5D_mean,Other
+rmax_5D_mean,Other
+sph_5D_mean,Other
+vs_5D_mean,Other
+th_5D_mean,Other
+srad_5D_mean,Other
+etr_5D_mean,Other
+fm100_5D_mean,Fire Weather Index
+fm1000_5D_mean,Fire Weather Index
+bi_5D_mean,Fire Weather Index
+vpd_5D_mean,Other
+erc_5D_mean,Fire Weather Index
+pr_5D_min,Other
+pr_5D_max,Other
+tmmn_5D_max,Other
+tmmx_5D_max,Other
+rmin_5D_min,Other
+rmax_5D_min,Other
+sph_5D_min,Other
+vs_5D_max,Other
+th_5D_max,Other
+srad_5D_max,Other
+etr_5D_max,Other
+fm100_5D_min,Fire Weather Index
+fm1000_5D_min,Fire Weather Index
+bi_5D_max,Fire Weather Index
+vpd_5D_max,Other
+erc_5D_max,Fire Weather Index
+tmmn_Percentile,Fire Weather Index
+tmmx_Percentile,Fire Weather Index
+sph_Percentile,Fire Weather Index
+vs_Percentile,Fire Weather Index
+fm100_Percentile,Fire Weather Index
+bi_Percentile,Fire Weather Index
+vpd_Percentile,Fire Weather Index
+erc_Percentile,Fire Weather Index
+NDVI-1day,Vegetation Index
+NDVI_min,Vegetation Index
+NDVI_max,Vegetation Index
+NDVI_mean,Vegetation Index
+CheatGrass,Vegetation Types
+ExoticAnnualGrass,Fire Weather Index
+Medusahead,Vegetation Types
+PoaSecunda,Vegetation Types
+geometry,Geographic Coordinates
+source_year,Other

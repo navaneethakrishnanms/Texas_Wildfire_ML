@@ -1,0 +1,9 @@
+Group Size,Duplicate Columns
+2,"FIRE_YEAR, source_year"
+6,"GACC_Fire Use Teams, IALMIL_87, IAPLHS_88, IAULHS_89, IAHSEF, geometry"
+2,"M_WTR, WDLI"
+2,"SM_C, SM_PFS"
+2,"WD_ET, M_WTR_EOMI"
+7,"IA_LMI_ET, IA_UN_ET, IA_POV_ET, IAULHSE, IAPLHSE, IALMILHSE, IALHE"
+2,"LHE, M_WKFC_105"
+2,"tmmn_Percentile, tmmx_Percentile"

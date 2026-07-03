@@ -1,0 +1,20 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+NWCG_CAUSE_AGE_CATEGORY,object,1,97.6848,True,False,,0.0,False,False,False,False,0,0,CONSTANT,REVIEW
+STATE,object,1,0.0,True,False,,0.0,False,False,False,False,0,0,CONSTANT,REVIEW
+GACC_Fire Use Teams,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IA_LMI_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IA_UN_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IA_POV_ET,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAULHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAPLHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IALMILHSE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IALMIL_87,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IAPLHS_88,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IAULHS_89,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+IALHE,float64,1,0.0039,True,False,,0.0,True,True,False,False,0,0,CONSTANT; DUPLICATE; ZERO_VARIANCE,REVIEW
+IAHSEF,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+UI_EXP,object,1,0.0039,True,False,,0.0,False,False,False,False,0,0,CONSTANT,REVIEW
+THRHLD,float64,1,0.0039,True,False,,0.0,False,True,False,False,0,0,CONSTANT; ZERO_VARIANCE,REVIEW
+tmmn_Percentile,object,1,0.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+tmmx_Percentile,object,1,0.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW
+geometry,float64,0,100.0,True,False,,0.0,True,False,False,False,0,0,CONSTANT; DUPLICATE,REVIEW

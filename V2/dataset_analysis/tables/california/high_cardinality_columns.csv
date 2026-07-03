@@ -1,0 +1,26 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+FPA_ID,object,50881,0.0,False,False,2014CAIRS24109077,0.0,False,False,False,True,0,0,HIGH_CARD(50881),REVIEW
+NWCG_REPORTING_UNIT_ID,object,122,0.0,False,False,USCACDF,0.4244,False,False,False,True,0,0,HIGH_CARD(122),REVIEW
+NWCG_REPORTING_UNIT_NAME,object,122,0.0,False,False,California Department of Forestry & Fire Protection,0.4244,False,False,False,True,0,0,HIGH_CARD(122),REVIEW
+SOURCE_REPORTING_UNIT,object,142,0.0,False,False,CACDF,0.5804,False,False,False,True,0,0,HIGH_CARD(142),REVIEW
+SOURCE_REPORTING_UNIT_NAME,object,160,0.0,False,False,"Headquarters, California Department of Forestry & Fire Protection",0.5804,False,False,False,True,0,0,HIGH_CARD(160),REVIEW
+LOCAL_INCIDENT_ID,object,40010,8.9542,False,False,11,0.0023,False,False,False,True,0,0,HIGH_CARD(40010),REVIEW
+FIRE_CODE,object,7703,76.6966,False,False,EK1W,0.0364,False,False,False,True,0,0,HIGH_CARD(7703),REVIEW
+FIRE_NAME,object,17712,30.3532,False,False,CREEK,0.0042,False,False,False,True,0,0,HIGH_CARD(17712),REVIEW
+ICS_209_PLUS_INCIDENT_JOIN_ID,object,602,98.5279,False,False,2017_7238965_MODOC JULY COMPLEX,0.0708,False,False,False,True,0,0,HIGH_CARD(602),REVIEW
+MTBS_ID,object,289,99.4045,False,False,CA4064212358620150731,0.0132,False,False,False,True,0,0,HIGH_CARD(289),REVIEW
+MTBS_FIRE_NAME,object,266,99.4045,False,False,ROUTE COMPLEX,0.0132,False,False,False,True,0,0,HIGH_CARD(266),REVIEW
+DISCOVERY_DATE,object,2320,0.0,False,False,2015-07-30,0.0031,False,False,False,True,0,0,HIGH_CARD(2320),REVIEW
+CONT_DATE,object,2142,40.2351,False,False,7/4/2015 0:00:00,0.0031,False,False,False,True,0,0,HIGH_CARD(2142),REVIEW
+COUNTY,object,177,9.0387,False,False,RIVERSIDE,0.1032,False,False,False,True,0,0,HIGH_CARD(177),REVIEW
+EVH_1km,object,40186,0.0,False,False,303(56%) / 118(20%) / 308(8%),0.0006,False,False,False,True,0,0,HIGH_CARD(40186),REVIEW
+EVT_1km,object,41996,0.0,False,False,7299(29%) / 7914(23%) / 7297(22%),0.0006,False,False,False,True,0,0,HIGH_CARD(41996),REVIEW
+EVC_1km,object,39786,0.0,False,False,355(51%) / 135(8%) / 325(8%),0.0006,False,False,False,True,0,0,HIGH_CARD(39786),REVIEW
+MOD_NDVI_12m,object,38769,0.0,False,False,'0.77' '0.76' '0.73' '0.73' '0.73' '0.62' '0.71' '0.7' '0.74' '0.74' '0.73' '0.74',0.0005,False,False,False,True,0,0,HIGH_CARD(38769),REVIEW
+MOD_EVI_12m,object,38758,0.0,False,False,'0.49' '0.41' '0.39' '0.3' '0.3' '0.28' '0.29' '0.37' '0.39' '0.44' '0.45' '0.44',0.0005,False,False,False,True,0,0,HIGH_CARD(38758),REVIEW
+Land_Cover_1km,object,39929,0.0,False,False,52(100%),0.0011,False,False,False,True,0,0,HIGH_CARD(39929),REVIEW
+FRG_1km,object,24591,0.0,False,False,4(100%) / 3(0%),0.006,False,False,False,True,0,0,HIGH_CARD(24591),REVIEW
+Ecoregion_US_L4CODE,object,173,0.1336,False,False,85k,0.0705,False,False,False,True,0,0,HIGH_CARD(173),REVIEW
+NDVI_min,object,38690,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0019,False,False,False,True,0,0,HIGH_CARD(38690),REVIEW
+NDVI_max,object,38691,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0019,False,False,False,True,0,0,HIGH_CARD(38691),REVIEW
+NDVI_mean,object,38691,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0019,False,False,False,True,0,0,HIGH_CARD(38691),REVIEW

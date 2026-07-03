@@ -1,0 +1,310 @@
+Column,Availability_Label,Update_Frequency,Reason,Usable_In_Model
+FOD_ID,ADMIN_ONLY,Event-based,Administrative identifier — not a predictive feature,False
+FPA_ID,ADMIN_ONLY,Event-based,Administrative identifier — not a predictive feature,False
+SOURCE_SYSTEM_TYPE,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+SOURCE_SYSTEM,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+NWCG_REPORTING_AGENCY,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+NWCG_REPORTING_UNIT_ID,ADMIN_ONLY,Event-based,Administrative identifier — not a predictive feature,False
+NWCG_REPORTING_UNIT_NAME,ADMIN_ONLY,Event-based,Administrative identifier — not a predictive feature,False
+SOURCE_REPORTING_UNIT,ADMIN_ONLY,UNKNOWN,Administrative identifier — not a predictive feature,False
+SOURCE_REPORTING_UNIT_NAME,ADMIN_ONLY,UNKNOWN,Administrative identifier — not a predictive feature,False
+LOCAL_FIRE_REPORT_ID,ADMIN_ONLY,Monthly,Administrative identifier — not a predictive feature,False
+LOCAL_INCIDENT_ID,ADMIN_ONLY,Monthly,Administrative identifier — not a predictive feature,False
+FIRE_CODE,ADMIN_ONLY,UNKNOWN,Administrative identifier — not a predictive feature,False
+FIRE_NAME,ADMIN_ONLY,UNKNOWN,Administrative identifier — not a predictive feature,False
+ICS_209_PLUS_INCIDENT_JOIN_ID,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+ICS_209_PLUS_COMPLEX_JOIN_ID,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+MTBS_ID,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+MTBS_FIRE_NAME,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+COMPLEX_NAME,ADMIN_ONLY,Event-based,Administrative identifier — not a predictive feature,False
+FIRE_YEAR,PRE_FIRE_DYNAMIC,Event-based,Dynamic — available pre-fire from live API,True
+DISCOVERY_DATE,SAME_DAY_RISK,Event-based,Available same day but temporal contamination risk,False
+DISCOVERY_DOY,SAME_DAY_RISK,Event-based,Available same day but temporal contamination risk,False
+DISCOVERY_TIME,SAME_DAY_RISK,Event-based,Available same day but temporal contamination risk,False
+NWCG_CAUSE_CLASSIFICATION,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+NWCG_GENERAL_CAUSE,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+NWCG_CAUSE_AGE_CATEGORY,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+CONT_DATE,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+CONT_DOY,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+CONT_TIME,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+FIRE_SIZE,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+FIRE_SIZE_CLASS,POST_FIRE_ONLY,Event-based,Confirmed leakage — only exists after fire event,False
+LATITUDE,PRE_FIRE_STATIC,Event-based,Static data — always available,True
+LONGITUDE,PRE_FIRE_STATIC,Event-based,Static data — always available,True
+OWNER_DESCR,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+STATE,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+COUNTY,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+FIPS_CODE,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+FIPS_NAME,ADMIN_ONLY,Event-based,Administrative identifier — not a predictive feature,False
+LatLong_State,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+LatLong_County,PRE_FIRE_DYNAMIC,Event-based,Default — assumed available pre-fire (verify),True
+NPL,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+Mang_Type,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+Mang_Name,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+Des_Tp,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+GAP_Sts,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+GAP_Prity,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EVH,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+EVT,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+EVH_1km,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+EVT_1km,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+EVC,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+EVC_1km,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+NAME,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+MOD_NDVI_12m,PRE_FIRE_DYNAMIC,16-day,Based on source update frequency: 16-day,True
+MOD_EVI_12m,PRE_FIRE_DYNAMIC,16-day,Based on source update frequency: 16-day,True
+Land_Cover,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+Land_Cover_1km,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+rpms,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+rpms_1km,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+Population,PRE_FIRE_STATIC,5 years,Static data — always available,True
+Popo_1km,PRE_FIRE_STATIC,5 years,Static data — always available,True
+GACCAbbrev,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_PL,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_New fire,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_New LF,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_Uncont LF,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_Type 1 IMTs,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_Type 2 IMTs,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_NIMO Teams,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_Area Command Teams,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+GACC_Fire Use Teams,POST_FIRE,Static,Only known after fire discovery/containment,False
+GDP,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+pr_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmn_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmx_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmin_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmax_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+sph_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+srad_Normal,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+fm100_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+fm1000_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+bi_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+vpd_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+erc_Normal,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+DF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+AF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+HDF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+DSF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EBF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EALR_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EBLR_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EPLR_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+HBF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+LLEF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+LIF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+LMI_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+MHVF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+PM25F_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+HSEF,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+P100_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+P200_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LPF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+NPL_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+RMP_PFS,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+TSDF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+TPF,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+TF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+UF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+WF_PFS,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+M_WTR,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+M_WKFC,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+M_CLT,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_ENY,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_TRN,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_HSG,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_PLN,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_HLTH,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+SM_C,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+SM_PFS,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+EPLRLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EALRLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EBLRLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+PM25LI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EBLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+DPMLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+TPLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LPMHVLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+HBLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+RMPLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+SFLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+HWLI,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+WDLI,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+DLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+ALI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+HDLI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LLELI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LILHSE,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+PLHSE,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LMILHSE,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+ULHSE,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EPL_ET,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EAL_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EBL_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+EB_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+PM25_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+DS_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+TP_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LPP_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+HB_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+RMP_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+NPL_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+TSDF_ET,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+WD_ET,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+DB_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+A_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+HD_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LLE_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+UN_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LISO_ET,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+POV_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+LMI_ET,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+IA_LMI_ET,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IA_UN_ET,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IA_POV_ET,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+TC,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+CC,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+IAULHSE,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IAPLHSE,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IALMILHSE,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IALMIL_87,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IAPLHS_88,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IAULHS_89,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+LHE,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+IALHE,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+IAHSEF,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+CA,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+NCA,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+CA_LT20,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+M_CLT_EOMI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_ENY_EOMI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_TRN_EOMI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_HSG_EOMI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_PLN_EOMI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_WTR_EOMI,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+M_HLTH_102,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_WKFC_103,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+FPL200S,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+M_WKFC_105,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+M_EBSI,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+UI_EXP,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+THRHLD,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+No_FireStation_1.0km,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+No_FireStation_5.0km,PRE_FIRE_STATIC,Annual,Static data — always available,True
+No_FireStation_10.0km,PRE_FIRE_STATIC,Annual,Static data — always available,True
+No_FireStation_20.0km,PRE_FIRE_STATIC,Annual,Static data — always available,True
+FRG_1km,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+FRG,PRE_FIRE_STATIC,~2 years,Based on source update frequency: ~2 years,True
+TRI_1km,PRE_FIRE_STATIC,Static,Static data — always available,True
+TRI,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+Aspect_1km,PRE_FIRE_STATIC,Static,Static data — always available,True
+Elevation_1km,PRE_FIRE_STATIC,Static,Static data — always available,True
+Elevation,PRE_FIRE_STATIC,Static,Static data — always available,True
+Slope_1km,PRE_FIRE_STATIC,Static,Static data — always available,True
+Aspect,PRE_FIRE_STATIC,Static,Static data — always available,True
+Slope,PRE_FIRE_STATIC,Static,Static data — always available,True
+GHM,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+TPI,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+TPI_1km,PRE_FIRE_STATIC,Static,Static data — always available,True
+TRACT,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+RPL_THEMES,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+RPL_THEME1,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_POV,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_UNEMP,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_PCI,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_NOHSDP,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+RPL_THEME2,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_AGE65,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_AGE17,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_DISABL,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_SNGPNT,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+RPL_THEME3,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_MINRTY,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_LIMENG,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+RPL_THEME4,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_MUNIT,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_MOBILE,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_CROWD,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_NOVEH,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+EPL_GROUPQ,PRE_FIRE_STATIC,5 years,Based on source update frequency: 5 years,True
+road_county_dis,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+road_interstate_dis,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+road_common_name_dis,PRE_FIRE_STATIC,Annual,Static data — always available,True
+road_other_dis,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+road_state_dis,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+road_US_dis,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+Ecoregion_US_L4CODE,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+Ecoregion_US_L3CODE,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+Ecoregion_NA_L3CODE,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+Ecoregion_NA_L2CODE,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+Ecoregion_NA_L1CODE,PRE_FIRE_STATIC,Static,Based on source update frequency: Static,True
+SDI,EXCLUDE,UNKNOWN,Corrupted values (numerical overflow) — cannot use,False
+Annual_etr,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+Annual_precipitation,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+Annual_tempreture,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+Aridity_index,PRE_FIRE_DYNAMIC,Monthly,Based on source update frequency: Monthly,True
+Evacuation,POST_FIRE,Event-based,Only known after fire discovery/containment,False
+pr,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+tmmn,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmx,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmin,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmax,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+sph,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+vs,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+th,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+srad,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+etr,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+fm100,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+fm1000,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+bi,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+vpd,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+erc,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+pr_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmn_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmx_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmin_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmax_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+sph_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+vs_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+th_5D_mean,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+srad_5D_mean,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+etr_5D_mean,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+fm100_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+fm1000_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+bi_5D_mean,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+vpd_5D_mean,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+erc_5D_mean,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+pr_5D_min,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+pr_5D_max,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmn_5D_max,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmx_5D_max,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmin_5D_min,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+rmax_5D_min,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+sph_5D_min,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+vs_5D_max,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+th_5D_max,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+srad_5D_max,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+etr_5D_max,PRE_FIRE_DYNAMIC,UNKNOWN,Default — assumed available pre-fire (verify),True
+fm100_5D_min,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+fm1000_5D_min,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+bi_5D_max,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+vpd_5D_max,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+erc_5D_max,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+tmmn_Percentile,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+tmmx_Percentile,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+sph_Percentile,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+vs_Percentile,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+fm100_Percentile,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+bi_Percentile,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+vpd_Percentile,PRE_FIRE_DYNAMIC,Daily,Based on source update frequency: Daily,True
+erc_Percentile,PRE_FIRE_DYNAMIC,Daily,Dynamic — available pre-fire from live API,True
+NDVI-1day,PRE_FIRE_DYNAMIC,16-day,Based on source update frequency: 16-day,True
+NDVI_min,PRE_FIRE_DYNAMIC,16-day,Based on source update frequency: 16-day,True
+NDVI_max,PRE_FIRE_DYNAMIC,16-day,Based on source update frequency: 16-day,True
+NDVI_mean,PRE_FIRE_DYNAMIC,16-day,Based on source update frequency: 16-day,True
+CheatGrass,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+ExoticAnnualGrass,PRE_FIRE_STATIC,Annual,Static data — always available,True
+Medusahead,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+PoaSecunda,PRE_FIRE_STATIC,Annual,Based on source update frequency: Annual,True
+geometry,EXCLUDE,UNKNOWN,Format artifact — never a real data column,False
+source_year,EXCLUDE,UNKNOWN,Format artifact — never a real data column,False

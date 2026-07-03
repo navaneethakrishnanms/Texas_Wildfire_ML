@@ -1,0 +1,23 @@
+Column,Data Type,Unique Values,Missing %,Is Constant,Is Near Constant,Dominant Value,Dominant Fraction,Is Duplicate Column,Zero Variance,All Zeros,High Cardinality,Infinite Value Count,Unexpected Negative Count,Quality Flags,Quality Score
+FPA_ID,object,51033,0.0,False,False,SFO-2014TXTXS1873,0.0,False,False,False,True,0,0,HIGH_CARD(51033),REVIEW
+LOCAL_INCIDENT_ID,object,50072,1.3031,False,False,03,0.0002,False,False,False,True,0,0,HIGH_CARD(50072),REVIEW
+FIRE_CODE,object,614,98.4912,False,False,D1CZ,0.1351,False,False,False,True,0,0,HIGH_CARD(614),REVIEW
+FIRE_NAME,object,37488,0.143,False,False,GRASS FIRE,0.069,False,False,False,True,0,0,HIGH_CARD(37488),REVIEW
+ICS_209_PLUS_INCIDENT_JOIN_ID,object,442,99.1241,False,False,2018_9058300_ARCHER CITY COMPLEX,0.0134,False,False,False,True,0,0,HIGH_CARD(442),REVIEW
+MTBS_ID,object,159,99.6826,False,False,TX3546810163520161230,0.0185,False,False,False,True,0,0,HIGH_CARD(159),REVIEW
+MTBS_FIRE_NAME,object,157,99.6826,False,False,136-2,0.0185,False,False,False,True,0,0,HIGH_CARD(157),REVIEW
+DISCOVERY_DATE,object,2345,0.0,False,False,2017-01-30,0.0029,False,False,False,True,0,0,HIGH_CARD(2345),REVIEW
+CONT_DATE,object,1430,89.9105,False,False,2/8/2016 0:00:00,0.0072,False,False,False,True,0,0,HIGH_CARD(1430),REVIEW
+COUNTY,object,288,0.5114,False,False,Upshur,0.0283,False,False,False,True,0,0,HIGH_CARD(288),REVIEW
+FIPS_NAME,object,251,0.5114,False,False,Upshur County,0.0283,False,False,False,True,0,0,HIGH_CARD(251),REVIEW
+LatLong_County,object,261,0.0294,False,False,Upshur,0.0282,False,False,False,True,0,0,HIGH_CARD(261),REVIEW
+EVH_1km,object,44470,0.0,False,False,304(35%) / 305(13%) / 303(9%),0.0007,False,False,False,True,0,0,HIGH_CARD(44470),REVIEW
+EVT_1km,object,47130,0.0,False,False,7997(53%) / 7519(35%) / 9823(4%),0.0007,False,False,False,True,0,0,HIGH_CARD(47130),REVIEW
+EVC_1km,object,41117,0.0,False,False,355(10%) / 162(4%) / 161(3%),0.0007,False,False,False,True,0,0,HIGH_CARD(41117),REVIEW
+MOD_NDVI_12m,object,41236,0.0,False,False,'0.36' '0.46' '0.34' '0.39' '0.38' '0.42' '0.43' '0.45' '0.46' '0.46' '0.46' '0.41',0.0003,False,False,False,True,0,0,HIGH_CARD(41236),REVIEW
+MOD_EVI_12m,object,41236,0.0,False,False,'0.21' '0.31' '0.19' '0.24' '0.23' '0.28' '0.29' '0.32' '0.33' '0.33' '0.32' '0.26',0.0003,False,False,False,True,0,0,HIGH_CARD(41236),REVIEW
+Land_Cover_1km,object,46587,0.0,False,False,52(100%),0.0009,False,False,False,True,0,0,HIGH_CARD(46587),REVIEW
+FRG_1km,object,11435,0.0,False,False,2(100%),0.0637,False,False,False,True,0,0,HIGH_CARD(11435),REVIEW
+NDVI_min,object,41160,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0004,False,False,False,True,0,0,HIGH_CARD(41160),REVIEW
+NDVI_max,object,41218,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0004,False,False,False,True,0,0,HIGH_CARD(41218),REVIEW
+NDVI_mean,object,41218,0.0,False,False,'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan' 'nan',0.0004,False,False,False,True,0,0,HIGH_CARD(41218),REVIEW

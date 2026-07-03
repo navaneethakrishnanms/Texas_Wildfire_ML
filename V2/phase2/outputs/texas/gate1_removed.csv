@@ -1,0 +1,28 @@
+Column,Gate,Reason
+FOD_ID,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+FPA_ID,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+NWCG_REPORTING_UNIT_ID,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+NWCG_REPORTING_UNIT_NAME,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+SOURCE_REPORTING_UNIT,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+SOURCE_REPORTING_UNIT_NAME,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+LOCAL_FIRE_REPORT_ID,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+LOCAL_INCIDENT_ID,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+FIRE_CODE,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+FIRE_NAME,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+ICS_209_PLUS_INCIDENT_JOIN_ID,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+ICS_209_PLUS_COMPLEX_JOIN_ID,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+MTBS_ID,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+MTBS_FIRE_NAME,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+COMPLEX_NAME,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+DISCOVERY_DATE,Gate1,SAME_DAY_RISK — temporal contamination risk
+DISCOVERY_DOY,Gate1,SAME_DAY_RISK — temporal contamination risk
+DISCOVERY_TIME,Gate1,SAME_DAY_RISK — temporal contamination risk
+CONT_DATE,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+CONT_DOY,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+CONT_TIME,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+FIRE_SIZE,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+FIRE_SIZE_CLASS,Gate1,POST_FIRE_ONLY — only exists after fire event (leakage)
+FIPS_NAME,Gate1,"ADMIN_ONLY — administrative identifier, not predictive"
+SDI,Gate1,"EXCLUDE — artifact, corrupted, or zero-variance"
+geometry,Gate1,"EXCLUDE — artifact, corrupted, or zero-variance"
+source_year,Gate1,"EXCLUDE — artifact, corrupted, or zero-variance"

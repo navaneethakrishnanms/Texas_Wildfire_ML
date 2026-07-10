@@ -4,6 +4,13 @@
 #  Ignore:  Raw datasets, processed parquets, large binaries
 # ============================================================
 
+# ── OS ARTIFACTS ─────────────────────────────────────────────
+nul
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
 # ── RAW FPA-FOD SOURCE DATA (150–190 MB each) ────────────────
 V2/data/*_FPA_FOD_cons.csv
 V2/data/*.xlsx
@@ -16,9 +23,9 @@ V2/data/processed/**/*.csv
 V2/data/raw/**/*.parquet
 V2/data/raw/**/*.csv
 
-# ── PHASE 2 DOWNLOADED DATA (GridMET, MODIS, LANDFIRE etc.) ──
-# Raw downloaded rasters and NetCDF files
-V2/phase2/data/
+# ── PHASE 2 DOWNLOADED RAW DATA (GridMET, MODIS, LANDFIRE etc.) ──
+V2/data/gridmet/
+V2/data/rasters/
 **/*.nc
 **/*.nc4
 **/*.hdf
@@ -46,6 +53,7 @@ V2/phase2/outputs/**/*.feather
 **/*.cpg
 **/*.sbn
 **/*.sbx
+**/*.zip
 
 # ── MODEL WEIGHTS (large binary files) ───────────────────────
 **/*.pkl
@@ -90,12 +98,6 @@ build/
 *.code-workspace
 *.swp
 *.swo
-
-# ── OS ARTIFACTS ─────────────────────────────────────────────
-.DS_Store
-Thumbs.db
-desktop.ini
-ehthumbs.db
 
 # ── TEMP / SCRATCH ────────────────────────────────────────────
 tmp/

@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://python.org)
 [![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange.svg)](https://xgboost.readthedocs.io)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Phase-2%20In%20Progress-yellow.svg)]()
+[![Status](https://img.shields.io/badge/Phase-2F%20Extracting-yellow.svg)]()
 
 ---
 
@@ -15,7 +15,7 @@ IgnitionNet answers one specific operational question:
 
 > **Given current landscape and weather conditions, which hexagonal cells in Texas (or California) are most likely to have a wildfire discovered in the next 6 hours?**
 
-The model outputs a **ranked risk map** of ~1.17 million H3 hexagonal cells, updated every 6 hours, that fire managers can use to **pre-position suppression resources before a fire starts**.
+The model outputs a **ranked risk map** of hexagonal H3 cells, updated every 6 hours, that fire managers can use to **pre-position suppression resources before a fire starts**.
 
 This is an **ignition prediction system** — not a damage model, not a spread model, not a detection system. It operates on publicly available data and runs **before** any fire is confirmed.
 
@@ -32,9 +32,8 @@ INPUT (publicly available, pre-ignition data)
     └── USFS FSim                   → Burn probability (50,000 simulations)
     │
     ▼
-H3 Resolution-8 Hexagonal Grid
-  Texas:      1,172,643 burnable cells (~860 m across each)
-  California: ~1,470,000 burnable cells
+H3 Resolution-7 Hexagonal Grid (Texas)
+  ~134,958 burnable cells (~1.9 km across each, ~5 km²)
     │
     ▼
 XGBoost Binary Classifier
@@ -53,71 +52,76 @@ OUTPUT: Ranked risk score per (H3 cell, 6-hour UTC window)
 | Metric | Value |
 |--------|-------|
 | Study period | 2014–2020 (7 years) |
-| H3 Resolution | 8 (~860 m cell width, ~0.74 km² area) |
-| Total H3 burnable cells (TX) | **1,172,643** |
+| H3 Resolution | 7 (~1.9 km cell width, ~5 km² area) |
 | Fire events used (TX, ≥1 acre) | **34,203** |
-| Non-fire samples (1:10 ratio) | **342,030** |
+| Non-fire samples (1:10 ratio, day-matched) | **342,030** |
 | Total training rows | **376,233** |
 | Positive rate | 9.1% |
 | Temporal windows | 4 per day (00Z, 06Z, 12Z, 18Z UTC) |
-| Train years | 2014–2017 |
-| Validation year | 2018 |
-| Test years | 2019–2020 |
+| Train years | 2014–2017 (~252k rows) |
+| Validation year | 2018 (~61k rows) |
+| Test years | 2019–2020 (~62k rows) |
 
 ---
 
-## 🧪 Feature Set
+## 🧪 Feature Set (~50 columns)
 
-All features are extracted **independently** for each cell at its own centroid location. Non-fire cells do **not** inherit the paired fire cell's weather values.
+All features extracted **independently** at each cell's own centroid. Non-fire cells **never inherit** the paired fire cell's weather values.
 
-### Group 1 — Landscape Features (Static, LANDFIRE / FSim)
+### Group 1 — Daily Fire Weather (gridMET, 4 km, CONUS)
 
-| Feature | Source | Description | Cohen's d |
-|---------|--------|-------------|-----------|
-| `avg_burn_prob` | USFS FSim | Long-run burn probability from 50,000 stochastic simulations | **> 1.5** |
-| `whp` | USFS WHP 2023 | Wildfire Hazard Potential index (0–7000) | > 0.7 |
-| `flep4` | LANDFIRE LF2022 | Flame Length Exceedance Probability at 4 ft | **> 1.0** |
-| `cfl` | LANDFIRE LF2022 | Canopy Fuel Load (Mg ha⁻¹) | > 0.8 |
-
-### Group 2 — Daily Fire Weather (gridMET, 4 km daily CONUS)
-
-| Feature | gridMET Variable | Units | Description |
-|---------|-----------------|-------|-------------|
-| `erc` | `energy_release_component-g` | BTU ft⁻² | Energy Release Component — best single daily predictor |
+| Feature | Source Variable | Units | Description |
+|---------|----------------|-------|-------------|
+| `erc` | `energy_release_component-g` | BTU ft⁻² | Energy Release Component — strongest daily predictor |
 | `fm100` | `dead_fuel_moisture_100hr` | % | 100-hr dead fuel moisture |
-| `fm100_5D_mean` | derived | % | 5-day trailing mean of fm100 |
+| `fm1000` | `dead_fuel_moisture_1000hr` | % | 1000-hr dead fuel moisture |
+| `bi` | `burning_index-g` | index | Burning Index (NFDRS) |
 | `vpd` | `mean_vapor_pressure_deficit` | kPa | Vapor pressure deficit |
 | `vs` | `wind_speed` | m s⁻¹ | Daily wind speed |
-| `bi` | `burning_index` | index | Burning Index (NFDRS) |
-| `rmax` / `rmin` | `max/min_relative_humidity` | % | Relative humidity bounds |
-| `tmmx` / `tmmn` | `air_temperature` | °C | Max/min temperature |
+| `rmax` / `rmin` | `relative_humidity` | % | Max / min relative humidity |
+| `tmmx` / `tmmn` | `air_temperature` | °C | Max / min temperature |
 | `pr` | `precipitation_amount` | mm | Daily precipitation |
 | `sph` | `specific_humidity` | kg kg⁻¹ | Specific humidity |
 
-### Group 3 — Temporal Encodings (Computed from timestamp)
+### Group 2 — 5-Day Trailing Weather Statistics (computed from gridMET)
 
-| Feature | Formula | Purpose |
-|---------|---------|---------|
-| `sin_month`, `cos_month` | sin/cos(2π × month/12) | Cyclic fire season encoding |
-| `sin_hour`, `cos_hour` | sin/cos(2π × hour/24) | Cyclic 6-hour window encoding |
-
-### Group 4 — Location (From H3 cell centroid)
+Each trailing stat covers the **5 calendar days before the event day** (shift-1 convention — event day excluded).
 
 | Feature | Description |
 |---------|-------------|
-| `centroid_lat` | H3-8 cell centroid latitude |
-| `centroid_lon` | H3-8 cell centroid longitude |
+| `erc_5D_mean`, `erc_5D_max` | 5-day trailing mean / max of ERC |
+| `fm100_5D_mean`, `fm100_5D_min` | 5-day trailing mean / min of fuel moisture |
+| `bi_5D_mean`, `bi_5D_max` | 5-day trailing Burning Index |
+| `vpd_5D_mean`, `vpd_5D_max` | 5-day trailing VPD |
+| `vs_5D_mean`, `vs_5D_max` | 5-day trailing wind speed |
+| `rmax_5D_mean`, `rmax_5D_min` | 5-day trailing max relative humidity |
+| `tmmx_5D_mean`, `tmmx_5D_max` | 5-day trailing max temperature |
 
-### Phase 2H — HRRR Sub-daily Features *(Added after daily baseline)*
+> **Implementation note:** Trailing stats are computed by fetching the actual 5 preceding days' NetCDF bands directly from gridMET files — not from the sparse training table. Cross-year boundaries (e.g., Jan 3 using Dec 29–31 prior year) are handled correctly.
+
+### Group 3 — Landscape Features (Static, LANDFIRE / FSim)
 
 | Feature | Source | Description |
 |---------|--------|-------------|
-| `rh_pw` | NOAA HRRR | 2-m relative humidity at fire's 6-hour window |
-| `temp_pw` | NOAA HRRR | 2-m temperature |
-| `wind_speed_pw` | NOAA HRRR | 10-m wind speed (√U²+V²) |
-| `vpd_pw` | NOAA HRRR | VPD derived from TMP + RH |
-| `hpbl_pw` | NOAA HRRR | Planetary boundary layer height |
-| `dswrf_pw` | NOAA HRRR | Downwelling solar radiation |
+| `avg_burn_prob` | USFS FSim | Burn probability from 50,000 stochastic simulations (0–1) |
+| `whp` | USFS WHP 2023 | Wildfire Hazard Potential index (0–7000) |
+| `flep4` | LANDFIRE LF2022 | Flame Length Exceedance Probability at 4 ft |
+| `cfl` | LANDFIRE LF2022 | Canopy Fuel Load (Mg ha⁻¹) |
+
+### Group 4 — Temporal Encodings
+
+| Feature | Formula | Purpose |
+|---------|---------|---------|
+| `sin_month`, `cos_month` | sin/cos(2π × month / 12) | Cyclic fire season encoding |
+| `sin_hour`, `cos_hour` | sin/cos(2π × window_hour / 24) | Cyclic 6-hour UTC window |
+
+### Group 5 — Location + Ecoregion
+
+| Feature | Description |
+|---------|-------------|
+| `centroid_lat`, `centroid_lon` | H3-7 cell centroid (WGS84) |
+| `ecoregion_l2`, `ecoregion_l3` | EPA Level-2/3 ecoregion codes |
+| `fire_count`, `has_fire_history` | Historical fire count in this cell |
 
 ---
 
@@ -126,8 +130,9 @@ All features are extracted **independently** for each cell at its own centroid l
 ```
 Texas_Wildfire_ML/
 │
-├── README.md                              ← This file
+├── README.md
 ├── IGNITIONNET_PROJECT_SCOPE_MASTER.md    ← Full project specification
+├── missing_data_diagnosis.md              ← Data quality analysis report
 ├── .gitignore
 │
 ├── V1/                                    ← Initial exploration (archived)
@@ -147,31 +152,34 @@ Texas_Wildfire_ML/
     │   └── pipeline.py
     │
     ├── maps/                              ← EDA scripts + outputs
-    │   ├── run_all_eda.py
     │   ├── texas/scripts/                 ← 7 EDA scripts
     │   ├── texas/eda_outputs/             ← PNGs, CSVs, HTML map
     │   ├── california/scripts/
     │   └── california/eda_outputs/
     │
     ├── phase2/                            ← Feature Engineering Pipeline
-    │   ├── config/phase2_config.py        ← State configs, paths
+    │   ├── config/phase2_config.py        ← State configs, paths, feature rules
     │   ├── run_phase2a.py                 ← Feature schema finalization
-    │   ├── run_phase2b.py                 ← H3 grid construction
+    │   ├── run_phase2b.py                 ← H3-R7 grid construction
     │   ├── run_phase2c.py                 ← FPA-FOD → H3 fire label mapping
-    │   ├── run_phase2d.py                 ← DAY-MATCHED 1:10 negative sampling
+    │   ├── run_phase2d.py                 ← Day-matched 1:10 negative sampling
     │   ├── run_phase2e_schema_fix.py      ← Schema cleanup + leakage check
     │   ├── run_phase2e_static.py          ← LANDFIRE raster extraction
-    │   ├── run_phase2f_gridmet.py         ← gridMET NetCDF download + extract
-    │   ├── run_phase2g_assemble.py        ← Final dataset assembly
+    │   ├── run_phase2f_gridmet.py         ← gridMET NetCDF download + extraction
+    │   ├── run_phase2g_assemble.py        ← Final training dataset assembly
+    │   ├── diagnose_missing.py            ← Missing value diagnostic
+    │   ├── inspect_datasets.py            ← Parquet inspection + CSV export
+    │   ├── deep_diagnose.py               ← Root-cause data quality analysis
+    │   │
     │   └── outputs/
-    │       ├── texas/                     ← Phase 2 outputs (Texas)
-    │       │   ├── h3_grid_tx.parquet     ← 1,172,643 cell grid
-    │       │   ├── full_training_labels.parquet   ← 376,233 rows
-    │       │   ├── cleaned_feature_schema.csv
-    │       │   ├── schema_fix_report.md
-    │       │   ├── phase2c_summary.csv
-    │       │   └── phase2d_summary.csv
-    │       └── california/
+    │       └── texas/
+    │           ├── h3_grid_tx.parquet           ← H3 cell grid
+    │           ├── full_training_labels.parquet  ← 376,233 label rows
+    │           ├── static_features_tx.parquet    ← LANDFIRE + terrain
+    │           ├── gridmet_features_tx.parquet   ← Daily weather (in progress)
+    │           ├── final_training_dataset_tx.parquet ← Final ML-ready table
+    │           ├── train_tx.parquet / val_tx.parquet / test_tx.parquet
+    │           └── phase2g_summary.md
     │
     ├── data/
     │   ├── *_FPA_FOD_cons.csv             ← Raw source (NOT in git, ~160 MB each)
@@ -183,14 +191,12 @@ Texas_Wildfire_ML/
 
 ---
 
-## 🚀 Quick Start
+## 🚀 How to Run (Step-by-Step)
 
 ### Prerequisites
 
 ```bash
 conda activate torch_gpu
-
-# Phase 2 dependencies
 pip install rasterio pyproj h3 netCDF4 scipy xgboost lightgbm shap
 ```
 
@@ -199,50 +205,42 @@ pip install rasterio pyproj h3 netCDF4 scipy xgboost lightgbm shap
 ```bash
 cd "V2"
 python run_phase1.py
-
-# EDA + Interactive Maps
 python maps/run_all_eda.py --state TX
-python maps/run_all_eda.py --state CA
 ```
 
-### Phase 2 — Feature Engineering Pipeline
+### Phase 2 — Feature Engineering Pipeline (Texas)
 
 ```bash
 cd "V2/phase2"
 
-# Step 1: Build feature schema (runs automatically)
+# 2A — Feature schema (309 → cleaned columns, leakage audit)
 python run_phase2a.py --state TX
 
-# Step 2: Build H3 grid (1,172,643 burnable cells for Texas)
+# 2B — H3-R7 grid (burnable cells only)
 python run_phase2b.py --state TX
 
-# Step 3: Map FPA-FOD fires to H3 cells
+# 2C — Map FPA-FOD fire events → H3 cells
 python run_phase2c.py --state TX
 
-# Step 4: Generate 1:10 DAY-MATCHED negative samples (~34 min)
+# 2D — Day-matched 1:10 negative sampling
 python run_phase2d.py --state TX --ratio 10
 
-# Step 5: Fix schema + leakage check
+# 2E — Schema fix + leakage check
 python run_phase2e_schema_fix.py --state TX
 
-# Step 6: Download LANDFIRE rasters (manual — see Data Downloads section)
-# Then extract static features
+# 2E — Static features (LANDFIRE rasters — download first, see below)
 python run_phase2e_static.py --state TX --download-check
 python run_phase2e_static.py --state TX
 
-# Step 7: Download + extract gridMET (15–20 GB, 1–3 hours)
+# 2F — gridMET weather (15–20 GB download + extraction, ~3–6 hours)
 python run_phase2f_gridmet.py --state TX --download-only
 python run_phase2f_gridmet.py --state TX
 
-# Step 8: Assemble final training dataset
+# 2G — Assemble final training dataset
 python run_phase2g_assemble.py --state TX
-```
 
-### Phase 3 — Model Training *(Coming Soon)*
-
-```bash
-cd "V2/phase2"
-python run_phase3_train.py --state TX
+# Verify data quality
+python diagnose_missing.py
 ```
 
 ---
@@ -251,54 +249,23 @@ python run_phase3_train.py --state TX
 
 ### Automatic (Script Downloads)
 
-| Dataset | Script | Size | URL |
-|---------|--------|------|-----|
-| gridMET daily weather | `run_phase2f_gridmet.py --download-only` | ~15–20 GB | [climatologylab.org](https://www.climatologylab.org/gridmet.html) |
-| NOAA HRRR (Phase 2H) | `herbie` Python library | via AWS S3 | Public, no auth needed |
+| Dataset | Command | Size |
+|---------|---------|------|
+| gridMET daily weather (12 vars × 7 years) | `python run_phase2f_gridmet.py --state TX --download-only` | ~15–20 GB |
 
-### Manual Download Required
+### Manual Download Required (LANDFIRE Rasters)
 
-| File | Save As | Source |
-|------|---------|--------|
-| FSim Burn Probability | `V2/data/rasters/BP_national.tif` | [firelab.org](https://www.firelab.org) |
-| Wildfire Hazard Potential 2023 | `V2/data/rasters/WHP_2023.tif` | [firelab.org](https://www.firelab.org) |
-| LANDFIRE FLEP4 | `V2/data/rasters/FLEP4_national.tif` | [landfire.gov/viewer](https://landfire.gov/viewer/) |
-| LANDFIRE CFL | `V2/data/rasters/CFL_national.tif` | [landfire.gov/viewer](https://landfire.gov/viewer/) |
-| FPA-FOD v6 (Labels) | `V2/data/YYYY_FPA_FOD_cons.csv` | [fs.usda.gov/rds](https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.6) |
+Place all `.tif` files in `V2/data/rasters/`:
 
-> ⚠️ LANDFIRE rasters and raw FPA-FOD CSVs are excluded from this repository due to file size. The pipeline runs with zero-filled LANDFIRE features for baseline testing.
+| File | Save As | Source URL |
+|------|---------|-----------|
+| FSim Burn Probability | `BP_national.tif` | [firelab.org — BP_national.zip](https://www.firelab.org/sites/default/files/images/attachments/BP_national.zip) |
+| Wildfire Hazard Potential 2023 | `WHP_2023.tif` | [firelab.org — WHP_2023.zip](https://www.firelab.org/sites/default/files/images/attachments/WHP_2023.zip) |
+| LANDFIRE FLEP4 | `FLEP4_national.tif` | [landfire.gov/viewer](https://landfire.gov/viewer/) → FLEP4 |
+| LANDFIRE CFL | `CFL_national.tif` | [landfire.gov/viewer](https://landfire.gov/viewer/) → CFL |
+| FPA-FOD v6 Fire Labels | `YYYY_FPA_FOD_cons.csv` | [fs.usda.gov/rds](https://www.fs.usda.gov/rds/archive/catalog/RDS-2013-0009.6) |
 
----
-
-## 📈 Expected Model Performance
-
-| Model Version | Features | AUROC | AUPR | Precision@Top59 |
-|--------------|---------|-------|------|-----------------|
-| Baseline (gridMET only) | 12 gridMET + temporal + location | ~0.87–0.90 | ~0.55–0.63 | ~75% |
-| Full daily model (+ LANDFIRE) | All 16 features | ~0.93–0.96 | ~0.60–0.70 | ~89% |
-| Sub-daily model (+ HRRR) | All 22 features | ~0.95–0.97 | ~0.65–0.74 | ~92% |
-
-> If AUROC exceeds 0.99 → a post-ignition leakage feature is present. Stop and check the feature list.
-
----
-
-## 🗂️ Negative Sampling — DAY-MATCHED Method
-
-FPA-FOD contains **only fire events**. Non-fire samples are generated using the **DAY-MATCHED** method:
-
-For each positive fire event on date D in UTC window W:
-- Draw **10 H3 cells** from the Texas grid that had **no fire** on date D in window W
-- These 10 cells become negative samples (label = 0)
-- Each cell gets weather extracted **at its own location** — not copied from the fire cell
-
-This design forces the model to learn **spatial discrimination** — which cells are high-risk given today's conditions — not just which days are fire-dangerous.
-
-```
-Texas training set:
-  34,203  fire rows    (label=1)  →  9.1%
-  342,030 non-fire rows (label=0) → 90.9%
-  376,233 total rows
-```
+> ⚠️ LANDFIRE rasters are excluded from this repo due to file size. The pipeline runs with zero-filled LANDFIRE features for baseline testing until rasters are downloaded.
 
 ---
 
@@ -306,26 +273,57 @@ Texas training set:
 
 Each day is split into four 6-hour UTC windows:
 
-| Window | Texas Local Time (CDT) | TX Fire Count | % |
-|--------|----------------------|---------------|---|
+| Window | Texas Local (CDT) | TX Fire Count | % |
+|--------|------------------|---------------|---|
 | 00Z | 7pm – 1am | 479 | 1.4% |
 | 06Z | 1am – 7am | 88 | 0.3% |
 | 12Z | 7am – 1pm | 20,300 | 59.3% |
 | 18Z | 1pm – 7pm | 13,336 | 39.0% |
 
-> Texas uses Central Time (CDT/CST). DST-aware UTC conversion is applied using `pytz.timezone('America/Chicago')` per county FIPS. El Paso area uses Mountain Time.
+> Texas uses Central Time (CDT/CST). DST-aware UTC conversion applied per county FIPS (`pytz.timezone('America/Chicago')`). El Paso uses Mountain Time.
 
 ---
 
-## 🔬 Train / Validation / Test Split
+## 🗂️ Negative Sampling — DAY-MATCHED Method
 
-**Always chronological — never random.** Random splitting leaks future fire locations into training data.
+FPA-FOD contains **only fire events**. Non-fire samples use the **DAY-MATCHED** method:
 
-| Split | Years | Rows | Role |
-|-------|-------|------|------|
-| Train | 2014–2017 | ~246,150 | Model learning |
-| Validation | 2018 | ~61,181 | Early stopping |
-| Test | 2019–2020 | ~68,902 | Final evaluation only |
+For each positive fire event on date D in UTC window W:
+- Draw **10 H3 cells** from the Texas grid that had **no fire** on date D in window W
+- Weather extracted at **each cell's own centroid** — never copied from the fire cell
+
+This forces the model to learn **spatial discrimination** — which cells are risky given today's conditions — not just which days are fire-dangerous.
+
+```
+Texas training set:
+   34,203  fire rows    (label=1)  →  9.1%
+  342,030  non-fire rows (label=0) → 90.9%
+  376,233  total rows
+```
+
+---
+
+## 🔄 Train / Val / Test Split
+
+**Always chronological — never random.** Random splitting leaks future fire locations.
+
+| Split | Years | ~Rows |
+|-------|-------|-------|
+| Train | 2014–2017 | 252,000 |
+| Validation | 2018 | 61,000 |
+| Test | 2019–2020 | 62,000 |
+
+---
+
+## 📈 Expected Model Performance
+
+| Model Version | Key Features | AUROC | AUPR |
+|--------------|-------------|-------|------|
+| Baseline (gridMET only, no LANDFIRE) | 12 weather + 5D stats + temporal | ~0.87–0.90 | ~0.55–0.63 |
+| Full daily model (+ LANDFIRE rasters) | All 50 features | ~0.93–0.96 | ~0.60–0.70 |
+| Sub-daily model (+ HRRR 6-hourly) | All features + atmospheric | ~0.95–0.97 | ~0.65–0.74 |
+
+> If AUROC > 0.99 → a post-ignition leakage feature is present. Check the feature list immediately.
 
 ---
 
@@ -334,18 +332,32 @@ Each day is split into four 6-hour UTC windows:
 | Phase | Description | Status |
 |-------|-------------|--------|
 | **Phase 1** | Data preprocessing, EDA, interactive maps (TX + CA) | ✅ Complete |
-| **Phase 2A** | Feature schema finalization (309 → 235 columns) | ✅ Complete |
-| **Phase 2B** | H3 Resolution-8 grid construction (1.17M cells, TX) | ✅ Complete |
+| **Phase 2A** | Feature schema finalization (309 → cleaned columns) | ✅ Complete |
+| **Phase 2B** | H3-R7 grid construction (Texas burnable cells) | ✅ Complete |
 | **Phase 2C** | FPA-FOD fire label mapping to H3 cells | ✅ Complete |
-| **Phase 2D** | DAY-MATCHED 1:10 negative sampling (376,233 rows) | ✅ Complete |
-| **Phase 2E** | LANDFIRE static feature extraction | ⏳ Pending rasters |
-| **Phase 2F** | gridMET daily weather extraction | 🔄 Downloading |
+| **Phase 2D** | Day-matched 1:10 negative sampling (376,233 rows) | ✅ Complete |
+| **Phase 2E** | Schema fix + leakage audit + LANDFIRE extraction | ✅ Complete |
+| **Phase 2F** | gridMET daily + 5-day trailing feature extraction | 🔄 Running |
 | **Phase 2G** | Final training dataset assembly | 🔜 Next |
-| **Phase 3** | XGBoost baseline model training + evaluation | 🔜 Next |
-| **Phase 4** | SHAP feature ablation + LOO analysis | ⬜ Planned |
-| **Phase 5** | LANDFIRE model upgrade (AUROC ~0.87 → ~0.96) | ⬜ Planned |
-| **Phase 2H** | HRRR sub-daily extension (6-hourly atmospheric) | ⬜ Planned |
+| **Phase 3** | XGBoost baseline training + evaluation (TX) | 🔜 Next |
+| **Phase 4** | SHAP feature importance + ablation study | ⬜ Planned |
+| **Phase 5** | LANDFIRE upgrade (add rasters when downloaded) | ⬜ Planned |
+| **Phase 2H** | HRRR sub-daily 6-hourly atmospheric features | ⬜ Planned |
 | **Phase 6** | California transfer + cross-state evaluation | ⬜ Planned |
+
+---
+
+## 📋 What Is and Is NOT in This Repository
+
+| Included ✅ | Excluded ❌ |
+|------------|------------|
+| All Python pipeline scripts | Raw FPA-FOD CSV files (~160 MB each) |
+| Config and schema files | gridMET NetCDF files (~15–20 GB total) |
+| Phase 2 Markdown summaries | LANDFIRE GeoTIFF rasters (~5 GB) |
+| Diagnostic and QC scripts | Processed Parquet training datasets |
+| EDA analysis scripts | Full-dataset CSV exports |
+| Negative sampling logic | Model weight files |
+| Data quality reports | Log files |
 
 ---
 
@@ -353,10 +365,10 @@ Each day is split into four 6-hour UTC windows:
 
 ```bibtex
 @misc{fpafod2022,
-  author  = {Short, Karen C.},
-  title   = {Spatial wildfire occurrence data for the United States, 1992-2020 [FPA FOD 20220705]},
-  year    = {2022},
-  doi     = {10.2737/RDS-2013-0009.6},
+  author    = {Short, Karen C.},
+  title     = {Spatial wildfire occurrence data for the United States, 1992-2020 [FPA FOD 20220705]},
+  year      = {2022},
+  doi       = {10.2737/RDS-2013-0009.6},
   publisher = {USDA Forest Service, Rocky Mountain Research Station}
 }
 
@@ -369,10 +381,17 @@ Each day is split into four 6-hour UTC windows:
 }
 
 @misc{landfire2022,
-  title   = {LANDFIRE 2022 (LF2022)},
-  author  = {{LANDFIRE}},
-  year    = {2022},
-  url     = {https://www.landfire.gov}
+  title  = {LANDFIRE 2022 (LF2022)},
+  author = {{LANDFIRE}},
+  year   = {2022},
+  url    = {https://www.landfire.gov}
+}
+
+@misc{ulm2019,
+  title  = {H3: Uber's Hexagonal Hierarchical Spatial Index},
+  author = {Uber Technologies},
+  year   = {2019},
+  url    = {https://h3geo.org}
 }
 ```
 
@@ -400,19 +419,6 @@ dependencies:
   - lightgbm
   - shap
 ```
-
----
-
-## 📋 What Is and Is NOT in This Repository
-
-| Included ✅ | Excluded ❌ |
-|------------|------------|
-| All Python pipeline scripts | Raw FPA-FOD CSV files (~160 MB each) |
-| Config and schema files | gridMET NetCDF files (~15–20 GB total) |
-| Phase 2 output CSVs and reports | LANDFIRE GeoTIFF rasters (~5 GB) |
-| Phase 2 Markdown summaries | Processed Parquet training datasets |
-| EDA scripts and analysis | Model weight files |
-| Interactive map scripts | Log files |
 
 ---
 

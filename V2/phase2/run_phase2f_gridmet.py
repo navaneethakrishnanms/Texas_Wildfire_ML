@@ -91,6 +91,23 @@ GRIDMET_VARS = {
     "sph":   "sph",
 }
 
+# gridMET internal NetCDF variable name (inside the .nc file)
+# These differ from the filename abbreviations used above
+NC_VAR_NAME = {
+    "erc":    "energy_release_component-g",
+    "fm100":  "dead_fuel_moisture_100hr",
+    "fm1000": "dead_fuel_moisture_1000hr",
+    "bi":     "burning_index-g",
+    "vpd":    "mean_vapor_pressure_deficit",
+    "vs":     "wind_speed",
+    "rmax":   "relative_humidity",   # rmax file contains max RH
+    "rmin":   "relative_humidity",   # rmin file contains min RH
+    "tmmx":   "air_temperature",
+    "tmmn":   "air_temperature",
+    "pr":     "precipitation_amount",
+    "sph":    "specific_humidity",
+}
+
 GRIDMET_BASE = "https://www.northwestknowledge.net/metdata/data"
 YEARS = list(range(2014, 2021))  # 2014–2020
 
@@ -186,11 +203,22 @@ class GridMETExtractor:
             pts = np.column_stack([lats, lons])
             _, idxs = self._tree.query(pts, k=1)
 
+            # Resolve internal NC variable name (may differ from file abbreviation)
+            nc_name = NC_VAR_NAME.get(var, var)
+
+            # Fallback: if mapped name not found, try the short name
+            if nc_name not in ds.variables:
+                # Try to find any variable that isn't a dimension
+                dims = set(ds.dimensions.keys())
+                data_vars = [v for v in ds.variables if v not in dims]
+                nc_name = data_vars[0] if data_vars else var
+                logger.debug(f"NC name fallback for '{var}' → '{nc_name}'")
+
             # Read band for this date (2D array: lat × lon)
-            data = ds.variables[var][time_idx, :, :].ravel()
+            data = ds.variables[nc_name][time_idx, :, :].ravel()
 
             # Apply scale_factor and add_offset if present (NetCDF conventions)
-            var_obj = ds.variables[var]
+            var_obj = ds.variables[nc_name]
             if hasattr(var_obj, "scale_factor"):
                 data = data * var_obj.scale_factor
             if hasattr(var_obj, "add_offset"):

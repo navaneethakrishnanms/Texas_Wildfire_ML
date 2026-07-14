@@ -204,6 +204,8 @@ class GridMETExtractor:
 
         FIX 1: _FillValue masked BEFORE scale_factor.
         FIX 4: values > 9000 clamped to NaN (belt-and-suspenders).
+        FIX 5: set_auto_maskandscale(False) — prevents netCDF4 from auto-applying
+                scale_factor + add_offset on read. Our code applies them once manually.
         """
         try:
             ds      = self._open_dataset(var)
@@ -213,6 +215,9 @@ class GridMETExtractor:
 
             nc_name = self._resolve_nc_name(ds, var)
             var_obj = ds.variables[nc_name]
+
+            # FIX 5 — disable auto-decode: get raw packed int16 values
+            var_obj.set_auto_maskandscale(False)
             raw     = np.array(var_obj[tidx, :, :], dtype=np.float64).ravel()
 
             # FIX 1 — mask fill value BEFORE scale arithmetic

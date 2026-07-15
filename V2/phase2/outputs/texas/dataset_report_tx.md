@@ -66,13 +66,13 @@
 | Column | Type | Non-null | NaN Count | NaN % | Min | Max | Mean | Description |
 |--------|------|---------|-----------|-------|-----|-----|------|-------------|
 | `erc` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.000 | 111.000 | 43.493 | Energy Release Component [BTU ft⁻²] — top daily predictor |
-| `fm100` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.220 | 2.850 | 1.252 | 100-hr dead fuel moisture [%] |
-| `vpd` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.000 | 0.051 | 0.015 | Vapor pressure deficit [kPa] — from gridMET (not FPA-FOD, no leakage) |
-| `vs` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.030 | 1.870 | 0.427 | Wind speed [m s⁻¹] |
-| `rmax` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 1.100 | 10.000 | 7.875 | Max relative humidity [%] |
-| `rmin` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.100 | 10.000 | 2.827 | Min relative humidity [%] |
-| `tmmx` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | -27.190 | -21.210 | -23.135 | Max temperature [°C] |
-| `pr` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.000 | 62.480 | 0.130 | Precipitation [mm] |
+| `fm100` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 2.200 | 28.500 | 12.521 | 100-hr dead fuel moisture [%] |
+| `vpd` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.000 | 5.090 | 1.454 | Vapor pressure deficit [kPa] — from gridMET (not FPA-FOD, no leakage) |
+| `vs` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.300 | 18.700 | 4.265 | Wind speed [m s⁻¹] |
+| `rmax` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 11.000 | 100.000 | 78.746 | Max relative humidity [%] |
+| `rmin` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 1.000 | 100.000 | 28.268 | Min relative humidity [%] |
+| `tmmx` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | -13.550 | 46.250 | 26.999 | Max temperature [°C] |
+| `pr` | float32 | 351,279 | 24,954 (6.6%) | 6.6% | 0.000 | 624.800 | 1.303 | Precipitation [mm] |
 
 ### 📅 5-Day Trailing Stats (gridMET)  (12 columns)
 
@@ -80,16 +80,16 @@
 |--------|------|---------|-----------|-------|-----|-----|------|-------------|
 | `erc_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.200 | 107.600 | 42.029 | 5-day trailing mean of ERC (days D-5 to D-1) |
 | `erc_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 1.000 | 110.000 | 47.306 | 5-day trailing max of ERC |
-| `fm100_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.274 | 2.726 | 1.296 | 5-day trailing mean of 100-hr fuel moisture |
-| `fm100_5D_min` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.230 | 2.510 | 1.151 | 5-day trailing min of fuel moisture (lower = drier) |
-| `vpd_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.000 | 0.047 | 0.014 | 5-day trailing mean of VPD |
-| `vpd_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.000 | 0.054 | 0.018 | 5-day trailing max of VPD |
-| `vs_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.072 | 1.246 | 0.423 | 5-day trailing mean of wind speed |
-| `vs_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.100 | 1.840 | 0.563 | 5-day trailing max of wind speed |
-| `rmax_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 1.708 | 10.000 | 8.046 | 5-day trailing mean of max relative humidity |
-| `rmax_5D_min` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 1.050 | 10.000 | 6.879 | 5-day trailing min of max relative humidity |
-| `tmmx_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | -26.440 | -21.454 | -23.217 | 5-day trailing mean of max temperature |
-| `tmmx_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | -26.030 | -21.200 | -22.851 | 5-day trailing max of max temperature |
+| `fm100_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 2.740 | 27.260 | 12.956 | 5-day trailing mean of 100-hr fuel moisture |
+| `fm100_5D_min` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 2.300 | 25.100 | 11.511 | 5-day trailing min of fuel moisture (lower = drier) |
+| `vpd_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.000 | 4.684 | 1.375 | 5-day trailing mean of VPD |
+| `vpd_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.000 | 5.440 | 1.783 | 5-day trailing max of VPD |
+| `vs_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 0.720 | 12.460 | 4.227 | 5-day trailing mean of wind speed |
+| `vs_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 1.000 | 18.400 | 5.630 | 5-day trailing max of wind speed |
+| `rmax_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 17.080 | 100.000 | 80.461 | 5-day trailing mean of max relative humidity |
+| `rmax_5D_min` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | 10.500 | 100.000 | 68.786 | 5-day trailing min of max relative humidity |
+| `tmmx_5D_mean` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | -6.050 | 43.810 | 26.181 | 5-day trailing mean of max temperature |
+| `tmmx_5D_max` | float32 | 351,268 | 24,965 (6.6%) | 6.6% | -1.950 | 46.350 | 29.840 | 5-day trailing max of max temperature |
 
 ### ⏱️ Temporal Encodings  (4 columns)
 
@@ -184,13 +184,13 @@
 | Stat | erc | fm100 | vpd | vs | rmax | rmin | tmmx | pr | erc_5D_mean | fm100_5D_mean | vpd_5D_mean | tmmx_5D_mean |
 |------|---|---|---|---|---|---|---|---|---|---|---|---|
 | count | 351279.0 | 351279.0 | 351279.0 | 351279.0 | 351279.0 | 351279.0 | 351279.0 | 351279.0 | 351268.0 | 351268.0 | 351268.0 | 351268.0 |
-| mean | 43.493 | 1.252 | 0.015 | 0.427 | 7.875 | 2.827 | -23.135 | 0.13 | 42.029 | 1.296 | 0.014 | -23.217 |
-| std | 16.521 | 0.37 | 0.008 | 0.152 | 1.751 | 1.511 | 0.854 | 0.606 | 16.016 | 0.362 | 0.007 | 0.864 |
-| min | 0.0 | 0.22 | 0.0 | 0.03 | 1.1 | 0.1 | -27.19 | 0.0 | 0.2 | 0.274 | 0.0 | -26.44 |
-| 25% | 32.0 | 0.98 | 0.009 | 0.32 | 6.72 | 1.73 | -23.72 | 0.0 | 30.4 | 1.03 | 0.008 | -23.892 |
-| 50% | 42.0 | 1.25 | 0.013 | 0.4 | 8.11 | 2.64 | -22.99 | 0.0 | 40.0 | 1.306 | 0.012 | -23.088 |
-| 75% | 53.0 | 1.52 | 0.02 | 0.51 | 9.39 | 3.73 | -22.43 | 0.0 | 51.6 | 1.564 | 0.019 | -22.462 |
-| max | 111.0 | 2.85 | 0.051 | 1.87 | 10.0 | 10.0 | -21.21 | 62.48 | 107.6 | 2.726 | 0.047 | -21.454 |
+| mean | 43.493 | 12.521 | 1.454 | 4.265 | 78.746 | 28.268 | 26.999 | 1.303 | 42.029 | 12.956 | 1.375 | 26.181 |
+| std | 16.521 | 3.701 | 0.786 | 1.516 | 17.511 | 15.109 | 8.542 | 6.056 | 16.016 | 3.621 | 0.734 | 8.639 |
+| min | 0.0 | 2.2 | 0.0 | 0.3 | 11.0 | 1.0 | -13.55 | 0.0 | 0.2 | 2.74 | 0.0 | -6.05 |
+| 25% | 32.0 | 9.8 | 0.87 | 3.2 | 67.2 | 17.3 | 21.15 | 0.0 | 30.4 | 10.3 | 0.8 | 19.43 |
+| 50% | 42.0 | 12.5 | 1.32 | 4.0 | 81.1 | 26.4 | 28.45 | 0.0 | 40.0 | 13.06 | 1.216 | 27.47 |
+| 75% | 53.0 | 15.2 | 1.95 | 5.1 | 93.9 | 37.3 | 34.05 | 0.0 | 51.6 | 15.64 | 1.866 | 33.73 |
+| max | 111.0 | 28.5 | 5.09 | 18.7 | 100.0 | 100.0 | 46.25 | 624.8 | 107.6 | 27.26 | 4.684 | 43.81 |
 
 ## 8. Status and Next Steps
 

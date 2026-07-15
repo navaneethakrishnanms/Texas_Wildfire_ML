@@ -39,7 +39,7 @@ A(f"| CSV export | `final_training_dataset_tx.csv` (~97 MB) |")
 A(f"| Study period | 2014–2020 (7 years) |")
 A(f"| State | Texas |")
 A(f"| H3 Resolution | 8 (~0.73 km edge, ~0.74 km² cell area) |")
-A(f"| Grid cells (unique) | ~57,000 unique H3 cells across Texas |")
+A(f"| Grid cells (unique) | {df['h3_cell'].nunique():,} unique H3 cells across Texas |")
 A(f"| Temporal windows | 4 per day (0h, 6h, 12h, 18h UTC) |")
 A("")
 

@@ -38,7 +38,12 @@ V2/data/gridmet/
 **/*.h5
 
 # ── RASTER / GIS FILES ───────────────────────────────────────
-V2/data/rasters/
+# Note: PLACE_RASTERS_HERE.txt inside V2/data/rasters/ is kept (tracked as a guide)
+V2/data/rasters/*.tif
+V2/data/rasters/*.tiff
+V2/data/rasters/*.geotiff
+V2/data/rasters/*.img
+V2/data/rasters/*.zip
 **/*.tif
 **/*.tiff
 **/*.geotiff
@@ -72,9 +77,16 @@ V2/phase2/outputs/**/sample_1000_*.csv
 V2/phase2/outputs/**/gridmet_features_*.csv
 V2/phase2/outputs/**/static_features_*.csv
 
-# csv_exports folder — large full-dataset exports
+# csv_exports folder — large full-dataset exports and sample dumps
 V2/phase2/outputs/**/csv_exports/final_dataset_ALL.csv
 V2/phase2/outputs/**/csv_exports/fire_all.csv
+V2/phase2/outputs/**/csv_exports/final_dataset_sample_*.csv
+V2/phase2/outputs/**/csv_exports/full_labels_sample_*.csv
+V2/phase2/outputs/**/csv_exports/nonfire_sample_*.csv
+
+# Phase 3 risk-map outputs (maps/ folder — large prediction CSVs + HTML)
+V2/phase2/outputs/**/maps/*.csv
+V2/phase2/outputs/**/maps/*.html
 
 # ── KEEP small schema/report CSVs (human-readable, < 1MB) ────
 !V2/phase2/outputs/**/gate1_removed.csv

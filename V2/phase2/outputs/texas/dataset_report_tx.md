@@ -1,6 +1,6 @@
 # Final Training Dataset Report — Texas (CORRECTED v2)
 
-*Generated: 2026-07-15 10:16*
+*Generated: 2026-07-15 10:55*
 
 ---
 
@@ -14,8 +14,8 @@
 | CSV export | `final_training_dataset_tx.csv` (~97 MB) |
 | Study period | 2014–2020 (7 years) |
 | State | Texas |
-| H3 Resolution | 7 (~1.9 km cell width) |
-| Grid cells (unique) | ~57,000 unique H3 cells across Texas |
+| H3 Resolution | 8 (~0.73 km edge, ~0.74 km² cell area) |
+| Grid cells (unique) | 317,142 unique H3 cells across Texas |
 | Temporal windows | 4 per day (0h, 6h, 12h, 18h UTC) |
 
 ## 2. Data Sources & Lineage
@@ -57,7 +57,7 @@ This dataset was built by joining 4 sources together on `(h3_cell, date_utc)`:
 
 | Column | Type | Non-null | NaN Count | NaN % | Min | Max | Mean | Description |
 |--------|------|---------|-----------|-------|-----|-----|------|-------------|
-| `h3_cell` | object | 376,233 | 0 ✔ | 0.0% | — | — | — | H3 hexagonal cell ID (resolution-7) — unique cell identifier |
+| `h3_cell` | object | 376,233 | 0 ✔ | 0.0% | — | — | — | H3 hexagonal cell ID (resolution-8, ~860m diameter) — unique cell identifier |
 | `date_utc` | object | 376,233 | 0 ✔ | 0.0% | — | — | — | UTC date of the 6-hour window (YYYY-MM-DD) |
 | `window_hour` | int64 | 376,233 | 0 ✔ | 0.0% | 0.000 | 18.000 | 14.156 | UTC hour of window start: 0, 6, 12, or 18 |
 | `window_6h_utc` | datetime64[ns] | 376,233 | 0 ✔ | 0.0% | — | — | — | Full UTC timestamp (date + hour combined) |
@@ -209,7 +209,7 @@ These columns were extracted but removed before final assembly:
 | `fm1000` | `fm100` | 1000-hr and 100-hr moisture are correlated — keep 100-hr |
 | `sph` | `vpd`, `rmax`, `rmin` | Specific humidity overlaps with VPD and RH — drop |
 | `ecoregion_l2`, `ecoregion_l3` | `centroid_lat`, `centroid_lon` | Geography already captured by coordinates |
-| `h3_resolution` | — | Constant value (always 7) — zero information |
+| `h3_resolution` | — | Constant value (always 8) — zero information |
 | `state_x`, `state_y` | — | Duplicate/constant columns — zero information |
 
 ## 8. Weather Feature Statistics (Corrected Values)
@@ -253,7 +253,7 @@ These columns were extracted but removed before final assembly:
 | California pipeline | 🔜 After TX baseline | Repeat Phases 2D–3 for CA |
 
 ---
-*Report generated: 2026-07-15 10:16 from `final_training_dataset_tx.parquet`*
+*Report generated: 2026-07-15 10:55 from `final_training_dataset_tx.parquet`*
 
 **To re-export as CSV:**
 ```

@@ -79,6 +79,7 @@ from config.phase2_config import STATE_CONFIG, LOGS_DIR, V2_ROOT
 logger = logging.getLogger(__name__)
 
 # ── Raster file locations ──────────────────────────────────────────────────────
+# ── Raster file locations ──────────────────────────────────────────────────────
 RASTER_DIR = V2_ROOT / "data" / "rasters"
 
 REQUIRED_RASTERS = {
@@ -107,6 +108,7 @@ REQUIRED_RASTERS = {
         "description": "LANDFIRE Canopy Fuel Load (Mg/ha)",
     },
 }
+
 
 
 # ── Raster extraction ──────────────────────────────────────────────────────────

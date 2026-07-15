@@ -1,0 +1,12 @@
+Place your 4 LANDFIRE raster .tif files here.
+
+Expected filenames (any of these will be auto-detected):
+  avg_burn_prob : BP_national.tif  OR  BP_CONUS.tif
+  whp           : WHP_2023.tif     OR  WHP_CONUS.tif  OR  whp2015_cnt.tif  OR  whp2023_cnt.tif
+  flep4         : FLEP4_national.tif  OR  FLEP4_CONUS.tif  OR  LC20_FLEP4_220.tif  OR  LC22_FLEP4_220.tif
+  cfl           : CFL_national.tif    OR  CFL_CONUS.tif    OR  LC20_CFL_220.tif    OR  LC22_CFL_220.tif
+
+After placing files here, run:
+  python V2/phase2/run_phase2e_static.py --state TX
+  python V2/phase2/run_phase2g_assemble.py --state TX
+  python V2/phase2/run_phase3_train.py --state TX

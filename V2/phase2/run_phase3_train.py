@@ -67,8 +67,9 @@ FEATURE_COLS = [
     "whp",              # Wildfire Hazard Potential  [0–7000]
     "flep4",            # Flame Length Exceedance Prob ≥4ft  [0–1]
     "cfl",              # Canopy Fuel Load  [Mg ha⁻¹]
-    "fire_count",       # Historical fire count in H3 cell
-    "has_fire_history", # Binary: cell ever burned before
+    # REMOVED: fire_count, has_fire_history — LEAKAGE per scope doc
+    # fire_count is computed from full 2014-2020 data (including test years)
+    # and trivially separates fire/non-fire by construction (scope doc line 391)
     "burnable",         # Binary: non-burnable mask
 
     # ── gridMET daily weather ──────────────────────────────────────────────────
@@ -107,8 +108,7 @@ FEATURE_COLS = [
 ]
 
 # Non-critical static cols — fill NaN with 0 (no landscape = low/unknown risk)
-STATIC_COLS = ["avg_burn_prob", "whp", "flep4", "cfl",
-               "fire_count", "has_fire_history", "burnable"]
+STATIC_COLS = ["avg_burn_prob", "whp", "flep4", "cfl", "burnable"]
 
 
 def load_split(path: Path, split_name: str) -> tuple[pd.DataFrame, np.ndarray]:
@@ -140,7 +140,17 @@ def load_split(path: Path, split_name: str) -> tuple[pd.DataFrame, np.ndarray]:
         if n_nan > 0:
             logger.debug(f"    {col}: {n_nan:,} NaN (XGBoost handles natively)")
 
+    # ── Convert any object columns to numeric ────────────────────────────────
+    # has_fire_history and burnable are stored as object dtype (e.g. "0"/"1")
+    # XGBoost DMatrix requires int/float/bool — convert all object cols here
+    obj_cols = X.select_dtypes(include="object").columns.tolist()
+    if obj_cols:
+        for col in obj_cols:
+            X[col] = pd.to_numeric(X[col], errors="coerce").fillna(0).astype(np.float32)
+            logger.info(f"    {col}: converted object → float32")
+
     return X, y
+
 
 
 def compute_metrics(y_true: np.ndarray, y_prob: np.ndarray,

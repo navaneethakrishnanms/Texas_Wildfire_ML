@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://python.org)
 [![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange.svg)](https://xgboost.readthedocs.io)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Phase-2F%20Extracting-yellow.svg)]()
+[![Status](https://img.shields.io/badge/Phase-3%20Complete-brightgreen.svg)]()
 
 ---
 
@@ -157,7 +157,7 @@ Texas_Wildfire_ML/
     │   ├── california/scripts/
     │   └── california/eda_outputs/
     │
-    ├── phase2/                            ← Feature Engineering Pipeline
+    ├── phase2/                            ← Feature Engineering + Modelling Pipeline
     │   ├── config/phase2_config.py        ← State configs, paths, feature rules
     │   ├── run_phase2a.py                 ← Feature schema finalization
     │   ├── run_phase2b.py                 ← H3-R7 grid construction
@@ -167,19 +167,25 @@ Texas_Wildfire_ML/
     │   ├── run_phase2e_static.py          ← LANDFIRE raster extraction
     │   ├── run_phase2f_gridmet.py         ← gridMET NetCDF download + extraction
     │   ├── run_phase2g_assemble.py        ← Final training dataset assembly
+    │   ├── run_phase3_train.py            ← XGBoost baseline training
+    │   ├── run_phase3_visualize.py        ← AUROC / AUPR / confusion matrix plots
+    │   ├── run_phase3_risk_map.py         ← Per-date ranked risk map generation
+    │   ├── dataset_report.py             ← Dataset statistics report
     │   ├── diagnose_missing.py            ← Missing value diagnostic
     │   ├── inspect_datasets.py            ← Parquet inspection + CSV export
     │   ├── deep_diagnose.py               ← Root-cause data quality analysis
     │   │
     │   └── outputs/
     │       └── texas/
-    │           ├── h3_grid_tx.parquet           ← H3 cell grid
     │           ├── full_training_labels.parquet  ← 376,233 label rows
     │           ├── static_features_tx.parquet    ← LANDFIRE + terrain
-    │           ├── gridmet_features_tx.parquet   ← Daily weather (in progress)
+    │           ├── gridmet_features_tx.parquet   ← Daily weather
     │           ├── final_training_dataset_tx.parquet ← Final ML-ready table
     │           ├── train_tx.parquet / val_tx.parquet / test_tx.parquet
-    │           └── phase2g_summary.md
+    │           ├── models/xgb_baseline_tx_meta.json ← Model metadata (weights excluded)
+    │           ├── figures/                      ← Evaluation plots (PNG)
+    │           ├── phase2g_summary.md            ← Assembly report
+    │           └── phase3_model_report_tx.md     ← Baseline model report ✅
     │
     ├── data/
     │   ├── *_FPA_FOD_cons.csv             ← Raw source (NOT in git, ~160 MB each)
@@ -241,6 +247,21 @@ python run_phase2g_assemble.py --state TX
 
 # Verify data quality
 python diagnose_missing.py
+```
+
+### Phase 3 — Model Training & Evaluation (Texas)
+
+```bash
+cd "V2/phase2"
+
+# 3 — Train XGBoost baseline (produces model weights + evaluation metrics)
+python run_phase3_train.py --state TX
+
+# Visualise results (ROC, PR, confusion matrix, feature importance)
+python run_phase3_visualize.py --state TX
+
+# Generate ranked risk map for a specific date/window
+python run_phase3_risk_map.py --state TX --date 2019-07-04 --window 12Z
 ```
 
 ---
@@ -315,12 +336,29 @@ Texas training set:
 
 ---
 
-## 📈 Expected Model Performance
+## 📈 Phase 3 — Baseline Model Results (Texas, XGBoost)
 
+### Performance Metrics
+
+| Split | Years | Rows | Fire Rows | AUROC | AUPR | F1 | Precision | Recall |
+|-------|-------|------|-----------|-------|------|----|-----------|--------|
+| Train | 2014–2017 | 252,066 | 22,916 | 0.9302 | 0.5723 | 0.5386 | 0.4153 | 0.7659 |
+| Validation | 2018 | 61,181 | 5,561 | 0.8742 | 0.4125 | 0.4316 | 0.3355 | 0.6049 |
+| **Test** | **2019–2020** | **62,986** | **5,726** | **0.8569** | **0.3978** | **0.4082** | **0.3315** | **0.5313** |
+
+> **AUPR baseline (random) = 0.091** (the fire rate). Our model achieves **4.4× better than random** — without any LANDFIRE rasters (all landscape features are placeholder zeros).
+
+### Key Observations
+
+- **Top features**: `burnable` (placeholder validity flag), `centroid_lon/lat` (location), `erc_5D_max` + `vs_5D_max` (trailing fire weather) — all physically sensible
+- **No leakage**: An earlier run with `fire_count` / `has_fire_history` gave AUROC 0.990 — these were removed (see [phase3_model_report_tx.md](V2/phase2/outputs/texas/phase3_model_report_tx.md))
+- **Expected improvement**: Downloading LANDFIRE rasters and re-running Phase 2E → 2G → 3 is expected to push AUROC to **~0.90–0.93**
+
+### Expected Model Performance
 | Model Version | Key Features | AUROC | AUPR |
 |--------------|-------------|-------|------|
-| Baseline (gridMET only, no LANDFIRE) | 12 weather + 5D stats + temporal | ~0.87–0.90 | ~0.55–0.63 |
-| Full daily model (+ LANDFIRE rasters) | All 50 features | ~0.93–0.96 | ~0.60–0.70 |
+| **Baseline — gridMET only (current)** | 12 weather + 5D stats + temporal | **0.857** | **0.398** |
+| Full daily model (+ LANDFIRE rasters) | All 50 features | ~0.90–0.93 | ~0.60–0.70 |
 | Sub-daily model (+ HRRR 6-hourly) | All features + atmospheric | ~0.95–0.97 | ~0.65–0.74 |
 
 > If AUROC > 0.99 → a post-ignition leakage feature is present. Check the feature list immediately.
@@ -337,11 +375,11 @@ Texas training set:
 | **Phase 2C** | FPA-FOD fire label mapping to H3 cells | ✅ Complete |
 | **Phase 2D** | Day-matched 1:10 negative sampling (376,233 rows) | ✅ Complete |
 | **Phase 2E** | Schema fix + leakage audit + LANDFIRE extraction | ✅ Complete |
-| **Phase 2F** | gridMET daily + 5-day trailing feature extraction | 🔄 Running |
-| **Phase 2G** | Final training dataset assembly | 🔜 Next |
-| **Phase 3** | XGBoost baseline training + evaluation (TX) | 🔜 Next |
-| **Phase 4** | SHAP feature importance + ablation study | ⬜ Planned |
-| **Phase 5** | LANDFIRE upgrade (add rasters when downloaded) | ⬜ Planned |
+| **Phase 2F** | gridMET daily + 5-day trailing feature extraction | ✅ Complete |
+| **Phase 2G** | Final training dataset assembly (376,233 rows) | ✅ Complete |
+| **Phase 3** | XGBoost baseline training + evaluation (TX) | ✅ Complete — AUROC 0.857, AUPR 0.398 |
+| **Phase 4** | SHAP feature importance + ablation study | 🔜 Next |
+| **Phase 5** | LANDFIRE upgrade (add rasters when downloaded) | 🔜 Next |
 | **Phase 2H** | HRRR sub-daily 6-hourly atmospheric features | ⬜ Planned |
 | **Phase 6** | California transfer + cross-state evaluation | ⬜ Planned |
 
@@ -353,10 +391,11 @@ Texas training set:
 |------------|------------|
 | All Python pipeline scripts | Raw FPA-FOD CSV files (~160 MB each) |
 | Config and schema files | gridMET NetCDF files (~15–20 GB total) |
-| Phase 2 Markdown summaries | LANDFIRE GeoTIFF rasters (~5 GB) |
+| Phase 2 + 3 Markdown summaries | LANDFIRE GeoTIFF rasters (~5 GB) |
 | Diagnostic and QC scripts | Processed Parquet training datasets |
 | EDA analysis scripts | Full-dataset CSV exports |
-| Negative sampling logic | Model weight files |
+| Evaluation figures (PNG) | Model weight files (.ubj) |
+| Phase 3 model report + metadata | Risk-map prediction CSVs / HTML |
 | Data quality reports | Log files |
 
 ---

@@ -15,7 +15,7 @@ Output columns:
   h3_cell         : H3 cell ID (string)
   centroid_lat    : Cell centroid latitude
   centroid_lon    : Cell centroid longitude
-  h3_resolution   : H3 resolution (7 for TX, 8 for CA)
+  h3_resolution   : H3 resolution (8 for TX, 8 for CA — both use R8 per project scope)
   state           : State abbreviation
   ecoregion_l3    : EPA Level-3 Ecoregion code (nearest-neighbor from fire data)
   ecoregion_l2    : EPA Level-2 Ecoregion code
@@ -287,7 +287,7 @@ def build_h3_grid(
     Parameters
     ----------
     state_key    : 'TX' or 'CA'
-    resolution   : H3 resolution (7 for TX, 8 for CA)
+    resolution   : H3 resolution (8 for TX, 8 for CA — both use R8 per project scope)
     parquet_path : Path to processed fire parquet (from Phase 1)
     output_dir   : Where to save outputs
 

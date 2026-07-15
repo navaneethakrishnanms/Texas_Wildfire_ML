@@ -45,8 +45,8 @@ STATE_CONFIG = {
         "parquet":     TX_PARQUET,
         "tables_dir":  PHASE1_TABLES_TX,
         "output_dir":  OUTPUTS_TX,
-        "h3_level":    7,            # H3-R7 (~1.9 km edge, ~5 km²)
-        "grid_cells_est": 134_958,   # estimated burnable cells
+        "h3_level":    8,            # H3-R8 (~0.73 km edge, ~0.74 km²) — same as CA per scope doc
+        "grid_cells_est": 317_142,   # confirmed from actual dataset (317,142 unique cells)
     },
     "CA": {
         "name":        "California",

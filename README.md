@@ -463,6 +463,3 @@ dependencies:
 
 *Built for wildfire ignition prediction research — Texas and California, 2014–2020.*  
 *Part of the IgnitionNet project using FPA-FOD labels + gridMET weather + LANDFIRE landscape features.*
-#   I n d u s t r y _ A p p r o v a l _ A u t o m a t i o n _ S y s t e m 
- 
- 

@@ -11,7 +11,7 @@
 
 ## 📌 What This Project Does
 
-IgnitionNet answers one specific operational question:
+IgnitionNet answers one specific operational question:  
 
 > **Given current landscape and weather conditions, which hexagonal cells in Texas (or California) are most likely to have a wildfire discovered in the next 6 hours?**
 
@@ -463,5 +463,6 @@ dependencies:
 
 *Built for wildfire ignition prediction research — Texas and California, 2014–2020.*  
 *Part of the IgnitionNet project using FPA-FOD labels + gridMET weather + LANDFIRE landscape features.*
-#   I n d u s t r y _ A p p r o v a l _ A u t o m a t i o n _ S y s t e m  
+#   I n d u s t r y _ A p p r o v a l _ A u t o m a t i o n _ S y s t e m 
+ 
  

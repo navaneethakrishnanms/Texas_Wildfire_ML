@@ -3,7 +3,7 @@ run_phase2b.py
 ---------------
 Phase 2B — H3 Grid Construction Entry Point
 
-Builds the spatial H3 grid for Texas (R7) and California (R8).
+Builds the spatial H3 grid for Texas (R8) and California (R8).
 This grid is the spatial foundation for all downstream phases:
   Phase 2C → Fire=1 cell-days are mapped onto this grid
   Phase 2D → Fire=0 cells are sampled from this grid (DAY-ECO-MATCHED)
@@ -126,7 +126,7 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python run_phase2b.py --state TX     # Texas only (H3-R7)
+  python run_phase2b.py --state TX     # Texas only (H3-R8)
   python run_phase2b.py --state CA     # California only (H3-R8)
   python run_phase2b.py --state ALL    # Both states
 

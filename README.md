@@ -32,8 +32,8 @@ INPUT (publicly available, pre-ignition data)
     └── USFS FSim                   → Burn probability (50,000 simulations)
     │
     ▼
-H3 Resolution-7 Hexagonal Grid (Texas)
-  ~134,958 burnable cells (~1.9 km across each, ~5 km²)
+H3 Resolution-8 Hexagonal Grid (Texas)
+  ~317,142 unique cells (~0.87 km across each, ~0.82 km²)
     │
     ▼
 XGBoost Binary Classifier
@@ -52,7 +52,7 @@ OUTPUT: Ranked risk score per (H3 cell, 6-hour UTC window)
 | Metric | Value |
 |--------|-------|
 | Study period | 2014–2020 (7 years) |
-| H3 Resolution | 7 (~1.9 km cell width, ~5 km² area) |
+| H3 Resolution | 8 (~0.87 km cell width, ~0.82 km² area) |
 | Fire events used (TX, ≥1 acre) | **34,203** |
 | Non-fire samples (1:10 ratio, day-matched) | **342,030** |
 | Total training rows | **376,233** |
@@ -371,7 +371,7 @@ Texas training set:
 |-------|-------------|--------|
 | **Phase 1** | Data preprocessing, EDA, interactive maps (TX + CA) | ✅ Complete |
 | **Phase 2A** | Feature schema finalization (309 → cleaned columns) | ✅ Complete |
-| **Phase 2B** | H3-R7 grid construction (Texas burnable cells) | ✅ Complete |
+| **Phase 2B** | H3-R8 grid construction (317,142 Texas cells) | ✅ Complete |
 | **Phase 2C** | FPA-FOD fire label mapping to H3 cells | ✅ Complete |
 | **Phase 2D** | Day-matched 1:10 negative sampling (376,233 rows) | ✅ Complete |
 | **Phase 2E** | Schema fix + leakage audit + LANDFIRE extraction | ✅ Complete |

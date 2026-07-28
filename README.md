@@ -137,6 +137,20 @@ Texas_Wildfire_ML/
 │
 ├── V1/                                    ← Initial exploration (archived)
 │
+├── TX/                                    ← Texas HRRR pipeline (code only — data/outputs NOT in git)
+│   ├── fetch_hrrr_tx.py                   ← HRRR GRIB2 download + variable extraction
+│   ├── setup_hrrr.py                      ← HRRR fetch environment setup
+│   ├── preprocess_tx.py                   ← Cleaning / train-val-test split
+│   ├── train_tx.py                        ← XGBoost training
+│   ├── tune_tx.py                         ← Hyperparameter tuning
+│   ├── verify_2015.py                     ← HRRR 2015 extraction QC checks
+│   ├── diagnose_hrrr.py / test_hrrr_fix.py / check_resolution.py / inspect_final.py
+│   ├── README.md                          ← Dataset schema + column reference
+│   ├── MODEL_TRAINING_REPORT_TX.md        ← Training results & metrics
+│   ├── meeting_explanation.md / missing_data_diagnosis.md
+│   ├── outputs/texas_landfire/models/*_meta.json  ← Model metadata (weights excluded)
+│   └── data/                              ← HRRR + cleaned parquet datasets (NOT in git)
+│
 └── V2/                                    ← Production pipeline
     ├── run_phase1.py                      ← Phase 1 entry-point
     │
@@ -397,6 +411,8 @@ Texas training set:
 | Evaluation figures (PNG) | Model weight files (.ubj) |
 | Phase 3 model report + metadata | Risk-map prediction CSVs / HTML |
 | Data quality reports | Log files |
+| TX/ pipeline scripts (HRRR fetch, train, tune) | TX/data/ (HRRR GRIB2 extracts, cleaned parquet datasets) |
+| TX/ model metadata (*_meta.json) | TX/outputs/ result CSVs and logs |
 
 ---
 

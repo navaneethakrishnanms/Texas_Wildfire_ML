@@ -59,7 +59,7 @@ import logging
 import sys
 import time
 import warnings
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -166,7 +166,7 @@ def save_checkpoint(date_str: str, window_hour: int):
         f.write(f"{date_str},{window_hour}\n")
 
 
-# ── HRRR extraction for one time ──────────────────────────────────────────────
+# ── HRRR extraction for one timestamp ─────────────────────────────────────────
 def extract_one(
     date_utc: pd.Timestamp,
     window_hour: int,
@@ -189,7 +189,6 @@ def extract_one(
     if date_utc < pd.Timestamp("2014-11-01"):
         return None
 
-    grib_path = None
     try:
         H = Herbie(
             dt_str,
@@ -199,14 +198,6 @@ def extract_one(
             verbose=False,
             priority=["aws"],  # free AWS S3 archive
         )
-
-        # Download GRIB2 ONCE — keep it for all variable extractions
-        # remove_grib=False → don't delete after each xarray() call
-        # We'll delete it manually at the end
-        try:
-            grib_path = H.download()
-        except Exception:
-            grib_path = None   # file might already be cached
 
         # Try each variable individually — skip if not in this HRRR version
         # RH known issue: not available in 2015-2016 HRRR surface files as
@@ -221,7 +212,6 @@ def extract_one(
         lats_ref = lons_ref = None
 
         for search_str, key, _ in HRRR_VARS:
-            # For RH, try fallback search strings
             search_attempts = (
                 RH_FALLBACKS if key == "rh_pw"
                 else [search_str]
@@ -229,6 +219,8 @@ def extract_one(
             success = False
             for attempt in search_attempts:
                 try:
+                    # remove_grib=False: keep the GRIB2 file in cache so
+                    # subsequent variable calls reuse it (no re-download)
                     ds = H.xarray(attempt, remove_grib=False)
                     var_name = list(ds.data_vars)[0]
                     data     = ds[var_name].values.ravel()
@@ -242,27 +234,18 @@ def extract_one(
                 except Exception:
                     continue
             if not success:
-                raw[key] = None   # will be NaN in output
+                raw[key] = None   # NaN in final output
 
-        # Cleanup: delete downloaded GRIB2 + subset files to save disk space
-        # grib_path is the local file path returned by H.download()
+        # Cleanup cached GRIB2 files after extracting all variables
         try:
-            if grib_path is not None:
-                local = Path(str(grib_path))
-                if local.exists():
-                    parent = local.parent
-                    stem   = local.stem
-                    # Delete main GRIB2 file
-                    local.unlink(missing_ok=True)
-                    # Delete all subset files wgrib2 created
-                    for f in parent.glob(f"subset_*__{stem}*"):
-                        f.unlink(missing_ok=True)
-                    for f in parent.glob(f"*{stem}*.grib2"):
-                        f.unlink(missing_ok=True)
+            save_dir = getattr(H, "save_dir", None)
+            if save_dir is not None and Path(str(save_dir)).exists():
+                for f in Path(str(save_dir)).glob("*.grib2"):
+                    f.unlink(missing_ok=True)
         except Exception:
             pass
 
-        # Need at least temperature to proceed (core variable)
+        # Need at least temperature to proceed
         if raw.get("tmp_raw") is None or lats_ref is None:
             log.warning(f"  HRRR FAIL: {dt_str} — temperature not available")
             return None
@@ -330,8 +313,6 @@ def extract_one(
     except Exception as e:
         log.warning(f"  HRRR FAIL: {dt_str} — {type(e).__name__}: {e}")
         return None
-
-
 
 
 # ── Process one year ──────────────────────────────────────────────────────────
@@ -415,8 +396,10 @@ def process_year(
                     f"ETA={remaining/3600:.1f}h"
                 )
     else:
-        # Multi-threaded
-        with ThreadPoolExecutor(max_workers=n_workers) as executor:
+        # Multi-process (ProcessPoolExecutor)
+        # cfgrib/eccodes is NOT thread-safe on Windows — using separate
+        # processes gives each worker its own isolated eccodes instance
+        with ProcessPoolExecutor(max_workers=n_workers) as executor:
             futures = {
                 executor.submit(extract_one, dt, wh, centroids): (dt, wh)
                 for dt, wh in pending
@@ -469,14 +452,27 @@ def merge_and_save(centroids: pd.DataFrame, date_windows: pd.DataFrame):
     then left-join with training data to produce hrrr_tx_all.parquet.
     Rows with no HRRR coverage get hrrr_pw=0 and NaN features.
     """
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+
     log.info("\nMerging per-year HRRR parquets...")
     year_files = sorted(HRRR_DIR.glob("hrrr_tx_????.parquet"))
     if not year_files:
         log.error("No year parquets found. Run extraction first.")
         return
 
-    dfs = [pd.read_parquet(f) for f in year_files]
-    hrrr_df = pd.concat(dfs, ignore_index=True)
+    log.info(f"  Found {len(year_files)} year file(s): {[f.name for f in year_files]}")
+
+    # Read year files with PyArrow (memory-efficient) then concat
+    tables = []
+    for f in year_files:
+        log.info(f"    Reading {f.name} ({f.stat().st_size/1e6:.0f} MB)...")
+        tables.append(pq.read_table(f))
+    hrrr_arrow = pa.concat_tables(tables)
+    del tables  # free memory before converting
+    hrrr_df = hrrr_arrow.to_pandas()
+    del hrrr_arrow
+
     hrrr_df["date_utc"] = pd.to_datetime(hrrr_df["date_utc"]).dt.normalize()
     log.info(f"  Combined HRRR rows: {len(hrrr_df):,}")
 
@@ -593,16 +589,23 @@ def main():
     total_elapsed = time.time() - t_global
     log.info(f"\nExtraction complete in {total_elapsed/3600:.2f} hours")
 
-    # Auto-merge if all years done
-    log.info("\nRunning merge...")
-    merge_and_save(centroids, date_windows)
-
-    log.info("\n" + "=" * 70)
-    log.info("DONE — HRRR features ready")
-    log.info("=" * 70)
-    log.info("Next: run train_tx_hrrr.py to retrain with HRRR features")
-    log.info(f"      Expected TEST AUROC: ~0.93–0.96 (current: 0.8687)")
-    log.info("=" * 70)
+    # Only auto-merge when ALL years were processed (not single-year --year runs)
+    # For single-year runs: run --merge-only manually after all years are done
+    if args.year is None:
+        log.info("\nRunning merge...")
+        merge_and_save(centroids, date_windows)
+        log.info("\n" + "=" * 70)
+        log.info("DONE — HRRR features ready")
+        log.info("=" * 70)
+        log.info("Next: run train_tx_hrrr.py to retrain with HRRR features")
+        log.info(f"      Expected TEST AUROC: ~0.93–0.96 (current: 0.8687)")
+        log.info("=" * 70)
+    else:
+        log.info("\n" + "=" * 70)
+        log.info(f"Year {args.year} extraction complete.")
+        log.info(f"  File: {HRRR_DIR / f'hrrr_tx_{args.year}.parquet'}")
+        log.info("  Run the next year, then --merge-only after all years done.")
+        log.info("=" * 70)
 
 
 if __name__ == "__main__":

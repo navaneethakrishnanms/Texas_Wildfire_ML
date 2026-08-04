@@ -202,10 +202,15 @@ def extract_one(
         # Try each variable individually — skip if not in this HRRR version
         # RH known issue: not available in 2015-2016 HRRR surface files as
         # ':RH:2 m above ground' — try fallback search strings
+        # NOTE: SPFH (specific humidity, kg/kg) was previously listed here as
+        # a fallback and silently written into rh_pw (0-100%) when RH wasn't
+        # found — that's a different physical quantity, ~100x smaller in
+        # magnitude, and corrupted rh_pw/vpd_pw for ~101k rows (2014-2016).
+        # Do NOT add it back. If RH truly isn't in the file, rh_pw/vpd_pw_hrrr
+        # should be NaN for that timestamp, not silently wrong.
         RH_FALLBACKS = [
             ":RH:2 m above ground",    # 2017+ standard
             ":RH:2 m",                  # some older versions
-            ":SPFH:2 m above ground",   # specific humidity (rare fallback)
         ]
 
         raw = {}
@@ -226,6 +231,14 @@ def extract_one(
                     data     = ds[var_name].values.ravel()
                     lats     = ds["latitude"].values.ravel()
                     lons     = ds["longitude"].values.ravel()
+                    # HRRR native grid uses 0-360 longitude convention
+                    # (Texas ~253-266 deg); H3 centroids use -180..180
+                    # (Texas ~-107..-93). Without this conversion, nearest-
+                    # neighbor search collapses every query point onto the
+                    # same wrong grid corner (see fetch_hrrr.log history —
+                    # this caused all pre-fix extractions to return one
+                    # identical value for every H3 cell in the state).
+                    lons = np.where(lons > 180, lons - 360, lons)
                     raw[key] = (lats, lons, data)
                     if lats_ref is None:
                         lats_ref, lons_ref = lats, lons
@@ -589,23 +602,16 @@ def main():
     total_elapsed = time.time() - t_global
     log.info(f"\nExtraction complete in {total_elapsed/3600:.2f} hours")
 
-    # Only auto-merge when ALL years were processed (not single-year --year runs)
-    # For single-year runs: run --merge-only manually after all years are done
-    if args.year is None:
-        log.info("\nRunning merge...")
-        merge_and_save(centroids, date_windows)
-        log.info("\n" + "=" * 70)
-        log.info("DONE — HRRR features ready")
-        log.info("=" * 70)
-        log.info("Next: run train_tx_hrrr.py to retrain with HRRR features")
-        log.info(f"      Expected TEST AUROC: ~0.93–0.96 (current: 0.8687)")
-        log.info("=" * 70)
-    else:
-        log.info("\n" + "=" * 70)
-        log.info(f"Year {args.year} extraction complete.")
-        log.info(f"  File: {HRRR_DIR / f'hrrr_tx_{args.year}.parquet'}")
-        log.info("  Run the next year, then --merge-only after all years done.")
-        log.info("=" * 70)
+    # NOTE: auto-merge intentionally disabled — merge_and_save() loads all
+    # yearly parquets fully into pandas (150+ GB for the full 2014-2020
+    # archive), which can hang/crash an unattended overnight run. Use
+    # merge_hrrr_duckdb.py instead, which streams from disk and only
+    # materializes the ~376k matched training rows.
+    log.info("\n" + "=" * 70)
+    log.info("EXTRACTION COMPLETE" if args.year is None else f"Year {args.year} extraction complete.")
+    log.info("=" * 70)
+    log.info("Next: python merge_hrrr_duckdb.py")
+    log.info("=" * 70)
 
 
 if __name__ == "__main__":

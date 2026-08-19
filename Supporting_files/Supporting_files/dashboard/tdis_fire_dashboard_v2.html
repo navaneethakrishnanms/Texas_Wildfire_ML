@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Texas Wildfire Risk & Ignition — TDIS v2 (zoom-adaptive)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/h3-js@4.1.0/dist/h3-js.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#0d0d12;color:#eee;overflow:hidden}
+#map{width:100vw;height:100vh;background:#0d0d12}
+#panel{position:absolute;top:12px;left:12px;z-index:1000;width:300px;
+  background:rgba(14,14,22,0.94);backdrop-filter:blur(9px);border:1px solid #2b2b40;
+  border-radius:13px;padding:15px 17px;box-shadow:0 8px 34px rgba(0,0,0,.45)}
+#panel h1{font-size:15px;font-weight:750;letter-spacing:-.01em}
+#panel .sub{font-size:10.5px;color:#8a8aa0;margin-top:3px;line-height:1.4}
+.modes{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.mode{padding:10px 12px;border-radius:9px;cursor:pointer;border:1px solid #34344c;
+  background:#17172a;transition:all .15s;display:flex;align-items:center;gap:9px}
+.mode .ic{font-size:16px}
+.mode .mt{font-size:12.5px;font-weight:700;color:#c9c9dd}
+.mode .md{font-size:9px;color:#7a7a95;margin-top:1px;line-height:1.2}
+.mode:hover{border-color:#ff7043}
+.mode.active{background:linear-gradient(135deg,#c0330f,#e8622d);border-color:#ff7043}
+.mode.active .mt,.mode.active .md{color:#fff}
+.mode.primary{padding:13px 12px}
+.mode.primary .mt{font-size:14px}
+.fcast{margin-top:8px;padding:10px 12px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:9px;
+  border:1px solid #4a2a1a;background:#1c1410;transition:all .15s}
+.fcast:hover{border-color:#ff7043}
+.fcast .dot{width:9px;height:9px;border-radius:50%;background:#ff5a2b;box-shadow:0 0 8px #ff5a2b;flex-shrink:0}
+.fcast .ft{font-size:12px;font-weight:700;color:#ffb38a}
+.fcast .fd{font-size:9px;color:#9a7a68;margin-top:1px}
+.fcast.active{background:linear-gradient(135deg,#7a1020,#c0330f);border-color:#ff5a2b}
+.fcast.active .ft,.fcast.active .fd{color:#fff}
+.lbl{font-size:9.5px;font-weight:650;color:#7a7a95;text-transform:uppercase;letter-spacing:.1em;margin:13px 0 7px}
+.seg{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-size:10.5px;padding:4px 9px;border-radius:6px;cursor:pointer;border:1px solid #34344c;
+  background:transparent;color:#9a9ab0;transition:all .14s}
+.chip:hover{border-color:#ff9068;color:#fff}
+.chip.on{background:#e8622d;border-color:#e8622d;color:#fff;font-weight:650}
+.scrub{display:flex;align-items:center;gap:8px;margin-top:2px}
+#play{width:30px;height:30px;flex-shrink:0;border-radius:7px;border:1px solid #34344c;
+  background:transparent;color:#eee;cursor:pointer;font-size:11px}
+#play:hover{border-color:#ff9068}
+#day{flex:1;accent-color:#e8622d}
+.dlbl{font-size:11px;min-width:74px;text-align:right;font-family:ui-monospace,monospace;color:#ffb38a}
+.divider{border:none;border-top:1px solid #26263a;margin:13px 0 11px}
+.stat{display:flex;justify-content:space-between;font-size:11px;padding:2px 0}
+.stat .v{color:#ff7a45;font-weight:700;font-family:ui-monospace,monospace}
+#legend{position:absolute;bottom:22px;right:12px;z-index:1000;background:rgba(14,14,22,0.94);
+  backdrop-filter:blur(9px);border:1px solid #2b2b40;border-radius:11px;padding:12px 14px;min-width:200px;max-width:280px}
+#legend .lbl{margin:0 0 8px}
+.leg{display:flex;align-items:center;gap:8px;font-size:10.5px;color:#c9c9dd;margin-bottom:5px}
+.sw{width:14px;height:14px;border-radius:3px;flex-shrink:0;border:1px solid rgba(255,255,255,.12)}
+.legnote{font-size:9px;color:#6a6a85;margin-top:7px;line-height:1.4}
+#resbadge{position:absolute;top:12px;right:12px;z-index:1000;background:rgba(14,14,22,0.94);
+  border:1px solid #2b2b40;border-radius:9px;padding:7px 12px;font-family:ui-monospace,monospace;font-size:11px;color:#ffb38a}
+#tip{position:fixed;z-index:3000;pointer-events:none;display:none;min-width:200px;
+  background:rgba(8,8,16,0.97);border:1px solid #34344c;border-radius:9px;padding:9px 12px;
+  font-size:11px;line-height:1.55;box-shadow:0 5px 22px rgba(0,0,0,.5)}
+.tt-t{font-weight:700;font-size:11.5px;color:#fff;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #2b2b40}
+.tt-r{display:flex;justify-content:space-between;gap:16px}
+.tt-r .tv{color:#ff7a45;font-weight:700;font-family:ui-monospace,monospace}
+.leaflet-container{background:#0d0d12}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<div id="panel">
+  <h1>Texas Wildfire Risk &amp; Ignition <span style="color:#ff7a45">v2</span></h1>
+  <div class="sub">TDIS · zoom-adaptive H3 (res 4→8) · static hazard/susceptibility at full model resolution; daily weather at res-5</div>
+
+  <div class="modes">
+    <div class="mode primary active" data-mode="wfrisk">
+      <span class="ic">🔥</span><div><div class="mt">Wildfire Risk</div><div class="md">hazard × daily fire-weather — no ML</div></div>
+    </div>
+    <div class="mode" data-mode="ignition">
+      <span class="ic">✦</span><div><div class="mt">Ignition</div><div class="md">will a fire start/be active — ML model</div></div>
+    </div>
+    <div class="mode" data-mode="static">
+      <span class="ic">▦</span><div><div class="mt">Static Hazard (full TX)</div><div class="md">WRAP baseline — no ML, no time</div></div>
+    </div>
+  </div>
+
+  <div class="fcast" id="fcast-toggle">
+    <span class="dot"></span><div><div class="ft">📅 Live Forecast</div>
+    <div class="fd">real HRRR · 24 / 48 h · applies to mode above</div></div>
+  </div>
+  <div id="fcast-horizons" style="display:none">
+    <div class="lbl">Forecast horizon</div>
+    <div class="seg" id="hz-seg"></div>
+  </div>
+
+  <div id="day-ctrl">
+    <div class="lbl">Day <span id="day-hint" style="color:#6a6a85;text-transform:none;letter-spacing:0">2024–26 · scrub or ▶</span></div>
+    <div class="scrub">
+      <button id="play">▶</button>
+      <input type="range" id="day" min="0" max="0" value="0" step="1">
+      <span class="dlbl" id="dlbl">—</span>
+    </div>
+  </div>
+
+  <!-- fire-weather formula picker (the FWI knob) -->
+  <div id="fwi-ctrl">
+    <div class="lbl">Fire-weather formula</div>
+    <div class="seg" id="fwi-seg">
+      <button class="chip on" data-f="fwi" title="TDIS additive composite: 0.30·ERC/100 + 0.30·VPD/5 + 0.40·wind/12">Composite</button>
+      <button class="chip" data-f="fwiN" title="NOAA GSL Hourly Wildfire Potential (James et al. 2025, Eq.3) — gust & soil-moisture driven">NOAA HWP</button>
+      <button class="chip" data-f="fwiT" title="Same HWP form, coefficients fit to Texas VIIRS fire activity">TX HWP</button>
+    </div>
+  </div>
+
+  <!-- 3b: display normalization -->
+  <div id="disp-ctrl">
+    <div class="lbl">Color scale</div>
+    <div class="seg" id="disp-seg">
+      <button class="chip on" data-d="abs" title="Color by the value itself (stretched to the ramp)">Absolute</button>
+      <button class="chip" data-d="pct" title="Color by today's percentile within THIS cell's 2024–26 record — 'is today unusual for here?' Fixes summer saturation of dryness-driven indices.">% of record</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="stat"><span id="s1k">Hexagons</span><span class="v" id="s1v">—</span></div>
+  <div class="stat"><span id="s2k">Mean</span><span class="v" id="s2v">—</span></div>
+  <div class="stat"><span>Top 5%</span><span class="v" id="s3v">—</span></div>
+</div>
+
+<div id="resbadge">H3 res — · cells —</div>
+<div id="legend">
+  <div class="lbl" id="leg-title">Wildfire risk</div>
+  <div id="leg-rows"></div>
+  <div class="legnote" id="leg-note"></div>
+</div>
+<div id="tip"></div>
+
+<script>
+let mode='wfrisk', day=0, playing=false, timer=null, DATES=[], liveForecast=false, hzi=0,
+    fwiVar='fwi', dispMode='abs';
+const MRES = /*__MRES__*/null;        // {"4":{h:[haz,ign]},...,"8":{...}} multi-res statics
+const DATA = /*__DATA__*/null;        // res-5 dynamic dashboard data (fwi/fwiN/fwiT arrays, ign, haz)
+const FORECASTS = /*__FORECASTS__*/[]; // newest 2: 24h + 48h
+function FCAST(){ return FORECASTS[hzi]||null; }
+
+const map=L.map('map',{center:[31.3,-99.4],zoom:6,minZoom:4,maxZoom:15,preferCanvas:true});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+  {attribution:'&copy; OpenStreetMap, CARTO · TDIS wildfire model v2',maxZoom:14,subdomains:'abcd'}).addTo(map);
+const tip=document.getElementById('tip');
+
+// ── res-5 dynamic lookup ──
+const D5={}; (DATA&&DATA.cells||[]).forEach(c=>D5[c.id]=c);
+
+// ── zoom → H3 resolution (h3geo.org-style: keep hexes ~constant px size) ──
+const EDGE_KM={4:22.606,5:8.544,6:3.229,7:1.221,8:0.4614};
+const RESES=[4,5,6,7,8], TARGET_PX=42, MAX_CELLS=6000;   // 42px biases finer: res-8 from ~zoom 12
+function resForView(zoom,lat){
+  const mpp=156543.03392*Math.cos(lat*Math.PI/180)/Math.pow(2,zoom);
+  const targetEdgeKm=(TARGET_PX*mpp)/1000/2;
+  let best=RESES[0],bd=Infinity;
+  for(const r of RESES){const d=Math.abs(EDGE_KM[r]-targetEdgeKm);if(d<bd){bd=d;best=r;}}
+  return best;
+}
+
+// ── colors (same ramp + bands as v1) ──
+const RAMP=[[0,'#2b2d42'],[0.12,'#3a5c6b'],[0.25,'#f4d06f'],[0.4,'#f0a03a'],[0.55,'#e8622d'],[0.72,'#c0330f'],[0.88,'#7a1020']];
+function rgb(h){h=h.slice(1);return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+function colr(v){
+  if(v==null||isNaN(v))return null;
+  if(v<=0.001)return '#20202e';
+  let lo=RAMP[0],hi=RAMP[RAMP.length-1];
+  for(let i=0;i<RAMP.length-1;i++){if(v>=RAMP[i][0]&&v<=RAMP[i+1][0]){lo=RAMP[i];hi=RAMP[i+1];break;}}
+  if(v>=RAMP[RAMP.length-1][0])return RAMP[RAMP.length-1][1];
+  const t=(v-lo[0])/((hi[0]-lo[0])||1),a=rgb(lo[1]),b=rgb(hi[1]);
+  return `rgb(${Math.round(a[0]+(b[0]-a[0])*t)},${Math.round(a[1]+(b[1]-a[1])*t)},${Math.round(a[2]+(b[2]-a[2])*t)})`;
+}
+
+// ── res-5 ancestor of any cell (for the dynamic factor) ──
+const parent5cache={};
+function parent5(h,res){
+  if(res===5)return h;
+  let p=parent5cache[h]; if(p)return p;
+  if(res>5)p=h3.cellToParent(h,5);
+  else{const ll=h3.cellToLatLng(h);p=h3.latLngToCell(ll[0],ll[1],5);}
+  parent5cache[h]=p; return p;
+}
+
+// ── dynamic factor for a res-5 cell (scrubber FWI or live forecast FWI) ──
+function dynFWI(p5){
+  if(liveForecast){const F=FCAST(); if(!F)return null; const FW=F[fwiVar]||F.fwi; return (FW&&FW[p5]!=null)?FW[p5]:null;}
+  const c=D5[p5]; if(!c)return null;
+  const arr=c[fwiVar]||c.fwi;
+  return (arr&&arr[day]!=null)?arr[day]:null;
+}
+// percentile of today's FWI within the cell's full record (3b) — lazily cached
+const pctCache={};
+function dynPct(p5){
+  const c=D5[p5]; if(!c)return null;
+  const arr=c[fwiVar]||c.fwi; if(!arr||arr[day]==null)return null;
+  const key=p5+'|'+fwiVar;
+  let sorted=pctCache[key];
+  if(!sorted){sorted=arr.filter(x=>x!=null).sort((a,b)=>a-b);pctCache[key]=sorted;}
+  const v=arr[day];
+  let lo=0,hi=sorted.length;
+  while(lo<hi){const m=(lo+hi)>>1; if(sorted[m]<v)lo=m+1; else hi=m;}
+  return sorted.length>1?lo/(sorted.length-1):null;
+}
+
+// ── value + color for one cell at the current view state ──
+// returns {raw, cv} — raw = interpretable number, cv = 0-1 color-scale value
+function cellValue(h,res){
+  const sr=(MRES[String(res)]||{})[h];                     // [haz, ign] or undefined
+  const p5=parent5(h,res);
+  if(mode==='static'){
+    if(!sr)return null;
+    return {raw:sr[0], cv:sr[0]};
+  }
+  if(mode==='ignition'&&liveForecast){                     // live model output (res-5 native)
+    const F=FCAST(); if(!F)return null;
+    const v=F.ign&&F.ign[p5]; if(v==null)return null;
+    return {raw:v, cv:Math.min(v/0.6,1)};
+  }
+  const usePct=(dispMode==='pct'&&!liveForecast);
+  const f=usePct?dynPct(p5):dynFWI(p5);
+  if(f==null)return null;
+  if(mode==='wfrisk'){
+    if(!sr)return null;
+    const raw=sr[0]*(usePct?1:f);
+    return usePct? {raw:f, cv:sr[0]>0.001?f:0} : {raw:raw, cv:Math.min(raw/0.5,1)};
+  }
+  if(mode==='ignition'){                                   // scrubber heuristic: susceptibility × FWI
+    const ign=sr?sr[1]:null; if(ign==null)return null;
+    const raw=ign*(usePct?1:f);
+    return usePct? {raw:f, cv:f} : {raw:raw, cv:Math.min(raw/0.4,1)};
+  }
+  return null;
+}
+
+// ── render: tessellate the viewport at the zoom-matched resolution ──
+let layer=L.layerGroup().addTo(map), lastKey=null;
+function clampLat(v){return Math.max(24,Math.min(38,v));}
+function draw(force){
+  const z=map.getZoom(), c=map.getCenter(), res=resForView(z,c.lat);
+  const b=map.getBounds().pad(0.15);
+  const s=clampLat(b.getSouth()),n=clampLat(b.getNorth()),w=Math.max(-108,b.getWest()),e=Math.min(-92,b.getEast());
+  const key=[res,s.toFixed(2),w.toFixed(2),n.toFixed(2),e.toFixed(2),mode,day,fwiVar,dispMode,liveForecast,hzi].join('|');
+  if(!force&&key===lastKey)return;
+  lastKey=key;
+  layer.clearLayers();
+  let cells=[];
+  try{cells=h3.polygonToCells([[s,w],[n,w],[n,e],[s,e],[s,w]],res,false);}catch(err){}
+  let truncated=false;
+  if(cells.length>MAX_CELLS){cells=cells.slice(0,MAX_CELLS);truncated=true;}
+  const vals=[];
+  for(const h of cells){
+    const r=cellValue(h,res);
+    let bnd; try{bnd=h3.cellToBoundary(h);}catch(err){continue;}
+    if(r==null){
+      L.polygon(bnd,{fillColor:'#ffffff',fillOpacity:0.02,color:'rgba(255,255,255,0.05)',weight:0.4})
+        .addTo(layer);
+      continue;
+    }
+    vals.push(r.raw);
+    L.polygon(bnd,{fillColor:colr(r.cv),fillOpacity:0.74,color:'rgba(255,255,255,0.07)',weight:0.4})
+      .on('mousemove',ev=>showTip(ev,h,res,r)).on('mouseout',()=>tip.style.display='none')
+      .addTo(layer);
+  }
+  vals.sort((a,b)=>a-b);
+  const nn=vals.filter(x=>isFinite(x));
+  document.getElementById('s1v').textContent=nn.length.toLocaleString();
+  document.getElementById('s2v').textContent=(nn.length?nn.reduce((a,b)=>a+b,0)/nn.length:0).toFixed(3);
+  document.getElementById('s3v').textContent=(nn.length?nn[Math.floor(nn.length*0.95)]:0).toFixed(3);
+  document.getElementById('resbadge').textContent=`H3 res ${res} · cells ${cells.length}${truncated?'+ (capped)':''} · zoom ${z}`;
+}
+
+function showTip(e,h,res,r){
+  const x=e.originalEvent.clientX,y=e.originalEvent.clientY;
+  const sr=(MRES[String(res)]||{})[h]||[null,null];
+  const p5=parent5(h,res), c5=D5[p5];
+  const usePct=(dispMode==='pct'&&!liveForecast&&mode!=='static');
+  const when=liveForecast?((FCAST()?FCAST().target:'')+' (forecast)'):(DATES[day]||'');
+  const vLabel=mode==='static'?'Static hazard':(mode==='wfrisk'?'Wildfire risk':'Ignition');
+  let hh=`<div class="tt-t">H3 res ${res}${res===8?' (full model resolution)':''}</div>`;
+  hh+=`<div class="tt-r"><span>${vLabel}${usePct?' — pctile of record':''} (${when||'static'})</span><span class="tv">${r.raw==null?'—':(usePct?(r.raw*100).toFixed(0)+'%':r.raw.toFixed(3))}</span></div>`;
+  if(sr[0]!=null)hh+=`<div class="tt-r"><span>Static hazard (this hex)</span><span class="tv">${sr[0].toFixed(3)}</span></div>`;
+  if(sr[1]!=null)hh+=`<div class="tt-r"><span>ML susceptibility (this hex)</span><span class="tv">${sr[1].toFixed(3)}</span></div>`;
+  if(mode!=='static'){
+    const f=dynFWI(p5);
+    hh+=`<div class="tt-r"><span>Fire-weather (${fwiVar==='fwiN'?'NOAA HWP':fwiVar==='fwiT'?'TX HWP':'composite'}, res-5)</span><span class="tv">${f==null?'—':f.toFixed(3)}</span></div>`;
+  }
+  if(c5&&c5.eco)hh+=`<div class="tt-r"><span>Ecoregion</span><span class="tv" style="font-size:9px">${c5.eco}</span></div>`;
+  tip.innerHTML=hh;tip.style.display='block';
+  let tx=x+14;if(tx+230>innerWidth)tx=x-230;
+  tip.style.left=tx+'px';tip.style.top=Math.min(y+12,innerHeight-170)+'px';
+}
+
+// ── chrome: legend + control visibility (same disclosure rules as v1) ──
+function refreshChrome(){
+  document.getElementById('day-ctrl').style.display=(mode==='static'||liveForecast)?'none':'block';
+  document.getElementById('fcast-horizons').style.display=(liveForecast&&mode!=='static')?'block':'none';
+  document.getElementById('fwi-ctrl').style.display=(mode==='static'||(mode==='ignition'&&liveForecast))?'none':'block';
+  document.getElementById('disp-ctrl').style.display=(mode==='static'||liveForecast)?'none':'block';
+  const lt=document.getElementById('leg-title'),ln=document.getElementById('leg-note'),lr=document.getElementById('leg-rows');
+  const bands=[['#7a1020','Extreme','≥ .88'],['#c0330f','Very high','.72–.88'],['#e8622d','High','.55–.72'],['#f0a03a','Elevated','.40–.55'],['#f4d06f','Moderate','.25–.40'],['#3a5c6b','Low','< .25']];
+  const kind=mode==='wfrisk'?'Wildfire risk':mode==='ignition'?'Ignition':'Static hazard';
+  const F=FCAST(); const tgt=F?F.target:'forecast', src=F?F.source:'HRRR';
+  const pct=(dispMode==='pct'&&!liveForecast&&mode!=='static');
+  if(mode==='static'){
+    lt.textContent='Static wildfire hazard';
+    ln.textContent='TxWRAP hazard composite — simulation-based, no ML, no time. Zoom in: hexes refine to the model’s true res-8 grid.';
+  } else if(liveForecast){
+    lt.textContent=kind+(mode==='ignition'?' · live model':' · forecast')+' — '+tgt;
+    ln.textContent=mode==='ignition'
+      ? 'LIVE trained ignition model on '+src+' forecast weather. Relative ranking, not a probability. (Formula & % toggles don’t apply.)'
+      : 'LIVE: hazard × '+src+' forecast fire-weather — no ML. Relative ranking, not a probability.';
+  } else {
+    lt.textContent=kind+(mode==='ignition'?' · heuristic':'')+(pct?' · % of record':'')+' (2024–26)';
+    ln.textContent=(mode==='ignition'
+      ? 'HEURISTIC proxy: susceptibility × daily fire-weather — NOT the live model’s output. '
+      : 'Hazard × daily fire-weather — no ML. ')
+      +(pct?'Colored by TODAY’S PERCENTILE within each cell’s own 2024–26 record — “is today unusual for here?” Fixes summer saturation of dryness-driven formulas.'
+            :'Relative ranking, not a probability. Dryness-driven formulas (NOAA/TX HWP) saturate statewide in dry seasons — try “% of record”.');
+  }
+  lr.innerHTML=(pct
+    ? [['#7a1020','Top 12% of record'],['#c0330f','72–88%'],['#e8622d','55–72%'],['#f0a03a','40–55%'],['#f4d06f','25–40%'],['#3a5c6b','Bottom 25%']]
+    : bands.map(b=>[b[0],b[1]+'&nbsp;',b[2]]))
+    .map(b=>`<div class="leg"><div class="sw" style="background:${b[0]}"></div>${b[1]}${b[2]?`<span style="margin-left:auto;color:#7a7a95;font-family:ui-monospace,monospace;font-size:9px">${b[2]}</span>`:''}</div>`).join('');
+}
+
+// ── wire controls ──
+document.querySelectorAll('.mode').forEach(el=>el.onclick=()=>{
+  document.querySelectorAll('.mode').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');mode=el.dataset.mode;
+  stopPlay();refreshChrome();draw(true);});
+document.getElementById('fcast-toggle').onclick=()=>{
+  liveForecast=!liveForecast;
+  document.getElementById('fcast-toggle').classList.toggle('active',liveForecast);
+  stopPlay();refreshChrome();draw(true);};
+document.getElementById('fwi-seg').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  fwiVar=b.dataset.f;
+  document.querySelectorAll('#fwi-seg .chip').forEach(x=>x.classList.toggle('on',x===b));
+  refreshChrome();draw(true);};
+document.getElementById('disp-seg').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  dispMode=b.dataset.d;
+  document.querySelectorAll('#disp-seg .chip').forEach(x=>x.classList.toggle('on',x===b));
+  refreshChrome();draw(true);};
+function buildHorizons(){
+  const seg=document.getElementById('hz-seg');
+  seg.innerHTML=FORECASTS.map((f,i)=>`<button class="chip ${i===hzi?'on':''}" data-i="${i}">${f.lead_h}h → ${f.target}</button>`).join('');
+  seg.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;hzi=+b.dataset.i;
+    seg.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));refreshChrome();draw(true);};
+}
+const dslider=document.getElementById('day');
+dslider.oninput=e=>{day=+e.target.value;document.getElementById('dlbl').textContent=DATES[day]||'';draw(true);};
+function startPlay(){if(!DATES.length)return;playing=true;document.getElementById('play').textContent='❚❚';
+  timer=setInterval(()=>{day=(day+1)%DATES.length;dslider.value=day;
+    document.getElementById('dlbl').textContent=DATES[day];draw(true);},300);}
+function stopPlay(){playing=false;document.getElementById('play').textContent='▶';if(timer)clearInterval(timer);}
+document.getElementById('play').onclick=()=>playing?stopPlay():startPlay();
+map.on('moveend',()=>draw(false));
+
+(function init(){
+  DATES=(DATA&&DATA.dates)||[];
+  dslider.max=Math.max(DATES.length-1,0);
+  day=Math.min(56,Math.max(DATES.length-1,0));   // default 2024-02-26 (Smokehouse day)
+  dslider.value=day;document.getElementById('dlbl').textContent=DATES[day]||'—';
+  buildHorizons();refreshChrome();draw(true);
+})();
+</script>
+</body>
+</html>

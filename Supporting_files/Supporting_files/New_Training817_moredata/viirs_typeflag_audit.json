@@ -1,0 +1,54 @@
+{
+  "product": "VIIRS_SNPP_SP",
+  "windows": 48,
+  "sampled_detections": 53669,
+  "flare_list_size": 531,
+  "direction1": {
+    "flare_cells_seen": 479,
+    "with_5plus_dets": 406,
+    "confirmed_static": 267,
+    "confirm_rate": 0.658,
+    "median_frac_static": 0.8
+  },
+  "direction2": {
+    "missed_flare_candidates": 7,
+    "their_detections": 93,
+    "cells": [
+      {
+        "h3_cell": "88454b966bfffff",
+        "n": 24,
+        "frac_static": 1.0
+      },
+      {
+        "h3_cell": "88488b14b7fffff",
+        "n": 14,
+        "frac_static": 0.57
+      },
+      {
+        "h3_cell": "88446c0045fffff",
+        "n": 12,
+        "frac_static": 0.5
+      },
+      {
+        "h3_cell": "88454b833bfffff",
+        "n": 11,
+        "frac_static": 1.0
+      },
+      {
+        "h3_cell": "8826da2339fffff",
+        "n": 11,
+        "frac_static": 0.55
+      },
+      {
+        "h3_cell": "8848b39115fffff",
+        "n": 11,
+        "frac_static": 0.91
+      },
+      {
+        "h3_cell": "8848893aebfffff",
+        "n": 10,
+        "frac_static": 1.0
+      }
+    ]
+  }
+}

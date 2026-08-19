@@ -1,0 +1,65 @@
+{
+ "tag": "honest_filtered",
+ "features": [
+  "road_dist_km",
+  "ecoregion_id",
+  "elevation_m",
+  "slope_deg",
+  "aspect_deg",
+  "avg_burn_prob",
+  "whp",
+  "flep4",
+  "cfl",
+  "cbd",
+  "cbh",
+  "sin_month",
+  "cos_month",
+  "sin_dow",
+  "cos_dow",
+  "is_weekend",
+  "is_holiday"
+ ],
+ "n_features": 17,
+ "filters": {
+  "flare_frac": 0.03,
+  "n_flare_cells": 531,
+  "last_label": "2026-07-29"
+ },
+ "split": {
+  "train": "2014-2021",
+  "val": "2022",
+  "test": "2023-2026 (clipped to last label)"
+ },
+ "test_pos_rate": 0.2344,
+ "clean_test_comparison": {
+  "OLD model (flare-trained)": {
+   "aucpr": 0.3862,
+   "auroc": 0.6511
+  },
+  "NEW model (flare-filtered)": {
+   "aucpr": 0.4502,
+   "auroc": 0.7112
+  }
+ },
+ "n_trees": 400,
+ "feature_importance": {
+  "ecoregion_id": 0.1358,
+  "elevation_m": 0.1358,
+  "sin_month": 0.1275,
+  "is_weekend": 0.0877,
+  "cos_month": 0.0854,
+  "road_dist_km": 0.0844,
+  "avg_burn_prob": 0.0535,
+  "slope_deg": 0.0447,
+  "whp": 0.0435,
+  "is_holiday": 0.0424,
+  "sin_dow": 0.0395,
+  "cos_dow": 0.0372,
+  "cbd": 0.035,
+  "cbh": 0.0312,
+  "aspect_deg": 0.0163,
+  "flep4": 0.0,
+  "cfl": 0.0
+ },
+ "note": "Honest baseline retrained WITHOUT flare cells (persistence>3%) and WITHOUT phantom post-label-date negatives. Comparison rows are identical for old/new."
+}

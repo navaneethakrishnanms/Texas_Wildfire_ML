@@ -32,6 +32,9 @@ final_training_dataset_tx*.xlsx
 final_training_dataset_tx*.csv
 
 # ── DATA FOLDERS (any depth: TX/data/, V1/data/, V2/data/, ...) ─
+**/data/**/*.parquet
+**/data/**/*.feather
+**/data/**/*.csv
 **/data/*.parquet
 **/data/*.feather
 **/data/*.csv
@@ -116,6 +119,25 @@ V2/phase2/outputs/**/maps/*.html
 # ── TEXAS PIPELINE (TX/) — code only, no result CSVs/data ────
 TX/outputs/**/*.csv
 TX/outputs/**/*.log
+
+# ── SUPPORTING_FILES / FOCUSED_FILES — data & model outputs ───
+# Parquet and CSV data files at any depth (they are large)
+Supporting_files/**/*.parquet
+Supporting_files/**/*.csv
+Focused_Files/**/*.parquet
+Focused_Files/**/*.csv
+
+# KEEP small JSON metadata/results in Supporting_files (scripts produce these)
+!Supporting_files/**/*_meta.json
+!Supporting_files/**/tuning_results.csv
+
+# Model binary weights inside Supporting_files
+Supporting_files/**/*.pkl
+Supporting_files/**/*.ubj
+Supporting_files/**/*.bin
+Supporting_files/**/*.model
+Supporting_files/**/*.joblib
+Supporting_files/**/*.cbm
 
 # ── MODEL WEIGHTS / SAVED MODELS (all formats, any depth) ────
 **/*.pkl

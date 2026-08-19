@@ -1,0 +1,107 @@
+{
+  "n_test": 892372,
+  "test_pos_rate": 0.2344,
+  "aucpr": 0.4823,
+  "auroc": 0.7348,
+  "lift": 2.06,
+  "threshold_sweep": {
+    "0.2": {
+      "precision": 0.26,
+      "recall": 0.968,
+      "f1": 0.41
+    },
+    "0.3": {
+      "precision": 0.289,
+      "recall": 0.9,
+      "f1": 0.437
+    },
+    "0.4": {
+      "precision": 0.336,
+      "recall": 0.774,
+      "f1": 0.468
+    },
+    "0.5": {
+      "precision": 0.411,
+      "recall": 0.605,
+      "f1": 0.49
+    },
+    "0.6": {
+      "precision": 0.506,
+      "recall": 0.441,
+      "f1": 0.472
+    },
+    "0.7": {
+      "precision": 0.594,
+      "recall": 0.314,
+      "f1": 0.411
+    },
+    "0.8": {
+      "precision": 0.643,
+      "recall": 0.216,
+      "f1": 0.324
+    }
+  },
+  "feature_importance": {
+    "ecoregion_id": 0.1331,
+    "elevation_m": 0.1077,
+    "hrrr_vpd": 0.0979,
+    "sin_month": 0.0862,
+    "road_dist_km": 0.0635,
+    "cos_month": 0.0535,
+    "avg_burn_prob": 0.0453,
+    "hrrr_tmp": 0.0444,
+    "whp": 0.0378,
+    "slope_deg": 0.0355,
+    "sin_dow": 0.0267,
+    "cos_dow": 0.0254,
+    "is_weekend": 0.0247,
+    "vpd_5D_mean": 0.0235,
+    "cbh": 0.0231,
+    "hrrr_gust": 0.0229,
+    "cbd": 0.0228,
+    "is_holiday": 0.0206,
+    "erc_5D_mean": 0.0203,
+    "erc_5D_max": 0.0186,
+    "hrrr_wind": 0.0157,
+    "vpd_5D_max": 0.0148,
+    "vs_5D_max": 0.0125,
+    "vs_5D_mean": 0.012,
+    "aspect_deg": 0.0119,
+    "flep4": 0.0,
+    "cfl": 0.0
+  },
+  "features_used": [
+    "road_dist_km",
+    "ecoregion_id",
+    "elevation_m",
+    "slope_deg",
+    "aspect_deg",
+    "avg_burn_prob",
+    "whp",
+    "flep4",
+    "cfl",
+    "cbd",
+    "cbh",
+    "sin_month",
+    "cos_month",
+    "sin_dow",
+    "cos_dow",
+    "is_weekend",
+    "is_holiday",
+    "hrrr_tmp",
+    "hrrr_vpd",
+    "hrrr_wind",
+    "hrrr_gust",
+    "erc_5D_mean",
+    "erc_5D_max",
+    "vpd_5D_mean",
+    "vpd_5D_max",
+    "vs_5D_mean",
+    "vs_5D_max"
+  ],
+  "baseline_comparison": {
+    "aucpr": 0.4825,
+    "auroc": 0.7333,
+    "lift": 2.06
+  }
+}

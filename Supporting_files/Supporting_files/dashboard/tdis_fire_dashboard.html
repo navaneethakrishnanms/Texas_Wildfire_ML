@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Texas Wildfire Risk & Ignition Forecast — TDIS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/h3-js@4.1.0/dist/h3-js.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#0d0d12;color:#eee;overflow:hidden}
+#map{width:100vw;height:100vh;background:#0d0d12}
+#panel{position:absolute;top:12px;left:12px;z-index:1000;width:300px;
+  background:rgba(14,14,22,0.94);backdrop-filter:blur(9px);border:1px solid #2b2b40;
+  border-radius:13px;padding:15px 17px;box-shadow:0 8px 34px rgba(0,0,0,.45)}
+#panel h1{font-size:15px;font-weight:750;letter-spacing:-.01em}
+#panel .sub{font-size:10.5px;color:#8a8aa0;margin-top:3px;line-height:1.4}
+.modes{display:flex;flex-direction:column;gap:6px;margin-top:14px}
+.mode{padding:10px 12px;border-radius:9px;cursor:pointer;border:1px solid #34344c;
+  background:#17172a;transition:all .15s;display:flex;align-items:center;gap:9px}
+.mode .ic{font-size:16px}
+.mode .mt{font-size:12.5px;font-weight:700;color:#c9c9dd}
+.mode .md{font-size:9px;color:#7a7a95;margin-top:1px;line-height:1.2}
+.mode:hover{border-color:#ff7043}
+.mode.active{background:linear-gradient(135deg,#c0330f,#e8622d);border-color:#ff7043}
+.mode.active .mt,.mode.active .md{color:#fff}
+.mode.primary{padding:13px 12px}
+.mode.primary .mt{font-size:14px}
+.fcast{margin-top:8px;padding:10px 12px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:9px;
+  border:1px solid #4a2a1a;background:#1c1410;transition:all .15s}
+.fcast:hover{border-color:#ff7043}
+.fcast .dot{width:9px;height:9px;border-radius:50%;background:#ff5a2b;box-shadow:0 0 8px #ff5a2b;flex-shrink:0}
+.fcast .ft{font-size:12px;font-weight:700;color:#ffb38a}
+.fcast .fd{font-size:9px;color:#9a7a68;margin-top:1px}
+.fcast.active{background:linear-gradient(135deg,#7a1020,#c0330f);border-color:#ff5a2b}
+.fcast.active .ft,.fcast.active .fd{color:#fff}
+.lbl{font-size:9.5px;font-weight:650;color:#7a7a95;text-transform:uppercase;letter-spacing:.1em;margin:13px 0 7px}
+.seg{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-size:10.5px;padding:4px 9px;border-radius:6px;cursor:pointer;border:1px solid #34344c;
+  background:transparent;color:#9a9ab0;transition:all .14s}
+.chip:hover{border-color:#ff9068;color:#fff}
+.chip.on{background:#e8622d;border-color:#e8622d;color:#fff;font-weight:650}
+.scrub{display:flex;align-items:center;gap:8px;margin-top:2px}
+#play{width:30px;height:30px;flex-shrink:0;border-radius:7px;border:1px solid #34344c;
+  background:transparent;color:#eee;cursor:pointer;font-size:11px}
+#play:hover{border-color:#ff9068}
+#day{flex:1;accent-color:#e8622d}
+.dlbl{font-size:11px;min-width:74px;text-align:right;font-family:ui-monospace,monospace;color:#ffb38a}
+.divider{border:none;border-top:1px solid #26263a;margin:13px 0 11px}
+.stat{display:flex;justify-content:space-between;font-size:11px;padding:2px 0}
+.stat .v{color:#ff7a45;font-weight:700;font-family:ui-monospace,monospace}
+#legend{position:absolute;bottom:22px;right:12px;z-index:1000;background:rgba(14,14,22,0.94);
+  backdrop-filter:blur(9px);border:1px solid #2b2b40;border-radius:11px;padding:12px 14px;min-width:184px}
+#legend .lbl{margin:0 0 8px}
+.leg{display:flex;align-items:center;gap:8px;font-size:10.5px;color:#c9c9dd;margin-bottom:5px}
+.sw{width:14px;height:14px;border-radius:3px;flex-shrink:0;border:1px solid rgba(255,255,255,.12)}
+.legnote{font-size:9px;color:#6a6a85;margin-top:7px;line-height:1.4}
+#tip{position:fixed;z-index:3000;pointer-events:none;display:none;min-width:200px;
+  background:rgba(8,8,16,0.97);border:1px solid #34344c;border-radius:9px;padding:9px 12px;
+  font-size:11px;line-height:1.55;box-shadow:0 5px 22px rgba(0,0,0,.5)}
+.tt-t{font-weight:700;font-size:11.5px;color:#fff;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #2b2b40}
+.tt-r{display:flex;justify-content:space-between;gap:16px}
+.tt-r .tv{color:#ff7a45;font-weight:700;font-family:ui-monospace,monospace}
+.leaflet-container{background:#0d0d12}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<div id="panel">
+  <h1>Texas Wildfire Risk &amp; Ignition</h1>
+  <div class="sub">TDIS · H3 hexbin · static hazard + forecast (static × fire-weather)</div>
+
+  <div class="modes">
+    <div class="mode primary active" data-mode="wfrisk">
+      <span class="ic">🔥</span><div><div class="mt">Wildfire Risk Forecast</div><div class="md">hazard × daily fire-weather — per day</div></div>
+    </div>
+    <div class="mode" data-mode="ignition">
+      <span class="ic">✦</span><div><div class="mt">Ignition Forecast</div><div class="md">will a fire start/be active — per day</div></div>
+    </div>
+    <div class="mode" data-mode="static">
+      <span class="ic">▦</span><div><div class="mt">Static Hazard (full TX)</div><div class="md">WRAP baseline, all cells</div></div>
+    </div>
+  </div>
+
+  <div class="fcast" id="fcast-toggle">
+    <span class="dot"></span><div><div class="ft">📅 Live Forecast</div>
+    <div class="fd">real HRRR · applies to mode above</div></div>
+  </div>
+  <div id="fcast-horizons" style="display:none">
+    <div class="lbl">Forecast horizon</div>
+    <div class="seg" id="hz-seg"></div>
+  </div>
+
+  <!-- day scrubber (dynamic modes) -->
+  <div id="day-ctrl">
+    <div class="lbl">Day <span id="day-hint" style="color:#6a6a85;text-transform:none;letter-spacing:0">2024–26 · scrub or ▶</span></div>
+    <div class="scrub">
+      <button id="play">▶</button>
+      <input type="range" id="day" min="0" max="0" value="0" step="1">
+      <span class="dlbl" id="dlbl">—</span>
+    </div>
+  </div>
+
+  <!-- static hazard metric picker -->
+  <div id="haz-ctrl" style="display:none">
+    <div class="lbl">Hazard metric</div>
+    <div class="seg" id="haz-seg">
+      <button class="chip on" data-h="haz">Composite</button>
+      <button class="chip" data-h="whp">WHP</button>
+      <button class="chip" data-h="bp">Burn Prob</button>
+      <button class="chip" data-h="cbd">Canopy</button>
+    </div>
+  </div>
+
+  <!-- fire-weather formula picker (the FWI knob) -->
+  <div id="fwi-ctrl">
+    <div class="lbl">Fire-weather formula</div>
+    <div class="seg" id="fwi-seg">
+      <button class="chip on" data-f="fwi" title="TDIS additive composite: 0.30·ERC/100 + 0.30·VPD/5 + 0.40·wind/12">Composite</button>
+      <button class="chip" data-f="fwiN" title="NOAA GSL Hourly Wildfire Potential (James et al. 2025, Eq.3): 0.213·G^1.50·VPD^0.73·(1−M)^5.10 — gust & soil-moisture driven">NOAA HWP</button>
+      <button class="chip" data-f="fwiT" title="Same HWP form, coefficients fit to Texas VIIRS fire activity 2024–2026">TX HWP</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="stat"><span id="s1k">Hexagons</span><span class="v" id="s1v">—</span></div>
+  <div class="stat"><span id="s2k">Mean</span><span class="v" id="s2v">—</span></div>
+  <div class="stat"><span>Top 5%</span><span class="v" id="s3v">—</span></div>
+</div>
+
+<div id="legend">
+  <div class="lbl" id="leg-title">Wildfire risk</div>
+  <div id="leg-rows"></div>
+  <div class="legnote" id="leg-note"></div>
+</div>
+<div id="tip"></div>
+
+<script>
+let DATA=null, mode='wfrisk', hazMetric='haz', day=0, playing=false, timer=null, layer=null, DATES=[], liveForecast=false, hzi=0, fwiVar='fwi';
+const FORECASTS = /*__FORECASTS__*/[];   // array of live HRRR forecasts, each {target,lead_h,source,fwi:{}}
+function FCAST(){ return FORECASTS[hzi]||null; }
+const map=L.map('map',{center:[31.3,-99.4],zoom:6,preferCanvas:true});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
+  {attribution:'&copy; OpenStreetMap, CARTO · TDIS wildfire model',maxZoom:12,subdomains:'abcd'}).addTo(map);
+const tip=document.getElementById('tip');
+
+const RAMP=[[0,'#2b2d42'],[0.12,'#3a5c6b'],[0.25,'#f4d06f'],[0.4,'#f0a03a'],[0.55,'#e8622d'],[0.72,'#c0330f'],[0.88,'#7a1020']];
+function rgb(h){h=h.slice(1);return[parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+function colr(v){
+  if(v==null||isNaN(v))return null;
+  if(v<=0.001)return '#20202e';
+  let lo=RAMP[0],hi=RAMP[RAMP.length-1];
+  for(let i=0;i<RAMP.length-1;i++){if(v>=RAMP[i][0]&&v<=RAMP[i+1][0]){lo=RAMP[i];hi=RAMP[i+1];break;}}
+  if(v>=RAMP[RAMP.length-1][0])return RAMP[RAMP.length-1][1];
+  const t=(v-lo[0])/((hi[0]-lo[0])||1),a=rgb(lo[1]),b=rgb(hi[1]);
+  return `rgb(${Math.round(a[0]+(b[0]-a[0])*t)},${Math.round(a[1]+(b[1]-a[1])*t)},${Math.round(a[2]+(b[2]-a[2])*t)})`;
+}
+// fire-weather for a cell: live forecast day OR the 2024 observed day
+function cellFWI(c){
+  if(liveForecast){const F=FCAST(); if(!F)return null; const FW=F[fwiVar]||F.fwi; return (FW&&FW[c.id]!=null)?FW[c.id]:null;}
+  const arr=c[fwiVar]||c.fwi;
+  return (arr&&arr[day]!=null)?arr[day]:null;
+}
+// raw value per cell for current mode/day
+function rawVal(c){
+  if(mode==='static'){
+    if(hazMetric==='haz')return c.haz;
+    if(hazMetric==='whp')return c.whp/9;
+    if(hazMetric==='bp') return c.bp/11;
+    if(hazMetric==='cbd')return Math.min(c.cbd/0.2,1);
+  }
+  if(liveForecast){                                   // live model forecast
+    const F=FCAST(); if(!F) return null;
+    if(mode==='ignition') return (F.ign&&F.ign[c.id]!=null)? F.ign[c.id] : null;  // ← HRRR MODEL output directly
+    const FW=F[fwiVar]||F.fwi;
+    if(mode==='wfrisk')  return (FW&&FW[c.id]!=null)? c.haz*FW[c.id] : null;
+    return null;
+  }
+  const f=cellFWI(c); if(f==null)return null;          // 2024-26 observed-weather days
+  if(mode==='wfrisk') return c.haz*f;                 // hazard × fire-weather
+  if(mode==='ignition') return (c.ign==null?null:c.ign*f);  // susceptibility × fire-weather (heuristic)
+  return null;
+}
+// colour scaling: stretch dynamic products (small magnitude) to the ramp
+function colorVal(c){
+  let v=rawVal(c); if(v==null)return null;
+  if(mode==='wfrisk') return Math.min(v/0.5,1);
+  if(mode==='ignition') return liveForecast ? Math.min(v/0.6,1)   // model prob 0–~0.9
+                                            : Math.min(v/0.4,1);  // heuristic susceptibility×fwi
+  return v;
+}
+function draw(){
+  if(layer)layer.remove(); layer=L.layerGroup().addTo(map);
+  let vals=[];
+  for(const c of DATA.cells){
+    const raw=rawVal(c), cv=colorVal(c);
+    if(cv==null){ if(mode!=='static')continue; }
+    let bnd; try{bnd=h3.cellToBoundary(c.id);}catch(e){continue;}
+    L.polygon(bnd,{fillColor:colr(cv==null?0:cv),fillOpacity:cv==null?0.05:0.74,
+      color:'rgba(255,255,255,0.07)',weight:0.4})
+      .on('mousemove',e=>showTip(e,c)).on('mouseout',()=>tip.style.display='none').addTo(layer);
+    if(raw!=null&&isFinite(raw))vals.push(raw);
+  }
+  vals.sort((a,b)=>a-b);const n=vals.length;
+  document.getElementById('s1v').textContent=n.toLocaleString();
+  document.getElementById('s2v').textContent=(n?vals.reduce((a,b)=>a+b,0)/n:0).toFixed(3);
+  document.getElementById('s3v').textContent=(n?vals[Math.floor(n*0.95)]:0).toFixed(3);
+}
+function showTip(e,c){
+  const x=e.originalEvent.clientX,y=e.originalEvent.clientY;
+  const f=(c.fwi&&c.fwi[day]!=null)?c.fwi[day]:null;
+  let h=`<div class="tt-t">${c.eco||c.eco}</div>`;
+  if(mode==='static'){
+    h+=`<div class="tt-r"><span>Hazard composite</span><span class="tv">${c.haz.toFixed(3)}</span></div>`+
+       `<div class="tt-r"><span>WHP (0–9)</span><span class="tv">${c.whp.toFixed(1)}</span></div>`+
+       `<div class="tt-r"><span>Burn prob (0–11)</span><span class="tv">${c.bp.toFixed(1)}</span></div>`;
+  } else {
+    const rv=rawVal(c), when=liveForecast?((FCAST()?FCAST().target:'')+' (forecast)'):(DATES[day]||'');
+    const fv=cellFWI(c);
+    h+=`<div class="tt-r"><span>${mode==='wfrisk'?'Wildfire risk':'Ignition risk'} (${when})</span><span class="tv">${rv==null?'—':rv.toFixed(3)}</span></div>`+
+       `<div class="tt-r"><span>Static hazard</span><span class="tv">${c.haz.toFixed(3)}</span></div>`+
+       `<div class="tt-r"><span>Fire-weather (${fwiVar==='fwiN'?'NOAA HWP':fwiVar==='fwiT'?'TX HWP':'composite'})</span><span class="tv">${fv==null?'—':fv.toFixed(3)}</span></div>`;
+  }
+  tip.innerHTML=h;tip.style.display='block';
+  let tx=x+14; if(tx+210>innerWidth)tx=x-210;
+  tip.style.left=tx+'px';tip.style.top=Math.max(8,y-8)+'px';
+}
+function refreshChrome(){
+  // day scrubber only for dynamic 2024 view (hidden in static + live-forecast)
+  document.getElementById('day-ctrl').style.display = (mode==='static'||liveForecast)?'none':'block';
+  document.getElementById('haz-ctrl').style.display = mode==='static'?'block':'none';
+  // Fire-weather formula only affects FWI-based views. Hide it where it has NO effect:
+  // Static Hazard (no FWI) and live Ignition (raw model output, no FWI multiply).
+  document.getElementById('fwi-ctrl').style.display =
+    (mode==='static' || (mode==='ignition' && liveForecast)) ? 'none' : 'block';
+  document.getElementById('fcast-horizons').style.display = (liveForecast&&mode!=='static')?'block':'none';
+  const lt=document.getElementById('leg-title'),ln=document.getElementById('leg-note'),lr=document.getElementById('leg-rows');
+  const bands=[['#7a1020','Extreme','≥ .88'],['#c0330f','Very high','.72–.88'],['#e8622d','High','.55–.72'],['#f0a03a','Elevated','.40–.55'],['#f4d06f','Moderate','.25–.40'],['#3a5c6b','Low','< .25']];
+  const kind = mode==='wfrisk'?'Wildfire risk':mode==='ignition'?'Ignition':'Static hazard';
+  const F=FCAST();
+  const tgt = F?F.target:'forecast', src = F?F.source:'HRRR';
+  // Title + note announce the EXACT machinery of each view, so the two ways "Ignition" is
+  // computed (live trained model vs historical susceptibility×FWI heuristic) are never conflated.
+  if(mode==='static'){
+    lt.textContent='Static wildfire hazard';
+    ln.textContent='Relative ranking by TxWRAP static hazard (WHP + burn prob + canopy) — simulation-based, no ML, no time dimension.';
+  } else if(liveForecast){
+    lt.textContent = kind + (mode==='ignition'?' · live model':' · forecast') + ' — ' + tgt;
+    ln.textContent = mode==='ignition'
+      ? 'LIVE trained ignition model run on '+src+' forecast weather for '+tgt+'. Relative ranking, not a probability. (Fire-weather formula does not apply — weather is learned inside the model.)'
+      : 'LIVE: TxWRAP hazard × '+src+' forecast fire-weather for '+tgt+' — no ML. Relative ranking, not a probability.';
+  } else {
+    lt.textContent = kind + (mode==='ignition'?' · heuristic (2024–26)':' (2024–26)');
+    ln.textContent = mode==='ignition'
+      ? 'HEURISTIC proxy: honest susceptibility × daily fire-weather (2024–26) — NOT the live model’s output. Relative ranking, not a probability.'
+      : 'TxWRAP hazard × daily fire-weather (2024–26) — no ML. Relative danger ranking: higher = worse if a fire occurs, not a probability.';
+  }
+  lr.innerHTML=bands.map(b=>`<div class="leg"><div class="sw" style="background:${b[0]}"></div>${b[1]}<span style="margin-left:auto;color:#7a7a95;font-family:ui-monospace,monospace;font-size:9px">${b[2]}</span></div>`).join('');
+  document.getElementById('s2k').textContent='Mean';
+}
+document.querySelectorAll('.mode').forEach(el=>el.onclick=()=>{
+  document.querySelectorAll('.mode').forEach(m=>m.classList.remove('active'));
+  el.classList.add('active');mode=el.dataset.mode;
+  if(mode==='static'){liveForecast=false;document.getElementById('fcast-toggle').classList.remove('active');}
+  stopPlay();refreshChrome();draw();});
+document.getElementById('fcast-toggle').onclick=()=>{
+  if(mode==='static'){ // forecast needs a dynamic mode; switch to wildfire risk
+    mode='wfrisk';document.querySelectorAll('.mode').forEach(m=>m.classList.toggle('active',m.dataset.mode==='wfrisk'));
+  }
+  liveForecast=!liveForecast;
+  document.getElementById('fcast-toggle').classList.toggle('active',liveForecast);
+  stopPlay();refreshChrome();draw();};
+function buildHorizons(){
+  const seg=document.getElementById('hz-seg');
+  seg.innerHTML=FORECASTS.map((f,i)=>`<button class="chip${i===hzi?' on':''}" data-i="${i}">${f.lead_h}h · ${f.target}</button>`).join('');
+  seg.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;hzi=+b.dataset.i;
+    document.querySelectorAll('#hz-seg .chip').forEach(c=>c.classList.remove('on'));b.classList.add('on');
+    refreshChrome();draw();};
+}
+document.getElementById('fwi-seg').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  fwiVar=b.dataset.f;
+  document.querySelectorAll('#fwi-seg .chip').forEach(x=>x.classList.toggle('on',x===b));
+  refreshChrome();draw();};
+document.getElementById('haz-seg').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  document.querySelectorAll('#haz-seg .chip').forEach(c=>c.classList.remove('on'));b.classList.add('on');hazMetric=b.dataset.h;draw();};
+const dslider=document.getElementById('day');
+dslider.oninput=e=>{day=+e.target.value;document.getElementById('dlbl').textContent=DATES[day]||'';draw();};
+document.getElementById('play').onclick=()=>playing?stopPlay():startPlay();
+function startPlay(){if(!DATES.length)return;playing=true;document.getElementById('play').textContent='❚❚';
+  timer=setInterval(()=>{day=(day+1)%DATES.length;dslider.value=day;
+    document.getElementById('dlbl').textContent=DATES[day];draw();},250);}
+function stopPlay(){playing=false;document.getElementById('play').textContent='▶';if(timer)clearInterval(timer);}
+
+// Data is EMBEDDED below (no fetch) so this file works by double-click / drag-and-drop.
+DATA = /*__DATA__*/null;
+(function init(){
+  DATES=(DATA&&DATA.dates)||[];
+  dslider.max=Math.max(DATES.length-1,0);
+  day=Math.min(90,Math.max(DATES.length-1,0));  // default ~Apr 1 (fire season)
+  dslider.value=day; document.getElementById('dlbl').textContent=DATES[day]||'—';
+  buildHorizons();
+  refreshChrome(); draw();
+})();
+</script>
+</body>
+</html>

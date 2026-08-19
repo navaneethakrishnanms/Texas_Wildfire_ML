@@ -1,0 +1,20 @@
+{
+  "gate2": {
+    "gains": [
+      0.005,
+      0.0042,
+      0.0038
+    ],
+    "robust": true
+  },
+  "gate3": {
+    "aucpr": 0.0874,
+    "auroc": 0.795,
+    "lift": 4.56,
+    "promoted": {
+      "aucpr": 0.0858,
+      "auroc": 0.7892,
+      "lift": 4.47
+    }
+  }
+}

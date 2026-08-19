@@ -1,0 +1,118 @@
+{
+  "n_test": 892372,
+  "test_pos_rate": 0.2344,
+  "aucpr": 0.4824,
+  "auroc": 0.7351,
+  "lift": 2.06,
+  "threshold_sweep": {
+    "0.2": {
+      "precision": 0.26,
+      "recall": 0.97,
+      "f1": 0.41
+    },
+    "0.3": {
+      "precision": 0.289,
+      "recall": 0.9,
+      "f1": 0.438
+    },
+    "0.4": {
+      "precision": 0.336,
+      "recall": 0.772,
+      "f1": 0.468
+    },
+    "0.5": {
+      "precision": 0.413,
+      "recall": 0.603,
+      "f1": 0.49
+    },
+    "0.6": {
+      "precision": 0.508,
+      "recall": 0.439,
+      "f1": 0.471
+    },
+    "0.7": {
+      "precision": 0.597,
+      "recall": 0.314,
+      "f1": 0.412
+    },
+    "0.8": {
+      "precision": 0.644,
+      "recall": 0.219,
+      "f1": 0.327
+    }
+  },
+  "feature_importance": {
+    "ecoregion_id": 0.1362,
+    "elevation_m": 0.1021,
+    "hrrr_vpd": 0.0984,
+    "sin_month": 0.0796,
+    "road_dist_km": 0.0569,
+    "cos_month": 0.046,
+    "avg_burn_prob": 0.045,
+    "hrrr_tmp": 0.043,
+    "gust_x_vpd": 0.0341,
+    "slope_deg": 0.0323,
+    "is_weekend": 0.0267,
+    "whp": 0.0249,
+    "sin_dow": 0.0249,
+    "cos_dow": 0.0232,
+    "hrrr_gust": 0.0232,
+    "cbd": 0.0224,
+    "vpd_5D_mean": 0.0217,
+    "cbh": 0.0208,
+    "erc_5D_mean": 0.0207,
+    "hwp_core": 0.0175,
+    "is_holiday": 0.0166,
+    "erc_5D_max": 0.0157,
+    "hrrr_wind": 0.013,
+    "vpd_5D_max": 0.0122,
+    "vs_5D_max": 0.0111,
+    "vs_5D_mean": 0.011,
+    "aspect_deg": 0.0109,
+    "gust_x_dry5": 0.0097,
+    "flep4": 0.0,
+    "cfl": 0.0
+  },
+  "features_used": [
+    "road_dist_km",
+    "ecoregion_id",
+    "elevation_m",
+    "slope_deg",
+    "aspect_deg",
+    "avg_burn_prob",
+    "whp",
+    "flep4",
+    "cfl",
+    "cbd",
+    "cbh",
+    "sin_month",
+    "cos_month",
+    "sin_dow",
+    "cos_dow",
+    "is_weekend",
+    "is_holiday",
+    "hrrr_tmp",
+    "hrrr_vpd",
+    "hrrr_wind",
+    "hrrr_gust",
+    "erc_5D_mean",
+    "erc_5D_max",
+    "vpd_5D_mean",
+    "vpd_5D_max",
+    "vs_5D_mean",
+    "vs_5D_max",
+    "gust_x_vpd",
+    "hwp_core",
+    "gust_x_dry5"
+  ],
+  "comparisons": {
+    "baseline": {
+      "aucpr": 0.4825,
+      "auroc": 0.7333
+    },
+    "step5": {
+      "aucpr": 0.4823,
+      "auroc": 0.7348
+    }
+  }
+}

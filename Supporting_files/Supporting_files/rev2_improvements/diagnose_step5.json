@@ -1,0 +1,66 @@
+{
+  "variant": "step5",
+  "gap": {
+    "train": {
+      "n": 856480,
+      "pos_rate": 0.2294,
+      "auroc": 0.8049,
+      "aucpr": 0.5868
+    },
+    "val": {
+      "n": 259245,
+      "pos_rate": 0.261,
+      "auroc": 0.6698,
+      "aucpr": 0.4477
+    },
+    "test": {
+      "n": 892372,
+      "pos_rate": 0.2344,
+      "auroc": 0.7348,
+      "aucpr": 0.4823
+    }
+  },
+  "train_val_gap": 0.1351,
+  "val_test_gap": -0.065,
+  "mean_abs_shap": {
+    "hrrr_vpd": 0.40764,
+    "elevation_m": 0.29128,
+    "hrrr_tmp": 0.23682,
+    "ecoregion_id": 0.179,
+    "road_dist_km": 0.16353,
+    "sin_month": 0.11894,
+    "cos_month": 0.0789,
+    "slope_deg": 0.0756,
+    "hrrr_gust": 0.05935,
+    "sin_dow": 0.05667,
+    "avg_burn_prob": 0.04389,
+    "cos_dow": 0.04343,
+    "cbd": 0.02062,
+    "hrrr_wind": 0.01953,
+    "vpd_5D_mean": 0.01806,
+    "whp": 0.01793,
+    "aspect_deg": 0.01599,
+    "cbh": 0.01316,
+    "erc_5D_mean": 0.01131,
+    "vpd_5D_max": 0.01021,
+    "erc_5D_max": 0.00836,
+    "vs_5D_max": 0.00603,
+    "is_weekend": 0.00532,
+    "is_holiday": 0.00512,
+    "vs_5D_mean": 0.00483,
+    "flep4": 0.0,
+    "cfl": 0.0
+  },
+  "interactions": {
+    "hrrr_wind_x_hrrr_vpd": 0.00518,
+    "hrrr_wind_x_vpd_5D_mean": 0.00045,
+    "hrrr_wind_x_vpd_5D_max": 0.00056,
+    "hrrr_wind_x_erc_5D_mean": 0.00056,
+    "hrrr_wind_x_erc_5D_max": 0.00043,
+    "hrrr_gust_x_hrrr_vpd": 0.013,
+    "hrrr_gust_x_vpd_5D_mean": 0.00121,
+    "hrrr_gust_x_vpd_5D_max": 0.00105,
+    "hrrr_gust_x_erc_5D_mean": 0.00088,
+    "hrrr_gust_x_erc_5D_max": 0.00055
+  }
+}

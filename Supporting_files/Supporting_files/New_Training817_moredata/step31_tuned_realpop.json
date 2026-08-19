@@ -1,0 +1,17 @@
+{
+  "model": "step30_tuned_seed42 (depth9/mcw30/lr.02/1000t)",
+  "n_scored": 5064462,
+  "base_rate": 0.01917992473830389,
+  "aucpr": 0.0858,
+  "auroc": 0.7892,
+  "lift": 4.47,
+  "served": {
+    "aucpr": 0.0851,
+    "auroc": 0.7838,
+    "lift": 4.43
+  },
+  "delta": {
+    "aucpr": 0.0007,
+    "auroc": 0.0054
+  }
+}

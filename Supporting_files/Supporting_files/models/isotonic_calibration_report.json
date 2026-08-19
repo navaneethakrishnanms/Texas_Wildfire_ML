@@ -1,0 +1,181 @@
+{
+  "operational": {
+    "fit_rows": 3934242,
+    "holdout_rows": 1130220,
+    "holdout_base_rate": 0.021326821326821326,
+    "before": {
+      "brier": 0.1569492413343919,
+      "ece": 0.32734243042041716,
+      "mean_pred": 0.3486692011356354,
+      "bins": [
+        {
+          "mean_pred": 0.0468,
+          "freq": 0.0013,
+          "n": 118521
+        },
+        {
+          "mean_pred": 0.1547,
+          "freq": 0.0044,
+          "n": 146997
+        },
+        {
+          "mean_pred": 0.2517,
+          "freq": 0.0082,
+          "n": 217122
+        },
+        {
+          "mean_pred": 0.3492,
+          "freq": 0.0133,
+          "n": 230680
+        },
+        {
+          "mean_pred": 0.4473,
+          "freq": 0.0218,
+          "n": 185752
+        },
+        {
+          "mean_pred": 0.5447,
+          "freq": 0.0357,
+          "n": 113734
+        },
+        {
+          "mean_pred": 0.6441,
+          "freq": 0.0554,
+          "n": 55507
+        },
+        {
+          "mean_pred": 0.7455,
+          "freq": 0.0745,
+          "n": 29982
+        },
+        {
+          "mean_pred": 0.8538,
+          "freq": 0.1522,
+          "n": 28714
+        },
+        {
+          "mean_pred": 0.912,
+          "freq": 0.2096,
+          "n": 3211
+        }
+      ]
+    },
+    "after": {
+      "brier": 0.020022452271270155,
+      "ece": 0.0018039950915574184,
+      "mean_pred": 0.019522827118635178,
+      "bins": [
+        {
+          "mean_pred": 0.017,
+          "freq": 0.0184,
+          "n": 1111294
+        },
+        {
+          "mean_pred": 0.1661,
+          "freq": 0.1928,
+          "n": 18926
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "ceiling": {
+    "fit_rows": 2472242,
+    "holdout_rows": 683164,
+    "holdout_base_rate": 0.02686031465358245,
+    "before": {
+      "brier": 0.19184907924326514,
+      "ece": 0.36522384713251804,
+      "mean_pred": 0.39208415150642395,
+      "bins": [
+        {
+          "mean_pred": 0.0623,
+          "freq": 0.0018,
+          "n": 52615
+        },
+        {
+          "mean_pred": 0.1525,
+          "freq": 0.0049,
+          "n": 96265
+        },
+        {
+          "mean_pred": 0.2499,
+          "freq": 0.01,
+          "n": 108667
+        },
+        {
+          "mean_pred": 0.3498,
+          "freq": 0.0146,
+          "n": 106176
+        },
+        {
+          "mean_pred": 0.4488,
+          "freq": 0.0186,
+          "n": 100286
+        },
+        {
+          "mean_pred": 0.5488,
+          "freq": 0.0292,
+          "n": 87231
+        },
+        {
+          "mean_pred": 0.648,
+          "freq": 0.0513,
+          "n": 71472
+        },
+        {
+          "mean_pred": 0.7436,
+          "freq": 0.0903,
+          "n": 44485
+        },
+        {
+          "mean_pred": 0.8341,
+          "freq": 0.1902,
+          "n": 15854
+        },
+        {
+          "mean_pred": 0.9079,
+          "freq": 0.3097,
+          "n": 113
+        }
+      ]
+    },
+    "after": {
+      "brier": 0.02495478546977435,
+      "ece": 0.0017000905353024738,
+      "mean_pred": 0.026238620281219482,
+      "bins": [
+        {
+          "mean_pred": 0.0217,
+          "freq": 0.0211,
+          "n": 655606
+        },
+        {
+          "mean_pred": 0.1342,
+          "freq": 0.1626,
+          "n": 27289
+        },
+        {
+          "mean_pred": 0.2336,
+          "freq": 0.2974,
+          "n": 269
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "method": "isotonic regression fit on 2024-2025 real-population predictions vs real fused-label outcomes (flare-excluded); all reported numbers are on the 2026 temporal holdout never seen by the calibrator"
+}

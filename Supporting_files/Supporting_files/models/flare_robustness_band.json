@@ -1,0 +1,24 @@
+{
+  "1pct": {
+    "n_flare_cells": 1732,
+    "base_rate": 0.0165,
+    "aucpr": 0.0584,
+    "auroc": 0.7657,
+    "lift": 3.54
+  },
+  "3pct": {
+    "n_flare_cells": 531,
+    "base_rate": 0.0192,
+    "aucpr": 0.0851,
+    "auroc": 0.7838,
+    "lift": 4.43
+  },
+  "10pct": {
+    "n_flare_cells": 145,
+    "base_rate": 0.0217,
+    "aucpr": 0.1015,
+    "auroc": 0.7897,
+    "lift": 4.69
+  },
+  "verdict": "lift band 3.54-4.69x, AUROC band 0.7657-0.7897 across a 10x change in the flare cutoff -- conclusions MAY hinge on the 3% choice"
+}

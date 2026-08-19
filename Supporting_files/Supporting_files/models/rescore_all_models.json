@@ -1,0 +1,202 @@
+{
+  "honest_filtered": {
+    "n_test": 262995,
+    "test_pos_rate": 0.2149,
+    "aucpr": 0.4018,
+    "auroc": 0.6633,
+    "lift": 1.87,
+    "threshold_sweep": {
+      "0.2": {
+        "precision": 0.218,
+        "recall": 0.972,
+        "f1": 0.356
+      },
+      "0.3": {
+        "precision": 0.224,
+        "recall": 0.935,
+        "f1": 0.362
+      },
+      "0.4": {
+        "precision": 0.246,
+        "recall": 0.822,
+        "f1": 0.379
+      },
+      "0.5": {
+        "precision": 0.319,
+        "recall": 0.567,
+        "f1": 0.409
+      },
+      "0.6": {
+        "precision": 0.5,
+        "recall": 0.335,
+        "f1": 0.401
+      },
+      "0.7": {
+        "precision": 0.599,
+        "recall": 0.249,
+        "f1": 0.352
+      },
+      "0.8": {
+        "precision": 0.622,
+        "recall": 0.155,
+        "f1": 0.249
+      }
+    },
+    "features_used": [
+      "road_dist_km",
+      "ecoregion_id",
+      "elevation_m",
+      "slope_deg",
+      "aspect_deg",
+      "avg_burn_prob",
+      "whp",
+      "flep4",
+      "cfl",
+      "cbd",
+      "cbh",
+      "sin_month",
+      "cos_month",
+      "sin_dow",
+      "cos_dow",
+      "is_weekend",
+      "is_holiday"
+    ]
+  },
+  "ceiling_filtered": {
+    "n_test": 262995,
+    "test_pos_rate": 0.2149,
+    "aucpr": 0.436,
+    "auroc": 0.7243,
+    "lift": 2.03,
+    "threshold_sweep": {
+      "0.2": {
+        "precision": 0.245,
+        "recall": 0.969,
+        "f1": 0.391
+      },
+      "0.3": {
+        "precision": 0.264,
+        "recall": 0.919,
+        "f1": 0.41
+      },
+      "0.4": {
+        "precision": 0.289,
+        "recall": 0.834,
+        "f1": 0.429
+      },
+      "0.5": {
+        "precision": 0.326,
+        "recall": 0.705,
+        "f1": 0.445
+      },
+      "0.6": {
+        "precision": 0.387,
+        "recall": 0.543,
+        "f1": 0.452
+      },
+      "0.7": {
+        "precision": 0.499,
+        "recall": 0.336,
+        "f1": 0.402
+      },
+      "0.8": {
+        "precision": 0.631,
+        "recall": 0.129,
+        "f1": 0.215
+      }
+    },
+    "features_used": [
+      "road_dist_km",
+      "ecoregion_id",
+      "elevation_m",
+      "slope_deg",
+      "aspect_deg",
+      "avg_burn_prob",
+      "whp",
+      "flep4",
+      "cfl",
+      "cbd",
+      "cbh",
+      "sin_month",
+      "cos_month",
+      "sin_dow",
+      "cos_dow",
+      "is_weekend",
+      "is_holiday",
+      "erc",
+      "fm100",
+      "vpd",
+      "vs",
+      "rmax",
+      "rmin",
+      "tmmx",
+      "pr"
+    ]
+  },
+  "operational_hrrr_filtered": {
+    "n_test": 892372,
+    "test_pos_rate": 0.2344,
+    "aucpr": 0.4825,
+    "auroc": 0.7333,
+    "lift": 2.06,
+    "threshold_sweep": {
+      "0.2": {
+        "precision": 0.261,
+        "recall": 0.965,
+        "f1": 0.411
+      },
+      "0.3": {
+        "precision": 0.289,
+        "recall": 0.893,
+        "f1": 0.437
+      },
+      "0.4": {
+        "precision": 0.336,
+        "recall": 0.767,
+        "f1": 0.467
+      },
+      "0.5": {
+        "precision": 0.41,
+        "recall": 0.602,
+        "f1": 0.488
+      },
+      "0.6": {
+        "precision": 0.511,
+        "recall": 0.438,
+        "f1": 0.471
+      },
+      "0.7": {
+        "precision": 0.596,
+        "recall": 0.313,
+        "f1": 0.41
+      },
+      "0.8": {
+        "precision": 0.644,
+        "recall": 0.219,
+        "f1": 0.327
+      }
+    },
+    "features_used": [
+      "road_dist_km",
+      "ecoregion_id",
+      "elevation_m",
+      "slope_deg",
+      "aspect_deg",
+      "avg_burn_prob",
+      "whp",
+      "flep4",
+      "cfl",
+      "cbd",
+      "cbh",
+      "sin_month",
+      "cos_month",
+      "sin_dow",
+      "cos_dow",
+      "is_weekend",
+      "is_holiday",
+      "hrrr_tmp",
+      "hrrr_vpd",
+      "hrrr_wind"
+    ]
+  }
+}

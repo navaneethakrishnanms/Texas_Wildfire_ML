@@ -1,0 +1,80 @@
+{
+  "cell-day (res-5, daily) \u2014 current": {
+    "units": 5064462,
+    "base_rate": 0.0192,
+    "sweep": [
+      {
+        "flag_top": "50%",
+        "precision": 0.033,
+        "recall": 0.886
+      },
+      {
+        "flag_top": "30%",
+        "precision": 0.043,
+        "recall": 0.74
+      },
+      {
+        "flag_top": "20%",
+        "precision": 0.056,
+        "recall": 0.595
+      },
+      {
+        "flag_top": "10%",
+        "precision": 0.079,
+        "recall": 0.42
+      }
+    ]
+  },
+  "cell-week (res-5, weekly)": {
+    "units": 726570,
+    "base_rate": 0.0875,
+    "sweep": [
+      {
+        "flag_top": "50%",
+        "precision": 0.147,
+        "recall": 0.882
+      },
+      {
+        "flag_top": "30%",
+        "precision": 0.193,
+        "recall": 0.661
+      },
+      {
+        "flag_top": "20%",
+        "precision": 0.224,
+        "recall": 0.522
+      },
+      {
+        "flag_top": "10%",
+        "precision": 0.282,
+        "recall": 0.33
+      }
+    ]
+  },
+  "region-week (res-4, weekly)": {
+    "units": 109215,
+    "base_rate": 0.3138,
+    "sweep": [
+      {
+        "flag_top": "50%",
+        "precision": 0.489,
+        "recall": 0.78
+      },
+      {
+        "flag_top": "30%",
+        "precision": 0.546,
+        "recall": 0.538
+      },
+      {
+        "flag_top": "20%",
+        "precision": 0.575,
+        "recall": 0.401
+      },
+      {
+        "flag_top": "10%",
+        "precision": 0.626,
+        "recall": 0.2
+      }
+    ]
+  }
+}

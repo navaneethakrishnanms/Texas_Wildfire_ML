@@ -1,0 +1,19 @@
+{
+  "model": "tdis_forecast_hrrr_tuned_d9",
+  "n_scored": 5064462,
+  "fit_rows": 3934242,
+  "holdout_rows": 1130220,
+  "holdout": {
+    "base_rate": 0.021326821326821326,
+    "raw": {
+      "ece": 0.2944,
+      "brier": 0.1376,
+      "mean_pred": 0.3157537281513214
+    },
+    "calibrated": {
+      "ece": 0.0019,
+      "brier": 0.02001,
+      "mean_pred": 0.019419627264142036
+    }
+  }
+}

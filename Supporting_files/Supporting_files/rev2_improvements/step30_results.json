@@ -1,0 +1,42 @@
+{
+  "served_baseline": {
+    "aucpr": 0.4825,
+    "auroc": 0.7333
+  },
+  "mono_wind": {
+    "aucpr": 0.4822,
+    "auroc": 0.733,
+    "delta_aucpr": -0.0003
+  },
+  "mono_wind_vpd": {
+    "aucpr": 0.4812,
+    "auroc": 0.7319,
+    "delta_aucpr": -0.0013
+  },
+  "tuned_seeds": {
+    "runs": [
+      {
+        "seed": 42,
+        "aucpr": 0.4875,
+        "auroc": 0.7331,
+        "delta_aucpr": 0.005
+      },
+      {
+        "seed": 7,
+        "aucpr": 0.4874,
+        "auroc": 0.7336,
+        "delta_aucpr": 0.0049
+      },
+      {
+        "seed": 2026,
+        "aucpr": 0.4874,
+        "auroc": 0.7335,
+        "delta_aucpr": 0.0049
+      }
+    ],
+    "min_gain": 0.0049,
+    "max_gain": 0.005,
+    "mean_gain": 0.0049,
+    "robust": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "holdout": {
+    "n": 1130220,
+    "base": 0.021307356089964785,
+    "raw_ece": 0.2799,
+    "cal_ece": 0.0018
+  },
+  "realpop_best_f1": {
+    "f1": 0.1692,
+    "precision": 0.1368,
+    "recall": 0.2219,
+    "threshold": 0.0774
+  }
+}

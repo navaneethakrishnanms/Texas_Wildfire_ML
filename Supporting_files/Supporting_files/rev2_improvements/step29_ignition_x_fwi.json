@@ -1,0 +1,30 @@
+{
+  "n_scored": 3155406,
+  "base_rate": 0.02425805110340793,
+  "date_range": [
+    "2024-01-01",
+    "2026-07-21"
+  ],
+  "results": {
+    "model_alone": {
+      "aucpr": 0.0945,
+      "auroc": 0.7552,
+      "lift": 3.895
+    },
+    "model_x_fwiN_noaa": {
+      "aucpr": 0.0372,
+      "auroc": 0.5732,
+      "lift": 1.532
+    },
+    "model_x_fwiT_tx": {
+      "aucpr": 0.0771,
+      "auroc": 0.7162,
+      "lift": 3.179
+    },
+    "model_x_fwi_comp": {
+      "aucpr": 0.0687,
+      "auroc": 0.6985,
+      "lift": 2.832
+    }
+  }
+}

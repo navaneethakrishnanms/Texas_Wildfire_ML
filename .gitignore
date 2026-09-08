@@ -116,9 +116,34 @@ V2/phase2/outputs/**/maps/*.html
 !V2/phase2/outputs/**/phase2c_summary.csv
 !V2/phase2/outputs/**/phase2d_summary.csv
 
-# ── TEXAS PIPELINE (TX/) — code only, no result CSVs/data ────
+# ⬛ TEXAS PIPELINE (TX/) — code only, no result CSVs/data ⬛
 TX/outputs/**/*.csv
 TX/outputs/**/*.log
+
+# ⬛ TEXAS/ folder — exclude data files and model weights, keep code & reports ⬛
+TEXAS/**/*.parquet
+TEXAS/**/*.feather
+TEXAS/**/*.csv
+TEXAS/**/*.pkl
+TEXAS/**/*.ubj
+TEXAS/**/*.bin
+TEXAS/**/*.joblib
+TEXAS/**/*.cbm
+# TEXAS JSON model files (large trained model outputs, not config)
+TEXAS/model_*.json
+TEXAS/training_results_*.json
+
+# ⬛ TEXAS_v1_backup/ — exclude all data & model files ⬛
+TEXAS_v1_backup/**/*.parquet
+TEXAS_v1_backup/**/*.feather
+TEXAS_v1_backup/**/*.csv
+TEXAS_v1_backup/**/*.pkl
+TEXAS_v1_backup/**/*.ubj
+TEXAS_v1_backup/**/*.bin
+TEXAS_v1_backup/**/*.joblib
+TEXAS_v1_backup/**/*.cbm
+TEXAS_v1_backup/model_*.json
+TEXAS_v1_backup/training_results_*.json
 
 # ── SUPPORTING_FILES / FOCUSED_FILES — data & model outputs ───
 # Parquet and CSV data files at any depth (they are large)

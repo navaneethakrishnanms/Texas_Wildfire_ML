@@ -23,6 +23,8 @@ Run:
 from datetime import date, datetime
 from pathlib import Path
 import json
+import os
+import urllib.request
 
 import pandas as pd
 from fastapi import FastAPI, Header, HTTPException, Query
@@ -33,6 +35,37 @@ DEV_API_KEY = "tdis_dev_master_key_2024_secure_token_123456789"
 
 REPLICA_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPLICA_ROOT / "data"
+
+# In the cloud, the ~600MB data/ folder isn't baked into the Docker image
+# (it's gitignored -- too large for GitHub, see Dockerfile comment). Instead,
+# set DATA_BASE_URL to a public Blob Storage container holding the same
+# files, and this downloads them once at startup into the same local
+# DATA_DIR path everything else already expects. Locally (DATA_BASE_URL
+# unset), this is a no-op and the pre-built files on disk are used as-is.
+DATA_BASE_URL = os.environ.get("DATA_BASE_URL", "").rstrip("/")
+DATA_FILES = [
+    "historical_risk_cells.parquet",
+    "active_fires_by_date.parquet",
+    "live_august_staging.parquet",
+    "live_feed_state.json",
+]
+
+
+def ensure_data_downloaded():
+    if not DATA_BASE_URL:
+        return
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    for fname in DATA_FILES:
+        dest = DATA_DIR / fname
+        if dest.exists():
+            continue
+        url = f"{DATA_BASE_URL}/{fname}"
+        print(f"Downloading {url} -> {dest} ...")
+        try:
+            urllib.request.urlretrieve(url, dest)
+            print(f"  done ({dest.stat().st_size:,} bytes)")
+        except Exception as e:
+            print(f"  FAILED: {e} (this file will show as missing/empty)")
 
 HISTORICAL_CUTOVER = "2026-07-31"
 LIVE_START = "2026-08-01"
@@ -56,6 +89,7 @@ _fires_df: pd.DataFrame | None = None
 @app.on_event("startup")
 def load_data():
     global _historical_df, _live_staging_df, _fires_df
+    ensure_data_downloaded()
     print("Loading historical_risk_cells.parquet ...")
     _historical_df = pd.read_parquet(DATA_DIR / "historical_risk_cells.parquet")
     print(f"  {len(_historical_df):,} cells loaded.")

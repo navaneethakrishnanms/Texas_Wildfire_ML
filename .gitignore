@@ -226,6 +226,11 @@ TDIS_REPLICA/**/*.pyc
 # Frontend secrets / local env overrides
 TDIS_REPLICA/frontend/.env
 TDIS_REPLICA/frontend/.env.*
+# EXCEPTION: .env.production holds only the public backend URL (not a
+# secret -- it ends up visible in the compiled JS bundle anyway), and is
+# committed deliberately so Azure Static Web Apps' GitHub Actions build
+# picks it up automatically at build time.
+!TDIS_REPLICA/frontend/.env.production
 # Node dependencies (never commit node_modules)
 TDIS_REPLICA/frontend/node_modules/
 TDIS_REPLICA/frontend/dist/

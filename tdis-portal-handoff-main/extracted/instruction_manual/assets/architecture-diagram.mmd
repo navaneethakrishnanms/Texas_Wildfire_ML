@@ -1,0 +1,32 @@
+flowchart LR
+  subgraph providers [External Providers]
+    Baron[Baron]
+    NIFC[NIFC]
+    USGS[USGS]
+    NOAA[NOAA]
+    PO[PowerOutage]
+  end
+
+  subgraph bit [BIT Databricks]
+    Bronze[Bronze]
+    Silver[Silver]
+    Gold[Gold]
+    Sync[PG Sync]
+  end
+
+  subgraph portal [Portal Handoff]
+    PG[(PostgreSQL)]
+    API[FastAPI]
+    Tiles[pg_tileserv]
+    FE[React]
+    Email[Email API]
+  end
+
+  providers --> Bronze --> Silver --> Gold
+  Silver --> Sync --> PG
+  Gold --> Sync
+  PG --> API
+  PG --> Tiles
+  API --> FE
+  Tiles --> FE
+  Email --> FE

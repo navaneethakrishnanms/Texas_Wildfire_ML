@@ -216,3 +216,32 @@ temp/
 scratch/
 *.tmp
 *.bak
+
+# ── TDIS_REPLICA — data, secrets, frontend deps, cache ────────
+# Large parquet data feeds (live + historical, hundreds of MB each)
+TDIS_REPLICA/data/
+# Python cache inside the replica services
+TDIS_REPLICA/**/__pycache__/
+TDIS_REPLICA/**/*.pyc
+# Frontend secrets / local env overrides
+TDIS_REPLICA/frontend/.env
+TDIS_REPLICA/frontend/.env.*
+# Node dependencies (never commit node_modules)
+TDIS_REPLICA/frontend/node_modules/
+TDIS_REPLICA/frontend/dist/
+TDIS_REPLICA/frontend/.vite/
+# Service logs
+TDIS_REPLICA/**/*.log
+
+# ── TDIS-PORTAL-HANDOFF — archives and logs ───────────────────
+# Large binary tarballs (download separately, don't bloat history)
+tdis-portal-handoff-main/**/*.tar.gz
+tdis-portal-handoff-main/**/*.tar
+tdis-portal-handoff-main/**/*.zip
+tdis-portal-handoff-main/**/*.log
+
+# ── NODE / FRONTEND (root-level, if any) ─────────────────────
+node_modules/
+package-lock.json
+dist/
+.vite/

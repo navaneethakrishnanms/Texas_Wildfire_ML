@@ -1,0 +1,33 @@
+# Local PostgreSQL + pg_tileserv only.
+# API, frontend, and email backend still run on the host (see 06-local-development.md).
+#
+# Usage (from instruction_manual/):
+#   docker compose -f docker-compose.local.yml up -d
+#   psql -h localhost -U postgres -d tdis_portal -f schema/portal_schema.sql
+
+services:
+  postgres:
+    image: postgis/postgis:15-3.4-alpine
+    container_name: tdis-postgres
+    environment:
+      POSTGRES_DB: tdis_portal
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pg_tileserv:
+    image: pramsey/pg_tileserv:20240614
+    container_name: tdis-pg-tileserv
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/tdis_portal?sslmode=disable
+    ports:
+      - "7800:7800"

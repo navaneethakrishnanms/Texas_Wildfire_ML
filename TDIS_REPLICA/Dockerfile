@@ -2,15 +2,24 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# NOTE: build this from the TDIS_REPLICA/ folder (not api/) so api/ is inside
-# the build context.
+# Build context is TDIS_REPLICA/ (this folder) -- e.g.:
+#   docker build -t wildfire-api .          (run from inside TDIS_REPLICA/)
+# or, when wiring up Azure Container Apps from GitHub: Dockerfile location =
+# TDIS_REPLICA/Dockerfile, build context = TDIS_REPLICA.
 #
-# data/ is NOT copied here on purpose: the parquet files (~600MB total,
-# largest single file 411MB) are gitignored and were never pushed to GitHub
-# (GitHub hard-blocks files over 100MB), so they can't exist in a cloud build
-# checked out from the repo. Instead, /app/data is mounted at runtime from an
-# Azure Files share (see deployment README) -- this directory just needs to
-# exist so the mount has somewhere to attach.
+# api/.env is NEVER copied into the image (see .dockerignore) -- it's
+# gitignored anyway (won't exist in a cloud checkout), and config shouldn't
+# be baked into an image. Real values are supplied as actual environment
+# variables at container runtime:
+#   - locally:  docker run --env-file api/.env -p 8000:8000 wildfire-api
+#   - in Azure: Container App -> Environment variables (same key names)
+# main.py reads them the same way either way via load_dotenv() + os.environ.
+#
+# data/ is ALSO NEVER copied into the image (see .dockerignore) -- the
+# parquet files (~600MB, largest file 411MB) are gitignored and too large
+# for GitHub anyway. Instead, main.py downloads them from DATA_BASE_URL
+# (a public Blob Storage container) once at container startup into this
+# empty /app/data directory.
 
 COPY api/requirements.txt ./api/requirements.txt
 RUN pip install --no-cache-dir -r api/requirements.txt

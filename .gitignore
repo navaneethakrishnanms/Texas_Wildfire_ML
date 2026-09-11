@@ -231,6 +231,9 @@ TDIS_REPLICA/frontend/.env.*
 # committed deliberately so Azure Static Web Apps' GitHub Actions build
 # picks it up automatically at build time.
 !TDIS_REPLICA/frontend/.env.production
+# Backend local config -- never commit (holds API_KEY; in Azure this is set
+# via Container App "Environment variables" instead, not a checked-in file).
+TDIS_REPLICA/api/.env
 # Node dependencies (never commit node_modules)
 TDIS_REPLICA/frontend/node_modules/
 TDIS_REPLICA/frontend/dist/

@@ -1,0 +1,22 @@
+# Data files -- never sent to the Docker build context. main.py downloads
+# these from Blob Storage (DATA_BASE_URL) at container startup instead.
+data/
+
+# Secrets / local config -- never baked into the image.
+api/.env
+api/.env.*
+frontend/.env
+frontend/.env.*
+!frontend/.env.production
+
+# Frontend build artifacts / deps -- not needed for the backend image, and
+# node_modules alone would otherwise balloon the build context hugely.
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Caches / logs
+**/__pycache__/
+**/*.pyc
+**/*.log
+.git/

@@ -27,11 +27,19 @@ import os
 import urllib.request
 
 import pandas as pd
+from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-DEV_API_KEY = "tdis_dev_master_key_2024_secure_token_123456789"
+# Loads TDIS_REPLICA/api/.env locally. In Azure, Container App "Environment
+# variables" are already real env vars before Python even starts, so this is
+# a no-op there (load_dotenv never overrides an existing env var by default)
+# -- the same .env-driven config works in both places without extra code.
+load_dotenv(Path(__file__).resolve().parent / ".env")
+
+DEV_API_KEY = os.environ.get("API_KEY", "tdis_dev_master_key_2024_secure_token_123456789")
+CORS_ORIGINS = [o.strip() for o in os.environ.get("CORS_ORIGINS", "*").split(",") if o.strip()]
 
 REPLICA_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPLICA_ROOT / "data"
@@ -75,7 +83,7 @@ app = FastAPI(title="TDIS Portal Replica API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )

@@ -67,8 +67,7 @@ def ensure_data_downloaded():
         dest = DATA_DIR / fname
         if dest.exists():
             continue
-        url = f
-        "{DATA_BASE_URL}/{fname}"
+        url = f"{DATA_BASE_URL}/{fname}"
         print(f"Downloading {url} -> {dest} ...")
         try:
             urllib.request.urlretrieve(url, dest)

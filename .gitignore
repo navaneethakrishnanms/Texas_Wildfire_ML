@@ -235,6 +235,13 @@ TDIS_REPLICA/frontend/.env.*
 # via Container App "Environment variables" instead, not a checked-in file).
 TDIS_REPLICA/api/.env
 # Node dependencies (never commit node_modules)
+# ── texas-backend/ — standalone backend deployment folder ─────
+# Same reasoning as TDIS_REPLICA/api and TDIS_REPLICA/data above: parquet
+# files are large and gitignored, .env holds local config.
+texas-backend/data/
+texas-backend/api/.env
+texas-backend/**/__pycache__/
+texas-backend/**/*.pyc
 TDIS_REPLICA/frontend/node_modules/
 TDIS_REPLICA/frontend/dist/
 TDIS_REPLICA/frontend/.vite/

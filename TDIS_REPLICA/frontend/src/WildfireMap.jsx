@@ -13,7 +13,8 @@ const RASTER_STYLE = {
       type: "raster",
       tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
       tileSize: 256,
-      attribution: "&copy; OpenStreetMap contributors",
+      attribution: "&copy; OpenStreetMap c
+      ontributors",
     },
   },
   layers: [{ id: "osm-tiles", type: "raster", source: "osm-tiles", minzoom: 0, maxzoom: 19 }],
@@ -92,9 +93,9 @@ const WildfireMap = forwardRef(function WildfireMap(
           .setLngLat(e.lngLat)
           .setHTML(
             `<b>H3 cell:</b> ${p.h3_cell}<br/>` +
-              `<b>Risk score:</b> ${p.risk_score}<br/>` +
-              `<b>Risk class:</b> ${p.risk_class}<br/>` +
-              `<b>Source:</b> ${p.source}`
+            `<b>Risk score:</b> ${p.risk_score}<br/>` +
+            `<b>Risk class:</b> ${p.risk_class}<br/>` +
+            `<b>Source:</b> ${p.source}`
           )
           .addTo(map);
       });

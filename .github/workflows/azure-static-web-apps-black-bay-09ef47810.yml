@@ -1,13 +1,10 @@
 name: Azure Static Web Apps CI/CD
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+  # Manual deploy only — run from GitHub Actions > "Run workflow" button
+  # Automatic deploy on push is intentionally disabled.
+  # To deploy: fix the AZURE_STATIC_WEB_APPS_API_TOKEN secret first, then trigger manually.
+  workflow_dispatch:
 
 jobs:
   build_and_deploy_job:

@@ -1,0 +1,14 @@
+# TDIS 24-48h Ignition — serving/retraining environment
+# Verified working under conda env UAI2526 (Python 3.10) on the lab server.
+xgboost>=2.0
+scikit-learn>=1.3      # isotonic calibrator (joblib-pickled)
+joblib>=1.3
+pandas>=2.0
+pyarrow>=12            # parquet
+numpy>=1.24
+h3>=4.0                # H3 res-8 grid + res-5 aggregation
+scipy>=1.10            # cKDTree nearest-gridpoint join
+# live serving only (offline mode does not need these):
+herbie-data>=2024.1    # HRRR/GFS pull from AWS noaa-hrrr-bdp-pds (verified 2025.12.0)
+xarray>=2024.1
+cfgrib>=0.9            # GRIB2 decode (verified 0.9.15.1)

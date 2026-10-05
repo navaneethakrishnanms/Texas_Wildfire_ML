@@ -1,0 +1,10 @@
+{
+  "note": "PRELIMINARY calibrator: fit/verified on the MATCHED test-set temporal split (2024H1 fit -> 2024H2-2026 holdout), NOT on true real population like d9's. Base rate here (~31%) is the matched-sample rate, not the real TX rate (~2%). Refit on true real-population outcomes before using ign_cal operationally.",
+  "fit_n": 316046,
+  "holdout_n": 316047,
+  "holdout_base_rate": 0.313228728638462,
+  "brier_before": 0.15969824533768492,
+  "brier_after": 0.13897180449514449,
+  "ece_before": 0.12828084896907013,
+  "ece_after": 0.015854044686064578
+}

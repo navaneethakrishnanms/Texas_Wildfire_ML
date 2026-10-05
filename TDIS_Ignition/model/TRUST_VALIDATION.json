@@ -1,0 +1,238 @@
+{
+  "rederived_vs_claimed": {
+    "comparison": {
+      "n": {
+        "derived": 5064462.0,
+        "claimed": 5064462.0,
+        "match": true
+      },
+      "base_rate": {
+        "derived": 0.01916,
+        "claimed": 0.01916,
+        "match": true
+      },
+      "aucpr": {
+        "derived": 0.08778,
+        "claimed": 0.08778,
+        "match": true
+      },
+      "auroc": {
+        "derived": 0.79682,
+        "claimed": 0.79682,
+        "match": true
+      },
+      "lift": {
+        "derived": 4.58233,
+        "claimed": 4.58233,
+        "match": true
+      }
+    },
+    "derived_full": {
+      "n": 5064462,
+      "base_rate": 0.01916,
+      "aucpr": 0.08778,
+      "auroc": 0.79682,
+      "brier_raw": 0.124,
+      "ece_raw": 0.27154,
+      "lift": 4.58233,
+      "ece_calibrated_wholepanel": 0.00055,
+      "brier_calibrated_wholepanel": 0.01807,
+      "ece_calibrated_2026_holdout": 0.00076
+    }
+  },
+  "load_response": {
+    "hrrr_vpd": {
+      "grid_lo": 0.765,
+      "grid_hi": 4.648,
+      "response": [
+        0.4016,
+        0.4689,
+        0.5484,
+        0.5886,
+        0.6163,
+        0.6445,
+        0.6555,
+        0.6682,
+        0.665
+      ],
+      "direction": "up",
+      "monotone": false,
+      "expected": "up",
+      "response_range": 0.2634,
+      "verdict": "\u26a0 dir-ok-not-monotone"
+    },
+    "hrrr_wind": {
+      "grid_lo": 3.546,
+      "grid_hi": 25.649,
+      "response": [
+        0.6019,
+        0.5885,
+        0.5738,
+        0.5741,
+        0.5669,
+        0.5669,
+        0.5669,
+        0.5669,
+        0.5669
+      ],
+      "direction": "down",
+      "monotone": false,
+      "expected": "up",
+      "response_range": -0.035,
+      "verdict": "\u274c WRONG DIRECTION"
+    },
+    "hrrr_tmp": {
+      "grid_lo": 10.744,
+      "grid_hi": 33.726,
+      "response": [
+        0.7574,
+        0.7334,
+        0.7163,
+        0.6003,
+        0.5566,
+        0.51,
+        0.4428,
+        0.3816,
+        0.3316
+      ],
+      "direction": "down",
+      "monotone": true,
+      "expected": "up",
+      "response_range": -0.4258,
+      "verdict": "\u274c WRONG DIRECTION"
+    },
+    "drought_score": {
+      "grid_lo": 0.755,
+      "grid_hi": 4.586,
+      "response": [
+        0.5671,
+        0.586,
+        0.5832,
+        0.593,
+        0.6004,
+        0.5766,
+        0.5805,
+        0.5581,
+        0.5931
+      ],
+      "direction": "up",
+      "monotone": false,
+      "expected": "up",
+      "response_range": 0.0261,
+      "verdict": "\u26a0 dir-ok-not-monotone"
+    },
+    "avg_burn_prob": {
+      "grid_lo": 0.0,
+      "grid_hi": 10.0,
+      "response": [
+        0.5933,
+        0.5843,
+        0.5817,
+        0.5805,
+        0.5835,
+        0.5807,
+        0.5796,
+        0.5702,
+        0.4741
+      ],
+      "direction": "down",
+      "monotone": false,
+      "expected": "up",
+      "response_range": -0.1192,
+      "verdict": "\u274c WRONG DIRECTION"
+    },
+    "whp": {
+      "grid_lo": 0.0,
+      "grid_hi": 7.0,
+      "response": [
+        0.5859,
+        0.5859,
+        0.5857,
+        0.5743,
+        0.57,
+        0.5752,
+        0.5832,
+        0.5863,
+        0.5785
+      ],
+      "direction": "down",
+      "monotone": false,
+      "expected": "up",
+      "response_range": -0.0074,
+      "verdict": "\u274c WRONG DIRECTION"
+    },
+    "hrrr_mstav": {
+      "grid_lo": 0.0,
+      "grid_hi": 0.792,
+      "response": [
+        0.5661,
+        0.5772,
+        0.579,
+        0.5838,
+        0.5842,
+        0.583,
+        0.6017,
+        0.6019,
+        0.6
+      ],
+      "direction": "up",
+      "monotone": false,
+      "expected": "down",
+      "response_range": 0.0339,
+      "verdict": "\u274c WRONG DIRECTION"
+    },
+    "road_dist_km": {
+      "grid_lo": 0.203,
+      "grid_hi": 299.977,
+      "response": [
+        0.492,
+        0.5618,
+        0.5849,
+        0.5595,
+        0.5741,
+        0.5866,
+        0.5736,
+        0.5664,
+        0.609
+      ],
+      "direction": "up",
+      "monotone": false,
+      "expected": null,
+      "response_range": 0.1169,
+      "verdict": "\u2705"
+    },
+    "elevation_m": {
+      "grid_lo": 0.967,
+      "grid_hi": 1799.212,
+      "response": [
+        0.6263,
+        0.5424,
+        0.4919,
+        0.4591,
+        0.4381,
+        0.3663,
+        0.2578,
+        0.2282,
+        0.2001
+      ],
+      "direction": "down",
+      "monotone": true,
+      "expected": null,
+      "response_range": -0.4262,
+      "verdict": "\u2705"
+    }
+  },
+  "permutation_sensitivity_top10": {
+    "elevation_m": 0.12429,
+    "hrrr_tmp": 0.12199,
+    "ecoregion_id": 0.08757,
+    "hrrr_vpd": 0.08071,
+    "road_dist_km": 0.06987,
+    "powerline_dist_km": 0.04339,
+    "drought_score": 0.0287,
+    "avg_burn_prob": 0.02712,
+    "slope_deg": 0.02623,
+    "hrrr_mstav": 0.02483
+  },
+  "hard_failures": []
+}

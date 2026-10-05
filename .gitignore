@@ -260,3 +260,53 @@ node_modules/
 package-lock.json
 dist/
 .vite/
+
+# ── TDIS_Ignition/ — code & docs kept, data/model weights ignored ─
+# Large parquet data files at every depth
+TDIS_Ignition/**/*.parquet
+TDIS_Ignition/**/*.feather
+TDIS_Ignition/**/*.csv
+# Model weights (large XGBoost/joblib files)
+TDIS_Ignition/**/*.joblib
+TDIS_Ignition/**/*.pkl
+TDIS_Ignition/**/*.ubj
+TDIS_Ignition/**/*.bin
+TDIS_Ignition/**/*.cbm
+# Large trained-model JSON dumps (30 MB+), keep small config/result JSONs
+TDIS_Ignition/model/tdis_forecast_hrrr_filtered.json
+TDIS_Ignition/model/tdis_forecast_hrrr_tuned_d9.json
+# Logs
+TDIS_Ignition/**/*.log
+# KEEP: code scripts, docs, markdown, small JSON reports, PNGs, requirements
+!TDIS_Ignition/**/*.py
+!TDIS_Ignition/**/*.sh
+!TDIS_Ignition/**/*.md
+!TDIS_Ignition/**/*.txt
+!TDIS_Ignition/**/*.png
+!TDIS_Ignition/**/*.json
+# Re-exclude the known large model JSONs (overrides the !*.json above)
+TDIS_Ignition/model/tdis_forecast_hrrr_filtered.json
+TDIS_Ignition/model/tdis_forecast_hrrr_tuned_d9.json
+
+# ── TDIS_Ignition_BIT/ — code & docs kept, data/model weights ignored ─
+TDIS_Ignition_BIT/**/*.parquet
+TDIS_Ignition_BIT/**/*.feather
+TDIS_Ignition_BIT/**/*.csv
+TDIS_Ignition_BIT/**/*.joblib
+TDIS_Ignition_BIT/**/*.pkl
+TDIS_Ignition_BIT/**/*.ubj
+TDIS_Ignition_BIT/**/*.bin
+TDIS_Ignition_BIT/**/*.cbm
+# Large model JSON (21 MB)
+TDIS_Ignition_BIT/model/model_bit_38feat.json
+TDIS_Ignition_BIT/**/*.log
+!TDIS_Ignition_BIT/**/*.py
+!TDIS_Ignition_BIT/**/*.sh
+!TDIS_Ignition_BIT/**/*.md
+!TDIS_Ignition_BIT/**/*.txt
+!TDIS_Ignition_BIT/**/*.json
+TDIS_Ignition_BIT/model/model_bit_38feat.json
+
+# ── Large archive files ───────────────────────────────────────
+# The BIT zip is 160 MB — don't commit it
+TDIS_Ignition_BIT.zip

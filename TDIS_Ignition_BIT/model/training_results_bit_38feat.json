@@ -1,0 +1,513 @@
+{
+  "built": "2026-10-01T14:53:20.039301",
+  "runtime_seconds": 185.65309643745422,
+  "dataset": "C:\\Users\\Admin\\Downloads\\Texas ML Wildfire\\TDIS_Ignition_BIT\\data\\bit_train_tx.parquet",
+  "n_features": 38,
+  "features": [
+    "road_dist_km",
+    "ecoregion_id",
+    "elevation_m",
+    "slope_deg",
+    "aspect_deg",
+    "avg_burn_prob",
+    "whp",
+    "flep4",
+    "cfl",
+    "cbd",
+    "cbh",
+    "powerline_dist_km",
+    "sin_month",
+    "cos_month",
+    "sin_dow",
+    "cos_dow",
+    "is_weekend",
+    "is_holiday",
+    "hrrr_tmp",
+    "hrrr_vpd",
+    "hrrr_wind",
+    "hrrr_mstav",
+    "drought_score",
+    "bp_x_vpd",
+    "whp_x_vpd",
+    "bp_x_drought",
+    "pop_density",
+    "fm100_5d_min",
+    "lat",
+    "lon",
+    "erc",
+    "fm100",
+    "vpd",
+    "vs",
+    "rmax",
+    "rmin",
+    "tmmx",
+    "pr"
+  ],
+  "rows": {
+    "train": 671455,
+    "val": 268332,
+    "test": 1261502,
+    "total": 2201289
+  },
+  "positive_rate": {
+    "train": 0.3042065365512209,
+    "val": 0.2876324851303609,
+    "test": 0.30550248830362536
+  },
+  "split_date_ranges": {
+    "train": [
+      "2018-07-16",
+      "2020-12-31"
+    ],
+    "val": [
+      "2021-01-01",
+      "2021-12-31"
+    ],
+    "test": [
+      "2022-01-01",
+      "2026-07-29"
+    ]
+  },
+  "hyperparameter_search": {
+    "stage1_winner": {
+      "depth": 9,
+      "mcw": 10,
+      "val_auroc": 0.8516185355482795,
+      "val_aucpr": 0.7603935809440281,
+      "best_iter": 399
+    },
+    "stage2_winner": {
+      "lr": 0.05,
+      "subsample": 0.8,
+      "val_auroc": 0.851616338469385,
+      "val_aucpr": 0.7632440521164711,
+      "best_iter": 695
+    },
+    "stage1_all": [
+      {
+        "depth": 6,
+        "mcw": 10,
+        "val_auroc": 0.8411756930142966,
+        "val_aucpr": 0.7331940734772657,
+        "best_iter": 399
+      },
+      {
+        "depth": 6,
+        "mcw": 20,
+        "val_auroc": 0.842885690688296,
+        "val_aucpr": 0.7348719724753169,
+        "best_iter": 399
+      },
+      {
+        "depth": 6,
+        "mcw": 30,
+        "val_auroc": 0.8432544027412849,
+        "val_aucpr": 0.735329347041746,
+        "best_iter": 399
+      },
+      {
+        "depth": 7,
+        "mcw": 10,
+        "val_auroc": 0.8477085743563499,
+        "val_aucpr": 0.746761309215804,
+        "best_iter": 399
+      },
+      {
+        "depth": 7,
+        "mcw": 20,
+        "val_auroc": 0.8479764902466941,
+        "val_aucpr": 0.7464175290539106,
+        "best_iter": 398
+      },
+      {
+        "depth": 7,
+        "mcw": 30,
+        "val_auroc": 0.8488299477258219,
+        "val_aucpr": 0.7482106903120301,
+        "best_iter": 399
+      },
+      {
+        "depth": 8,
+        "mcw": 10,
+        "val_auroc": 0.8505842511014787,
+        "val_aucpr": 0.7560542950840985,
+        "best_iter": 399
+      },
+      {
+        "depth": 8,
+        "mcw": 20,
+        "val_auroc": 0.8511887740312043,
+        "val_aucpr": 0.7558810637155305,
+        "best_iter": 399
+      },
+      {
+        "depth": 8,
+        "mcw": 30,
+        "val_auroc": 0.851248912914743,
+        "val_aucpr": 0.7554023415991413,
+        "best_iter": 398
+      },
+      {
+        "depth": 9,
+        "mcw": 10,
+        "val_auroc": 0.8516185355482795,
+        "val_aucpr": 0.7603935809440281,
+        "best_iter": 399
+      },
+      {
+        "depth": 9,
+        "mcw": 20,
+        "val_auroc": 0.8510671458136627,
+        "val_aucpr": 0.758642018678239,
+        "best_iter": 378
+      },
+      {
+        "depth": 9,
+        "mcw": 30,
+        "val_auroc": 0.85228402755289,
+        "val_aucpr": 0.7590707547662868,
+        "best_iter": 399
+      }
+    ],
+    "stage2_all": [
+      {
+        "lr": 0.01,
+        "subsample": 0.7,
+        "val_auroc": 0.850795862219045,
+        "val_aucpr": 0.7541142731592703,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.01,
+        "subsample": 0.8,
+        "val_auroc": 0.8508674164369407,
+        "val_aucpr": 0.7542733883110351,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.01,
+        "subsample": 0.9,
+        "val_auroc": 0.8507861844369468,
+        "val_aucpr": 0.7542730377308631,
+        "best_iter": 1197
+      },
+      {
+        "lr": 0.02,
+        "subsample": 0.7,
+        "val_auroc": 0.8526972271999659,
+        "val_aucpr": 0.7618019413285293,
+        "best_iter": 1190
+      },
+      {
+        "lr": 0.02,
+        "subsample": 0.8,
+        "val_auroc": 0.852556830001826,
+        "val_aucpr": 0.7620261454115628,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.02,
+        "subsample": 0.9,
+        "val_auroc": 0.8529347784080152,
+        "val_aucpr": 0.7624327864047085,
+        "best_iter": 1192
+      },
+      {
+        "lr": 0.05,
+        "subsample": 0.7,
+        "val_auroc": 0.8517658771601121,
+        "val_aucpr": 0.7612069930946832,
+        "best_iter": 490
+      },
+      {
+        "lr": 0.05,
+        "subsample": 0.8,
+        "val_auroc": 0.851616338469385,
+        "val_aucpr": 0.7632440521164711,
+        "best_iter": 695
+      },
+      {
+        "lr": 0.05,
+        "subsample": 0.9,
+        "val_auroc": 0.8511857126328332,
+        "val_aucpr": 0.7621102956692045,
+        "best_iter": 648
+      }
+    ]
+  },
+  "final_hyperparameters": {
+    "n_estimators": 3000,
+    "max_depth": 9,
+    "min_child_weight": 10,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "eval_metric": "aucpr",
+    "early_stopping_rounds": 80,
+    "tree_method": "hist",
+    "device": "cuda",
+    "random_state": 42,
+    "n_jobs": -1,
+    "scale_pos_weight": 2.287240344461253,
+    "best_iteration": 695
+  },
+  "metrics_raw": {
+    "train": {
+      "aucpr": 0.9050701395712295,
+      "auroc": 0.9494135492661668,
+      "f1": 0.8145351122840675,
+      "precision": 0.8075662722491422,
+      "recall": 0.8216252735470795,
+      "best_threshold": 0.515161395072937,
+      "base_rate": 0.3042065365512209,
+      "lift": 2.9751830773657226
+    },
+    "val": {
+      "aucpr": 0.7632440521164711,
+      "auroc": 0.851616338469385,
+      "f1": 0.6651076620107454,
+      "precision": 0.6650645800676245,
+      "recall": 0.6651507495368031,
+      "best_threshold": 0.48055773973464966,
+      "base_rate": 0.2876324851303609,
+      "lift": 2.6535391222258964
+    },
+    "test": {
+      "aucpr": 0.7237376017082187,
+      "auroc": 0.8064376171931998,
+      "f1": 0.6283548403234072,
+      "precision": 0.6215165229575066,
+      "recall": 0.6353453107485365,
+      "best_threshold": 0.44984081387519836,
+      "base_rate": 0.30550248830362536,
+      "lift": 2.369007223891833
+    }
+  },
+  "metrics_calibrated": {
+    "val": {
+      "aucpr": 0.7590650136233608,
+      "auroc": 0.8518210143915818,
+      "f1": 0.6651076620107454,
+      "precision": 0.6650645800676245,
+      "recall": 0.6651507495368031,
+      "best_threshold": 0.3396226465702057,
+      "base_rate": 0.2876324851303609,
+      "lift": 2.639010031427212
+    },
+    "test": {
+      "aucpr": 0.7190172469675785,
+      "auroc": 0.8063550591020628,
+      "f1": 0.6282198722554371,
+      "precision": 0.6321153962345437,
+      "recall": 0.624372067920455,
+      "best_threshold": 0.32059380412101746,
+      "base_rate": 0.30550248830362536,
+      "lift": 2.35355610672794
+    }
+  },
+  "calibration": {
+    "brier_test_raw": 0.15398228892505517,
+    "brier_test_calibrated": 0.14744237733718268
+  },
+  "feature_importance_gain": [
+    {
+      "feature": "ecoregion_id",
+      "gain": 241.98501586914062,
+      "pct": 0.20791238887657124
+    },
+    {
+      "feature": "elevation_m",
+      "gain": 89.57235717773438,
+      "pct": 0.0769601485085308
+    },
+    {
+      "feature": "hrrr_vpd",
+      "gain": 63.4578742980957,
+      "pct": 0.054522707494752715
+    },
+    {
+      "feature": "avg_burn_prob",
+      "gain": 59.38324737548828,
+      "pct": 0.05102180718397386
+    },
+    {
+      "feature": "lat",
+      "gain": 52.12730026245117,
+      "pct": 0.04478753151027091
+    },
+    {
+      "feature": "lon",
+      "gain": 39.62845993041992,
+      "pct": 0.03404858661202669
+    },
+    {
+      "feature": "powerline_dist_km",
+      "gain": 38.231842041015625,
+      "pct": 0.03284861908225688
+    },
+    {
+      "feature": "road_dist_km",
+      "gain": 38.07207107543945,
+      "pct": 0.03271134461918011
+    },
+    {
+      "feature": "rmin",
+      "gain": 37.873321533203125,
+      "pct": 0.03254057994614422
+    },
+    {
+      "feature": "sin_month",
+      "gain": 33.96744155883789,
+      "pct": 0.029184666220582838
+    },
+    {
+      "feature": "whp",
+      "gain": 25.792085647583008,
+      "pct": 0.0221604388265016
+    },
+    {
+      "feature": "hrrr_mstav",
+      "gain": 23.857616424560547,
+      "pct": 0.02049835195751834
+    },
+    {
+      "feature": "cos_month",
+      "gain": 23.366779327392578,
+      "pct": 0.020076627029407004
+    },
+    {
+      "feature": "pop_density",
+      "gain": 23.089555740356445,
+      "pct": 0.01983843782572183
+    },
+    {
+      "feature": "rmax",
+      "gain": 22.51648712158203,
+      "pct": 0.01934605996054022
+    },
+    {
+      "feature": "hrrr_tmp",
+      "gain": 21.29850959777832,
+      "pct": 0.01829957939370652
+    },
+    {
+      "feature": "bp_x_vpd",
+      "gain": 20.976806640625,
+      "pct": 0.018023173724164673
+    },
+    {
+      "feature": "is_holiday",
+      "gain": 19.649757385253906,
+      "pct": 0.016882979237947873
+    },
+    {
+      "feature": "cbd",
+      "gain": 18.965425491333008,
+      "pct": 0.016295004489435078
+    },
+    {
+      "feature": "slope_deg",
+      "gain": 18.21246910095215,
+      "pct": 0.015648067895936982
+    },
+    {
+      "feature": "cbh",
+      "gain": 18.1534366607666,
+      "pct": 0.015597347500642641
+    },
+    {
+      "feature": "hrrr_wind",
+      "gain": 17.56197166442871,
+      "pct": 0.015089163554278029
+    },
+    {
+      "feature": "is_weekend",
+      "gain": 17.235990524291992,
+      "pct": 0.014809082090014206
+    },
+    {
+      "feature": "tmmx",
+      "gain": 17.128498077392578,
+      "pct": 0.014716725084598915
+    },
+    {
+      "feature": "vpd",
+      "gain": 16.932266235351562,
+      "pct": 0.014548123607743586
+    },
+    {
+      "feature": "bp_x_drought",
+      "gain": 16.636812210083008,
+      "pct": 0.01429427089716913
+    },
+    {
+      "feature": "drought_score",
+      "gain": 16.613548278808594,
+      "pct": 0.0142742826367037
+    },
+    {
+      "feature": "aspect_deg",
+      "gain": 16.44135093688965,
+      "pct": 0.014126331489447853
+    },
+    {
+      "feature": "fm100_5d_min",
+      "gain": 15.645922660827637,
+      "pct": 0.013442903251290087
+    },
+    {
+      "feature": "fm100",
+      "gain": 15.165940284729004,
+      "pct": 0.013030504648529964
+    },
+    {
+      "feature": "sin_dow",
+      "gain": 14.649240493774414,
+      "pct": 0.012586558615410757
+    },
+    {
+      "feature": "cos_dow",
+      "gain": 14.57051944732666,
+      "pct": 0.012518921862105886
+    },
+    {
+      "feature": "vs",
+      "gain": 14.284401893615723,
+      "pct": 0.012273091004034365
+    },
+    {
+      "feature": "pr",
+      "gain": 14.154256820678711,
+      "pct": 0.012161270968741426
+    },
+    {
+      "feature": "whp_x_vpd",
+      "gain": 13.423881530761719,
+      "pct": 0.01153373595068403
+    },
+    {
+      "feature": "erc",
+      "gain": 13.257272720336914,
+      "pct": 0.011390586443435047
+    },
+    {
+      "feature": "flep4",
+      "gain": 0.0,
+      "pct": 0.0
+    },
+    {
+      "feature": "cfl",
+      "gain": 0.0,
+      "pct": 0.0
+    }
+  ],
+  "comparison_vs_tdis_served_model": {
+    "tdis_served_test_aucpr": 0.4941,
+    "tdis_served_test_auroc": 0.7402,
+    "tdis_served_test_f1": 0.4958,
+    "tdis_served_realpop_aucpr": 0.0878,
+    "tdis_served_realpop_auroc": 0.7968,
+    "tdis_served_realpop_lift": 4.58,
+    "note": "TDIS served-model numbers are on THEIR balanced/matched test set (23.4% positive rate, 2023-2026) and separately on their real deployment population (1.92% base rate). Our numbers above are on a different test population (30.3% positive rate, 2022-2026, TDIS's own tri-state-table split) -- NOT directly comparable to either of TDIS's two reported numbers. See the MD report for the lift-based fair comparison and the explicit caveat that we have not run real-population validation."
+  }
+}

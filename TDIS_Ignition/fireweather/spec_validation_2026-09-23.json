@@ -1,0 +1,99 @@
+{
+  "rev5_load_response": {
+    "hrrr_vpd": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.5404,
+      "verdict": "\u2705"
+    },
+    "hrrr_wind": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.0089,
+      "verdict": "\u2705"
+    },
+    "avg_burn_prob": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.0243,
+      "verdict": "\u2705"
+    },
+    "whp": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.0057,
+      "verdict": "\u2705"
+    },
+    "drought_score": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.0395,
+      "verdict": "\u2705"
+    },
+    "bp_x_vpd": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.0435,
+      "verdict": "\u2705"
+    },
+    "whp_x_vpd": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.016,
+      "verdict": "\u2705"
+    },
+    "bp_x_drought": {
+      "direction": "up",
+      "monotone": true,
+      "expected": "up",
+      "response_range": 0.0165,
+      "verdict": "\u2705"
+    },
+    "fm100_5d_min": {
+      "direction": "down",
+      "monotone": true,
+      "expected": "down",
+      "response_range": -0.0341,
+      "verdict": "\u2705"
+    },
+    "hrrr_mstav": {
+      "direction": "up",
+      "monotone": false,
+      "expected": null,
+      "response_range": 0.0823,
+      "verdict": "\u2705"
+    },
+    "hrrr_tmp": {
+      "direction": "down",
+      "monotone": false,
+      "expected": null,
+      "response_range": -0.252,
+      "verdict": "\u2705"
+    }
+  },
+  "rev5_cross_seed_corr": {
+    "s42v7": 0.9969,
+    "s42v2026": 0.997,
+    "s7v2026": 0.997
+  },
+  "fireweather_spec_match": {
+    "noaa_maxerr": 0.0,
+    "tx_maxerr": 0.0
+  },
+  "fireweather_physics": {
+    "monotone": {
+      "G": true,
+      "vpd_kpa": true,
+      "M": true
+    },
+    "gust_floor": true,
+    "clip_at_1": true
+  }
+}

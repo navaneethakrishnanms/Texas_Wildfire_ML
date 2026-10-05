@@ -1,0 +1,17 @@
+{
+ "tx": {
+  "C": 17.602188661049293,
+  "a": 0.05,
+  "b": 0.05,
+  "c": 0.9191398507900925,
+  "ref": 20.10084683047422,
+  "fit_r": 0.084,
+  "n": 50893,
+  "note": "log-linear fit to daily VIIRS FRP, large-fire episodes (peak>=500MW), TX 2024-2026",
+  "fit_r_log": 0.097
+ },
+ "noaa": {
+  "ref": 26.246602120140658,
+  "note": "James et al. 2025 Eq.3 coefficients; ref = p99.5 over TX archive"
+ }
+}

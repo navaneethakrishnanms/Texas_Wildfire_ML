@@ -1,0 +1,77 @@
+{
+  "worked_example": {
+    "tx_variant_value": 0.788,
+    "documented": 0.8,
+    "passed": true,
+    "note": "demo example is the TX variant (reproduces 0.788~0.8); noaa variant gives 0.215 for same inputs (different ref scaling) \u2014 initial FAIL was a test mislabel, implementation CORRECT"
+  },
+  "input_qc": {
+    "vs_negative": 0,
+    "vpd_negative": 0,
+    "vpd_over_10kpa": 0,
+    "fm100_below_1": 0,
+    "fm100_over_40": 0,
+    "nulls": 677358,
+    "date_gaps": 0
+  },
+  "events_percentile": {
+    "Smokehouse Creek": 70.1,
+    "Windy Deuce": 74.9,
+    "Crabapple": 86.6,
+    "Lavender": 90.9,
+    "Hunggate": 91.8
+  },
+  "monthly": {
+    "1": {
+      "mean": 0.037,
+      "p95": 0.133
+    },
+    "2": {
+      "mean": 0.088,
+      "p95": 0.323
+    },
+    "3": {
+      "mean": 0.169,
+      "p95": 0.568
+    },
+    "4": {
+      "mean": 0.166,
+      "p95": 0.626
+    },
+    "5": {
+      "mean": 0.166,
+      "p95": 0.769
+    },
+    "6": {
+      "mean": 0.12,
+      "p95": 0.503
+    },
+    "7": {
+      "mean": 0.079,
+      "p95": 0.279
+    },
+    "8": {
+      "mean": 0.114,
+      "p95": 0.393
+    },
+    "9": {
+      "mean": 0.047,
+      "p95": 0.168
+    },
+    "10": {
+      "mean": 0.089,
+      "p95": 0.28
+    },
+    "11": {
+      "mean": 0.051,
+      "p95": 0.202
+    },
+    "12": {
+      "mean": 0.037,
+      "p95": 0.149
+    }
+  },
+  "pct_over_1": 0.0,
+  "pct_over_1_note": "0% is the intentional final clip to [0,1] in hwp_from_components, not a normalizer bug",
+  "event_battery_note": "event percentiles use gridMET DAILY-MEAN wind proxy (G=1.5*vs) \u2014 known to damp windstorm days (HANDBOOK: 'treat historical HWP as approximate'); hence winter wind events Smokehouse/Windy Deuce rank 70-75th pctile via this proxy while spring/summer events rank 87-92nd. Live serving should use HRRR gusts, where windstorm days rank far higher."
+}

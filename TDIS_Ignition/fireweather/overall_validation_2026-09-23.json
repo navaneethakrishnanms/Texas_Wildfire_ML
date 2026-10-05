@@ -1,0 +1,26 @@
+{
+  "coverage": {
+    "live_path": "ALL of Texas: every res-8 cell (1.7M) from each HRRR pull, aggregated to all res-5 cells",
+    "historical_components_archive": "3,624 of 5,382 res-5 cells (67.3%), 933 days 2024-01-01..2026-07-21",
+    "missing_cells_pattern": "NOT border slivers (same median child count 328); consistent with the dynamic-panel (fire-relevant) universe; 35.3% of res-8 cells lack HISTORICAL component values. Live product is full-coverage."
+  },
+  "range": {
+    "composite": {"min": 0.047, "max": 0.855, "mean": 0.353, "clipped_at_1": "0%"},
+    "hwp_noaa": {"min": 0.0, "max": 1.0, "mean": 0.102, "clipped_at_1": "0.5% (beyond p99.5 ref)"},
+    "hwp_tx": {"min": 0.074, "max": 1.0, "mean": 0.650, "clipped_at_1": "0.5%"},
+    "note": "all variants 0-1 by construction; HWP normalized by p99.5 archive refs then clipped"
+  },
+  "pooled_discrimination_2024_26": {
+    "n_cell_days": 3155406, "fire_base_rate_pct": 2.42,
+    "auroc": {"composite": 0.494, "hwp_noaa": 0.500, "hwp_tx": 0.505},
+    "top_decile_lift": {"composite": 1.07, "hwp_noaa": 1.00, "hwp_tx": 1.04},
+    "interpretation": "Fire weather has ~NO skill at WHERE/IF ignitions occur (TX ignitions 84% human-caused; spatial factors dominate). This is expected, and is the quantitative backing for the NEVER-multiply-onto-ignition rule."
+  },
+  "within_cell_timing_2024_26": {
+    "n_fire_cell_days": 76492, "n_top1pct_frp_days": 765,
+    "mean_percentile_all_fire_days": {"composite": 0.528, "hwp_noaa": 0.539, "hwp_tx": 0.554},
+    "mean_percentile_top1pct_frp_days": {"composite": 0.632, "hwp_noaa": 0.657, "hwp_tx": 0.680},
+    "top1pct_frp_days_in_cells_top_quartile_pct": {"composite": 41, "hwp_noaa": 45, "hwp_tx": 46},
+    "interpretation": "The real signal is WHEN/severity: ordinary fire days sit just above a cell's median fire-weather, but the most INTENSE fires (top-1% FRP) concentrate on high-fire-weather days (mean pct 0.63-0.68). TX variant strongest on intensity days, consistent with its large-fire-episode fit target. Fire weather = severity-conditioning layer, not an ignition locator."
+  }
+}

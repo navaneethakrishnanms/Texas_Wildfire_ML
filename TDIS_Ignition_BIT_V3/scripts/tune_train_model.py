@@ -1,5 +1,5 @@
 """
-TDIS_Ignition_BIT_V3 -- HRRR-only retrain (29 features), 3-stage hyperparameter search.
+TDIS_Ignition_BIT_V3 -- HRRR-only, no-coordinates retrain (27 features), 3-stage hyperparameter search.
 
 Same regularization-aware search as BIT V2: stage 1 (depth x min_child_weight,
 prefer more-regularized within 0.003 AUPR margin), stage 2 (lr x subsample),
@@ -30,9 +30,9 @@ FEATURES = [
     "avg_burn_prob", "whp", "flep4", "cfl", "cbd", "cbh", "powerline_dist_km",
     "sin_month", "cos_month", "sin_dow", "cos_dow", "is_weekend", "is_holiday",
     "hrrr_tmp", "hrrr_vpd", "hrrr_wind", "hrrr_mstav", "drought_score",
-    "bp_x_vpd", "whp_x_vpd", "bp_x_drought", "pop_density", "lat", "lon",
+    "bp_x_vpd", "whp_x_vpd", "bp_x_drought", "pop_density",
 ]
-assert len(FEATURES) == 29, f"Expected 29 features, got {len(FEATURES)}"
+assert len(FEATURES) == 27, f"Expected 27 features, got {len(FEATURES)}"
 
 def metrics(y_true, p):
     aucpr = average_precision_score(y_true, p)
@@ -220,8 +220,8 @@ def main():
     for r in fi[:15]:
         print(f"  {r['feature']:20s} gain={r['gain']:10.2f}  {r['pct']:.2%}")
 
-    final_model.save_model(str(MODEL_DIR / "model_bit_v3_29feat.json"))
-    joblib.dump(calibrator, MODEL_DIR / "calibrator_bit_v3_29feat.joblib")
+    final_model.save_model(str(MODEL_DIR / "model_bit_v3_27feat.json"))
+    joblib.dump(calibrator, MODEL_DIR / "calibrator_bit_v3_27feat.joblib")
     with open(MODEL_DIR / "feature_list.json", "w") as f:
         json.dump({"n_features": len(FEATURES), "features": FEATURES}, f, indent=2)
 
@@ -256,12 +256,15 @@ def main():
         },
         "feature_importance_gain": fi,
         "removed_vs_bit_v1": {
-            "dropped": ["erc", "fm100", "vpd", "vs", "rmax", "rmin", "tmmx", "pr", "fm100_5d_min"],
-            "reason": "same-day OBSERVED gridMET weather, not a true forecast -- internal feedback "
-                      "(Haripriya, 2026-10-14): use HRRR only, one weather source.",
+            "dropped": ["erc", "fm100", "vpd", "vs", "rmax", "rmin", "tmmx", "pr", "fm100_5d_min",
+                        "lat", "lon"],
+            "reason": "gridMET columns: same-day OBSERVED weather, not a true forecast -- internal "
+                      "feedback (Haripriya, 2026-10-14): use HRRR only, one weather source. "
+                      "lat/lon: raw coordinates -- Texas team feedback, relayed 2026-10-14, "
+                      "instructing not to proceed with raw coordinates as model features.",
         },
     }
-    with open(RESULTS_DIR / "training_results_bit_v3_29feat.json", "w") as f:
+    with open(RESULTS_DIR / "training_results_bit_v3_27feat.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
 
     print(f"\nSaved model, calibrator, feature list, and results under {ROOT}")

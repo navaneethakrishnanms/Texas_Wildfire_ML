@@ -53,8 +53,8 @@ REALPOP = ROOT / "realpop"
 OUT_DAYS = REALPOP / "data" / "scored_days"
 OUT_DAYS.mkdir(parents=True, exist_ok=True)
 
-MODEL_PATH = ROOT / "models" / "model_bit_v3_29feat.json"
-CALIB_PATH = ROOT / "models" / "calibrator_bit_v3_29feat.joblib"
+MODEL_PATH = ROOT / "models" / "model_bit_v3_27feat.json"
+CALIB_PATH = ROOT / "models" / "calibrator_bit_v3_27feat.joblib"
 FEATURE_LIST_PATH = ROOT / "models" / "feature_list.json"
 
 # Representative dates: one per season per year across the test period (2022-2026)

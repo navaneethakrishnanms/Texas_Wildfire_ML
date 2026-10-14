@@ -25,15 +25,15 @@ plt.rcParams.update({"figure.dpi": 130, "font.size": 10, "axes.grid": True, "gri
 def main():
     feat_info = json.load(open(MODEL_DIR / "feature_list.json"))
     FEATURES = feat_info["features"]
-    results = json.load(open(ROOT / "results" / "training_results_bit_v3_29feat.json"))
+    results = json.load(open(ROOT / "results" / "training_results_bit_v3_27feat.json"))
 
     df = pd.read_parquet(DATA)
     test = df[df.split == "test"]
     X_test, y_test = test[FEATURES], test["label"].values
 
     model = xgb.XGBClassifier()
-    model.load_model(str(MODEL_DIR / "model_bit_v3_29feat.json"))
-    calibrator = joblib.load(MODEL_DIR / "calibrator_bit_v3_29feat.joblib")
+    model.load_model(str(MODEL_DIR / "model_bit_v3_27feat.json"))
+    calibrator = joblib.load(MODEL_DIR / "calibrator_bit_v3_27feat.joblib")
 
     p_raw = model.predict_proba(X_test)[:, 1]
     p_cal = calibrator.predict(p_raw)

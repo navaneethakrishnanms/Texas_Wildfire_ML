@@ -332,3 +332,26 @@ TDIS_Ignition_BIT_V2/**/*.log
 !TDIS_Ignition_BIT_V2/**/*.json
 !TDIS_Ignition_BIT_V2/data/raw/*.csv
 TDIS_Ignition_BIT_V2/models/model_bit_v2_36feat.json
+
+# ── TDIS_Ignition_BIT_V3/ — code & docs kept, data/model weights ignored ──
+TDIS_Ignition_BIT_V3/**/*.parquet
+TDIS_Ignition_BIT_V3/**/*.feather
+# Large CSV datasets — exclude entirely
+TDIS_Ignition_BIT_V3/**/*.csv
+# Model weights
+TDIS_Ignition_BIT_V3/**/*.joblib
+TDIS_Ignition_BIT_V3/**/*.pkl
+TDIS_Ignition_BIT_V3/**/*.ubj
+TDIS_Ignition_BIT_V3/**/*.bin
+TDIS_Ignition_BIT_V3/**/*.cbm
+# Large model JSON (15 MB) — exclude the trained model dump
+TDIS_Ignition_BIT_V3/models/model_bit_v3_29feat.json
+# Logs
+TDIS_Ignition_BIT_V3/**/*.log
+# KEEP: scripts, markdown, small result/tuning JSONs, PNGs
+!TDIS_Ignition_BIT_V3/**/*.py
+!TDIS_Ignition_BIT_V3/**/*.md
+!TDIS_Ignition_BIT_V3/**/*.json
+!TDIS_Ignition_BIT_V3/**/*.png
+# Re-exclude the large model JSON (overrides the !*.json above)
+TDIS_Ignition_BIT_V3/models/model_bit_v3_29feat.json

@@ -344,8 +344,9 @@ TDIS_Ignition_BIT_V3/**/*.pkl
 TDIS_Ignition_BIT_V3/**/*.ubj
 TDIS_Ignition_BIT_V3/**/*.bin
 TDIS_Ignition_BIT_V3/**/*.cbm
-# Large model JSON (15 MB) — exclude the trained model dump
+# Large model JSONs — exclude trained model dumps (too big for git)
 TDIS_Ignition_BIT_V3/models/model_bit_v3_29feat.json
+TDIS_Ignition_BIT_V3/models/model_bit_v3_27feat.json
 # Logs
 TDIS_Ignition_BIT_V3/**/*.log
 # KEEP: scripts, markdown, small result/tuning JSONs, PNGs
@@ -353,5 +354,6 @@ TDIS_Ignition_BIT_V3/**/*.log
 !TDIS_Ignition_BIT_V3/**/*.md
 !TDIS_Ignition_BIT_V3/**/*.json
 !TDIS_Ignition_BIT_V3/**/*.png
-# Re-exclude the large model JSON (overrides the !*.json above)
+# Re-exclude the large model JSONs (overrides the !*.json above)
 TDIS_Ignition_BIT_V3/models/model_bit_v3_29feat.json
+TDIS_Ignition_BIT_V3/models/model_bit_v3_27feat.json

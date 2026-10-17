@@ -1,0 +1,595 @@
+{
+  "built": "2026-10-15T14:28:38.005717",
+  "runtime_seconds": 273.8600490093231,
+  "dataset": "C:\\Nk\\Texas ML Wildfire\\TDIS_Ignition_BIT_V3\\data\\processed\\bit_v3_train_tx.parquet",
+  "n_features": 27,
+  "features": [
+    "road_dist_km",
+    "ecoregion_id",
+    "elevation_m",
+    "slope_deg",
+    "aspect_deg",
+    "avg_burn_prob",
+    "whp",
+    "flep4",
+    "cfl",
+    "cbd",
+    "cbh",
+    "powerline_dist_km",
+    "sin_month",
+    "cos_month",
+    "sin_dow",
+    "cos_dow",
+    "is_weekend",
+    "is_holiday",
+    "hrrr_tmp",
+    "hrrr_vpd",
+    "hrrr_wind",
+    "hrrr_mstav",
+    "drought_score",
+    "bp_x_vpd",
+    "whp_x_vpd",
+    "bp_x_drought",
+    "pop_density"
+  ],
+  "rows": {
+    "train": 671455,
+    "val": 268332,
+    "test": 1261502,
+    "total": 2201289
+  },
+  "positive_rate": {
+    "train": 0.3042065365512209,
+    "val": 0.2876324851303609,
+    "test": 0.30550248830362536
+  },
+  "split_date_ranges": {
+    "train": [
+      "2018-07-16",
+      "2020-12-31"
+    ],
+    "val": [
+      "2021-01-01",
+      "2021-12-31"
+    ],
+    "test": [
+      "2022-01-01",
+      "2026-07-29"
+    ]
+  },
+  "hyperparameter_search": {
+    "stage1_winner": {
+      "depth": 9,
+      "mcw": 50,
+      "val_auroc": 0.8390873066575004,
+      "val_aucpr": 0.7413821125450274,
+      "train_val_gap_auroc": 0.07081480835300014,
+      "best_iter": 397
+    },
+    "stage2_winner": {
+      "lr": 0.05,
+      "subsample": 0.9,
+      "val_auroc": 0.8395223293631128,
+      "val_aucpr": 0.7462808785446179,
+      "best_iter": 811
+    },
+    "stage3_winner": {
+      "gamma": 0.1,
+      "colsample_bytree": 0.8,
+      "val_auroc": 0.8402507962751864,
+      "val_aucpr": 0.7472275382365525,
+      "best_iter": 847
+    },
+    "stage1_all": [
+      {
+        "depth": 6,
+        "mcw": 10,
+        "val_auroc": 0.8325020427358645,
+        "val_aucpr": 0.7216998732036803,
+        "train_val_gap_auroc": 0.04517014234649919,
+        "best_iter": 398
+      },
+      {
+        "depth": 6,
+        "mcw": 20,
+        "val_auroc": 0.8324482574799494,
+        "val_aucpr": 0.7210740735437244,
+        "train_val_gap_auroc": 0.04451298797884873,
+        "best_iter": 399
+      },
+      {
+        "depth": 6,
+        "mcw": 30,
+        "val_auroc": 0.8323216319822642,
+        "val_aucpr": 0.7210348438383039,
+        "train_val_gap_auroc": 0.04403132743074489,
+        "best_iter": 398
+      },
+      {
+        "depth": 6,
+        "mcw": 50,
+        "val_auroc": 0.8323987940925458,
+        "val_aucpr": 0.720007334947673,
+        "train_val_gap_auroc": 0.04237639557432937,
+        "best_iter": 399
+      },
+      {
+        "depth": 7,
+        "mcw": 10,
+        "val_auroc": 0.8369626010899568,
+        "val_aucpr": 0.7333934803034127,
+        "train_val_gap_auroc": 0.055855344197612955,
+        "best_iter": 399
+      },
+      {
+        "depth": 7,
+        "mcw": 20,
+        "val_auroc": 0.8365442000039902,
+        "val_aucpr": 0.7326251459090973,
+        "train_val_gap_auroc": 0.05424611637055665,
+        "best_iter": 398
+      },
+      {
+        "depth": 7,
+        "mcw": 30,
+        "val_auroc": 0.8372664652891012,
+        "val_aucpr": 0.7324530985153996,
+        "train_val_gap_auroc": 0.05238608359753394,
+        "best_iter": 398
+      },
+      {
+        "depth": 7,
+        "mcw": 50,
+        "val_auroc": 0.8372215526354181,
+        "val_aucpr": 0.7322844313515235,
+        "train_val_gap_auroc": 0.05008192017963853,
+        "best_iter": 398
+      },
+      {
+        "depth": 8,
+        "mcw": 10,
+        "val_auroc": 0.8383039844184157,
+        "val_aucpr": 0.7411277094998063,
+        "train_val_gap_auroc": 0.07059321295342014,
+        "best_iter": 399
+      },
+      {
+        "depth": 8,
+        "mcw": 20,
+        "val_auroc": 0.8390014613273041,
+        "val_aucpr": 0.7410574333065919,
+        "train_val_gap_auroc": 0.06707977909613272,
+        "best_iter": 399
+      },
+      {
+        "depth": 8,
+        "mcw": 30,
+        "val_auroc": 0.8380254826733521,
+        "val_aucpr": 0.7387352115608684,
+        "train_val_gap_auroc": 0.06543096109167701,
+        "best_iter": 399
+      },
+      {
+        "depth": 8,
+        "mcw": 50,
+        "val_auroc": 0.8379756865112576,
+        "val_aucpr": 0.7378945717445673,
+        "train_val_gap_auroc": 0.06132435442412654,
+        "best_iter": 399
+      },
+      {
+        "depth": 9,
+        "mcw": 10,
+        "val_auroc": 0.8378261307056288,
+        "val_aucpr": 0.7422727004145768,
+        "train_val_gap_auroc": 0.08216716519146183,
+        "best_iter": 345
+      },
+      {
+        "depth": 9,
+        "mcw": 20,
+        "val_auroc": 0.8391309718890377,
+        "val_aucpr": 0.7434813969655057,
+        "train_val_gap_auroc": 0.07978480702107149,
+        "best_iter": 395
+      },
+      {
+        "depth": 9,
+        "mcw": 30,
+        "val_auroc": 0.8385178909662516,
+        "val_aucpr": 0.7421237606650849,
+        "train_val_gap_auroc": 0.07680242618958377,
+        "best_iter": 398
+      },
+      {
+        "depth": 9,
+        "mcw": 50,
+        "val_auroc": 0.8390873066575004,
+        "val_aucpr": 0.7413821125450274,
+        "train_val_gap_auroc": 0.07081480835300014,
+        "best_iter": 397
+      }
+    ],
+    "stage2_all": [
+      {
+        "lr": 0.01,
+        "subsample": 0.7,
+        "val_auroc": 0.8393343411816965,
+        "val_aucpr": 0.7359831141229212,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.01,
+        "subsample": 0.8,
+        "val_auroc": 0.839162570945484,
+        "val_aucpr": 0.7361529083756848,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.01,
+        "subsample": 0.9,
+        "val_auroc": 0.8391709469105512,
+        "val_aucpr": 0.7370254983129202,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.02,
+        "subsample": 0.7,
+        "val_auroc": 0.8411453724240552,
+        "val_aucpr": 0.7444359278468983,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.02,
+        "subsample": 0.8,
+        "val_auroc": 0.8403149689885259,
+        "val_aucpr": 0.7425529520686158,
+        "best_iter": 982
+      },
+      {
+        "lr": 0.02,
+        "subsample": 0.9,
+        "val_auroc": 0.839567406387633,
+        "val_aucpr": 0.7432516168458522,
+        "best_iter": 1199
+      },
+      {
+        "lr": 0.05,
+        "subsample": 0.7,
+        "val_auroc": 0.8401567694797653,
+        "val_aucpr": 0.7428756110308986,
+        "best_iter": 419
+      },
+      {
+        "lr": 0.05,
+        "subsample": 0.8,
+        "val_auroc": 0.8385761038641592,
+        "val_aucpr": 0.7444027552872146,
+        "best_iter": 683
+      },
+      {
+        "lr": 0.05,
+        "subsample": 0.9,
+        "val_auroc": 0.8395223293631128,
+        "val_aucpr": 0.7462808785446179,
+        "best_iter": 811
+      }
+    ],
+    "stage3_all": [
+      {
+        "gamma": 0.0,
+        "colsample_bytree": 0.7,
+        "val_auroc": 0.8388323212278334,
+        "val_aucpr": 0.7441330040212821,
+        "best_iter": 703
+      },
+      {
+        "gamma": 0.0,
+        "colsample_bytree": 0.8,
+        "val_auroc": 0.8395223293631128,
+        "val_aucpr": 0.7462808785446179,
+        "best_iter": 811
+      },
+      {
+        "gamma": 0.0,
+        "colsample_bytree": 0.9,
+        "val_auroc": 0.8383035407188277,
+        "val_aucpr": 0.7451696452197003,
+        "best_iter": 784
+      },
+      {
+        "gamma": 0.1,
+        "colsample_bytree": 0.7,
+        "val_auroc": 0.8392193753378252,
+        "val_aucpr": 0.7426869056891359,
+        "best_iter": 447
+      },
+      {
+        "gamma": 0.1,
+        "colsample_bytree": 0.8,
+        "val_auroc": 0.8402507962751864,
+        "val_aucpr": 0.7472275382365525,
+        "best_iter": 847
+      },
+      {
+        "gamma": 0.1,
+        "colsample_bytree": 0.9,
+        "val_auroc": 0.8376561143570864,
+        "val_aucpr": 0.7444150013656803,
+        "best_iter": 773
+      },
+      {
+        "gamma": 0.3,
+        "colsample_bytree": 0.7,
+        "val_auroc": 0.8378865811820495,
+        "val_aucpr": 0.7440829004846656,
+        "best_iter": 833
+      },
+      {
+        "gamma": 0.3,
+        "colsample_bytree": 0.8,
+        "val_auroc": 0.8398650997327467,
+        "val_aucpr": 0.7435860712713925,
+        "best_iter": 456
+      },
+      {
+        "gamma": 0.3,
+        "colsample_bytree": 0.9,
+        "val_auroc": 0.8381292401545575,
+        "val_aucpr": 0.7447253421818056,
+        "best_iter": 768
+      }
+    ]
+  },
+  "final_hyperparameters": {
+    "n_estimators": 3000,
+    "max_depth": 9,
+    "min_child_weight": 50,
+    "learning_rate": 0.05,
+    "subsample": 0.9,
+    "colsample_bytree": 0.8,
+    "gamma": 0.1,
+    "eval_metric": "aucpr",
+    "early_stopping_rounds": 80,
+    "tree_method": "hist",
+    "device": "cuda",
+    "random_state": 42,
+    "n_jobs": -1,
+    "scale_pos_weight": 2.287240344461253,
+    "best_iteration": 970
+  },
+  "metrics_raw": {
+    "train": {
+      "aucpr": 0.8861235924436744,
+      "auroc": 0.9357366169598182,
+      "f1": 0.790620660695125,
+      "precision": 0.7710973458740744,
+      "recall": 0.8111582729938657,
+      "best_threshold": 0.4952440559864044,
+      "base_rate": 0.3042065365512209,
+      "lift": 2.9129012232597873
+    },
+    "val": {
+      "aucpr": 0.747514267394908,
+      "auroc": 0.8398545094044291,
+      "f1": 0.6494671901284963,
+      "precision": 0.6322356636321252,
+      "recall": 0.6676643215299102,
+      "best_threshold": 0.4650241732597351,
+      "base_rate": 0.2876324851303609,
+      "lift": 2.5988520283309424
+    },
+    "test": {
+      "aucpr": 0.7140751089762124,
+      "auroc": 0.7974652872545238,
+      "f1": 0.6178560826067927,
+      "precision": 0.6147093420451102,
+      "recall": 0.621035205712625,
+      "best_threshold": 0.4597741961479187,
+      "base_rate": 0.30550248830362536,
+      "lift": 2.3373790273895407
+    }
+  },
+  "metrics_calibrated": {
+    "test": {
+      "aucpr": 0.7090842051465014,
+      "auroc": 0.7974074540847922,
+      "f1": 0.61780093806944,
+      "precision": 0.6199079891635165,
+      "recall": 0.6157081620791298,
+      "best_threshold": 0.33287671208381653,
+      "base_rate": 0.30550248830362536,
+      "lift": 2.321042323039196
+    }
+  },
+  "calibration": {
+    "brier_test_raw": 0.15816254413535033,
+    "brier_test_calibrated": 0.1500421548863084
+  },
+  "train_test_auroc_gap": 0.13827132970529443,
+  "confusion_matrices": {
+    "raw_best_f1_threshold": {
+      "threshold": 0.4597741961479187,
+      "tn": 726094,
+      "fp": 150016,
+      "fn": 146050,
+      "tp": 239342,
+      "precision": 0.6147093420451102,
+      "recall": 0.621035205712625,
+      "accuracy": 0.7653067533781159
+    },
+    "calibrated_best_f1_threshold": {
+      "threshold": 0.33287671208381653,
+      "tn": 730618,
+      "fp": 145492,
+      "fn": 148103,
+      "tp": 237289,
+      "precision": 0.6199079891635165,
+      "recall": 0.6157081620791298,
+      "accuracy": 0.7672655295037186
+    },
+    "raw_threshold_0.5": {
+      "threshold": 0.5,
+      "tn": 757617,
+      "fp": 118493,
+      "fn": 161451,
+      "tp": 223941,
+      "precision": 0.6539683559459634,
+      "recall": 0.5810732967991032,
+      "accuracy": 0.7780867568977299
+    }
+  },
+  "feature_importance_gain": [
+    {
+      "feature": "ecoregion_id",
+      "gain": 141.6927490234375,
+      "pct": 0.15728570546919157
+    },
+    {
+      "feature": "elevation_m",
+      "gain": 79.59915924072266,
+      "pct": 0.08835886100184753
+    },
+    {
+      "feature": "hrrr_vpd",
+      "gain": 77.02299499511719,
+      "pct": 0.08549919589147875
+    },
+    {
+      "feature": "avg_burn_prob",
+      "gain": 74.11756134033203,
+      "pct": 0.08227402604167067
+    },
+    {
+      "feature": "road_dist_km",
+      "gain": 48.32234573364258,
+      "pct": 0.05364010714045051
+    },
+    {
+      "feature": "powerline_dist_km",
+      "gain": 45.67308807373047,
+      "pct": 0.05069930485606537
+    },
+    {
+      "feature": "sin_month",
+      "gain": 37.091224670410156,
+      "pct": 0.041173027407611036
+    },
+    {
+      "feature": "whp",
+      "gain": 36.51005172729492,
+      "pct": 0.04052789773804435
+    },
+    {
+      "feature": "pop_density",
+      "gain": 29.633424758911133,
+      "pct": 0.03289451401569307
+    },
+    {
+      "feature": "cos_month",
+      "gain": 27.95589828491211,
+      "pct": 0.03103237966707839
+    },
+    {
+      "feature": "hrrr_mstav",
+      "gain": 26.5303897857666,
+      "pct": 0.029449997283465083
+    },
+    {
+      "feature": "hrrr_tmp",
+      "gain": 25.01443099975586,
+      "pct": 0.027767210769947172
+    },
+    {
+      "feature": "slope_deg",
+      "gain": 24.33817481994629,
+      "pct": 0.027016534175327254
+    },
+    {
+      "feature": "bp_x_vpd",
+      "gain": 22.579788208007812,
+      "pct": 0.025064641219248198
+    },
+    {
+      "feature": "cbd",
+      "gain": 22.56825065612793,
+      "pct": 0.025051833986702274
+    },
+    {
+      "feature": "cbh",
+      "gain": 21.96827507019043,
+      "pct": 0.024385832487339297
+    },
+    {
+      "feature": "is_holiday",
+      "gain": 19.056922912597656,
+      "pct": 0.02115409281729811
+    },
+    {
+      "feature": "aspect_deg",
+      "gain": 19.028911590576172,
+      "pct": 0.02112299891464156
+    },
+    {
+      "feature": "drought_score",
+      "gain": 18.985042572021484,
+      "pct": 0.02107430221294602
+    },
+    {
+      "feature": "hrrr_wind",
+      "gain": 18.790571212768555,
+      "pct": 0.020858429734329702
+    },
+    {
+      "feature": "is_weekend",
+      "gain": 17.96564483642578,
+      "pct": 0.019942722134911505
+    },
+    {
+      "feature": "whp_x_vpd",
+      "gain": 16.74418830871582,
+      "pct": 0.01858684716611524
+    },
+    {
+      "feature": "bp_x_drought",
+      "gain": 16.694795608520508,
+      "pct": 0.018532018914501864
+    },
+    {
+      "feature": "sin_dow",
+      "gain": 16.600088119506836,
+      "pct": 0.018426889087284896
+    },
+    {
+      "feature": "cos_dow",
+      "gain": 16.37824249267578,
+      "pct": 0.01818062986681056
+    },
+    {
+      "feature": "flep4",
+      "gain": 0.0,
+      "pct": 0.0
+    },
+    {
+      "feature": "cfl",
+      "gain": 0.0,
+      "pct": 0.0
+    }
+  ],
+  "removed_vs_bit_v1": {
+    "dropped": [
+      "erc",
+      "fm100",
+      "vpd",
+      "vs",
+      "rmax",
+      "rmin",
+      "tmmx",
+      "pr",
+      "fm100_5d_min",
+      "lat",
+      "lon"
+    ],
+    "reason": "gridMET columns: same-day OBSERVED weather, not a true forecast -- internal feedback (Haripriya, 2026-10-14): use HRRR only, one weather source. lat/lon: raw coordinates -- Texas team feedback, relayed 2026-10-14, instructing not to proceed with raw coordinates as model features."
+  }
+}

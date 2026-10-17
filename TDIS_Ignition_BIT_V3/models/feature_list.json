@@ -1,5 +1,5 @@
 {
-  "n_features": 29,
+  "n_features": 27,
   "features": [
     "road_dist_km",
     "ecoregion_id",
@@ -27,8 +27,6 @@
     "bp_x_vpd",
     "whp_x_vpd",
     "bp_x_drought",
-    "pop_density",
-    "lat",
-    "lon"
+    "pop_density"
   ]
 }
